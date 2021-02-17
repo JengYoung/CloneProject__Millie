@@ -1,0 +1,23 @@
+{
+  "name": "parcel",
+  "version": "1.0.0",
+  "description": "https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq0uD57A7114k7_hU-cXbSTDO8BKxpUFUy_Dkig9dTc0a_MGb6zdHIaAi39EALw_wcB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JengYoung/MillieResponsiveWebsite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JengYoung/MillieResponsiveWebsite/issues"
+  },
+  "homepage": "https://github.com/JengYoung/MillieResponsiveWebsite#readme",
+  "keywords": [],
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}

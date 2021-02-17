@@ -1,0 +1,103 @@
+/* color */
+/* Layout size */
+/* font-size */
+/************* width and height **************/
+/******************* fonts *******************/
+/************ tag default setting ************/
+* {
+  font-family: "Noto Serif KR", serif;
+  margin: 0;
+  padding: 0;
+  color: #333333; }
+
+body {
+  background-color: #FFEB60;
+  min-width: 320px;
+  overflow-y: scroll;
+  font-family: "Noto Serif KR", serif; }
+
+button {
+  border-radius: 50px;
+  border: 1px solid #A451F7;
+  background-color: transparent;
+  color: #A451F7;
+  font-weight: 900;
+  outline: none; }
+  button:hover {
+    cursor: pointer; }
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+  border-style: none; }
+
+/******************************************/
+#nav-bar * {
+  font-family: "Noto Sans KR", sans-serif; }
+
+#nav-bar #nav-logo {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  width: 40px;
+  height: 40px;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-image: url("/subLogo.ff816756.svg");
+  object-fit: cover; }
+
+#nav-bar .btn {
+  top: 35px;
+  height: 31px;
+  width: 70px; }
+
+#nav-bar .go.login.btn {
+  position: fixed;
+  right: 150px;
+  cursor: pointer; }
+
+#nav-bar .go.fee-page.btn {
+  background-color: #A451F7;
+  color: #FFEB60;
+  position: fixed;
+  right: 30px;
+  width: 105px;
+  background-repeat: no-repeat;
+  cursor: pointer; }
+
+#pages-container {
+  max-width: 100%;
+  height: auto; }
+
+#intro-container {
+  padding-left: 50px;
+  max-width: 100%;
+  height: auto;
+  background-color: #FFEB60; }
+  #intro-container .logo {
+    width: 80px;
+    height: 26px;
+    padding-top: 110px;
+    background-repeat: no-repeat; }
+    #intro-container .logo img {
+      height: 100%; }
+  #intro-container .copy-wrap .main-copy {
+    padding-top: 40px;
+    font-size: 80px;
+    font-weight: 900; }
+  #intro-container .copy-wrap .sub-copy {
+    margin-top: 20px;
+    font-size: 23px; }
+    #intro-container .copy-wrap .sub-copy strong {
+      color: #A451F7; }
+  #intro-container .imgContainer {
+    top: 50%;
+    right: 0;
+    width: 70%;
+    max-width: 967px;
+    text-align: right; }
+    #intro-container .imgContainer div {
+      display: block; }
+
+
+/*# sourceMappingURL=/css.81192ade.css.map */
