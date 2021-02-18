@@ -17,7 +17,12 @@ $button-height: 31px;
 /******************* fonts *******************/
 $default-font: 'Noto Serif KR', serif;
 $godic-font: 'Noto Sans KR', sans-serif;
+$slogan-font: "supilmyeongjo010";
 
+@font-face {
+    font-family: "supilmyeongjo010";
+    src: url("../font/supilmyeongjo010.ttf") format('truetype');
+}
 /************ tag default setting ************/
 * {
     font-family: $default-font;
@@ -90,6 +95,21 @@ img {
         cursor: pointer;
     }
 }
+.signup-button-box {
+    display: flex;
+    justify-content: center;
+
+    .go-signup-button {
+        position: fixed;
+        top: 88%;
+        width: 330px;
+        height: 65px;
+        border-radius: 50px;
+        background-color: black;
+        border: none;
+        z-index: 10;
+    }
+}
 
 #pages-container {
     max-width: 100%;
@@ -100,6 +120,7 @@ img {
     padding-left: 50px;
     max-width: 100%;
     height: auto;
+    min-height: 1300px;
     background-color: $yellow;
     .logo {
         width: 80px;
@@ -112,6 +133,8 @@ img {
     }
 
     .copy-wrap {
+        position: relative;
+        z-index: 1;
         .main-copy {
             padding-top: 40px;
             font-size: 80px;
@@ -119,6 +142,7 @@ img {
         }
         
         .sub-copy {
+            position: relative;
             margin-top: 20px;
             font-size: $fl;
             strong {
@@ -127,16 +151,73 @@ img {
         }
     }
     .imgContainer {
-        // display: inline;
-        top: 50%;
-        right: 0;
+        position: relative;
+        top: -30px;
+        right: -30%;
         width: 70%;
         max-width: 967px;
-        text-align: right;
         div {
             display: block;
         }
     }
+    .book1-img {
+        position: absolute;
+        width: 5%;
+        top: 23%;
+        left: 36.70599900842836%;
+    }
+    .book2-img {
+        position: absolute;
+        width: 4%;
+        top: 23%;
+        left: 45%;
+    }
 }
 
 
+#slogan-container {
+    display: flex;
+    justify-content: center;
+    background-color: $yellow;
+    max-width: 100%;
+    min-height: 1300px;
+    font-family: 'Noto Serif KR', Serif;
+    .copy-and-logo-container {
+        display: flex;
+        margin-bottom: 150px;
+        flex-direction: column;
+        justify-content: space-between;
+        .main-copy {
+            padding-top: 130px;
+            * {
+                font-family: $slogan-font;
+                font-size: 60px;
+            }
+            strong {
+                font-weight: 900;
+                color: $purple;
+            }
+        }
+    }
+
+    .shelf-image-box {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 190%;
+        left: 70%;
+        & :nth-child(2) {
+            position: absolute;
+            left: -230%;
+            top: 100px;
+            padding-top: 70px;
+        }
+        & :last-child {
+            position: absolute;
+            right: 130px;
+            top: 330px;
+        }
+    }
+
+    
+}
