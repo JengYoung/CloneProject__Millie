@@ -2,6 +2,7 @@
 $yellow: #FFEB60;
 $purple: #A451F7;
 $black: #333333;
+$white: #FDFAF3;
 
 /* Layout size */
 $maxWidth: 1440px;
@@ -9,6 +10,7 @@ $maxHeight: 1024px;
 
 /* font-size */
 $fl: 23px;
+$main-copy-size: 80px;
 
 /************* width and height **************/ 
 $button-width: 70px;
@@ -52,7 +54,7 @@ button {
 }
 
 img {
-    max-width: 100%;
+    // max-width: 100%;
     vertical-align: top;
     border-style: none;
 }
@@ -137,7 +139,7 @@ img {
         z-index: 1;
         .main-copy {
             padding-top: 40px;
-            font-size: 80px;
+            font-size: $main-copy-size;
             font-weight: 900;
         }
         
@@ -149,6 +151,9 @@ img {
                 color: $purple;
             }
         }
+    }
+    img {
+        max-width: 100%;
     }
     .imgContainer {
         position: relative;
@@ -184,7 +189,7 @@ img {
     font-family: 'Noto Serif KR', Serif;
     .copy-and-logo-container {
         display: flex;
-        margin-bottom: 150px;
+        margin-bottom: 200px;
         flex-direction: column;
         justify-content: space-between;
         .main-copy {
@@ -202,13 +207,17 @@ img {
 
     .shelf-image-box {
         display: flex;
+        max-width: 100%;
         flex-direction: column;
         position: absolute;
         top: 190%;
         left: 70%;
+        img {
+            display: block;
+        }
         & :nth-child(2) {
             position: absolute;
-            left: -230%;
+            left: -200%;
             top: 100px;
             padding-top: 70px;
         }
@@ -217,7 +226,54 @@ img {
             right: 130px;
             top: 330px;
         }
-    }
-
+    }    
     
+    .slogan-and-logo {
+        width:150px;
+        height:55px;
+    }
+}
+
+#book-introduction-container {
+    display: block;
+    min-height: 1024px;     
+    padding-left: 50px;
+    .book-main-copy {
+        font-size: $main-copy-size;
+    }
+    .book-sub-copy  {
+        strong {
+            color: $purple;
+        }
+        margin-top: 20px;
+        font-size: $fl;
+    }
+    .descriptions {
+        margin-top: 30px;
+        p {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+        }
+        div {
+            margin-top:10px;
+        }
+    }
+    .books-img-wrap {
+        position: relative;
+        top: -124px;
+        left: -50px;
+        z-index:-1;
+        opacity: 0.5;
+        img {
+            margin: 10px;
+            width: 100px;
+            min-height: 140px;
+            max-height: 140px;
+        }
+    }
+}
+
+#genre-introduction-container {
+    min-height: 1024px;
+    background: $white;
 }

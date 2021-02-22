@@ -2,6 +2,11 @@
 
 https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq0uD57A7114k7_hU-cXbSTDO8BKxpUFUy_Dkig9dTc0a_MGb6zdHIaAi39EALw_wcB
 
+## 2021.02.22
+
+구현 - book-introduction-container section 구현.
+미구현 - event 미구현.
+
 ## 2021.02.18
 
 ### 주요 변경 사항
