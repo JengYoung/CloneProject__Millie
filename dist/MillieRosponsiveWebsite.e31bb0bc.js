@@ -117,79 +117,109 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"index.js":[function(require,module,exports) {
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-  return bundleURL;
-}
+function increase(number) {
+  var promise = new Promise(function (resolve, reject) {
+    //resolve: 성공, reject: 실패
+    setTimeout(function () {
+      var result = number + 10;
 
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
+      if (result > 50) {
+        //50보다 높으면 에러
+        var e = new Error('NumberTooBig');
+        return reject(e);
       }
-    }
 
-    cssTimeout = null;
-  }, 50);
+      resolve(result);
+    }, 1000);
+  });
+  return promise;
 }
 
-module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"css/index.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
+function runTasks() {
+  return _runTasks.apply(this, arguments);
+}
 
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./..\\font\\supilmyeongjo010.ttf":[["supilmyeongjo010.36fa789e.ttf","font/supilmyeongjo010.ttf"],"font/supilmyeongjo010.ttf"],"./..\\img\\subLogo.svg":[["subLogo.ff816756.svg","img/subLogo.svg"],"img/subLogo.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+function _runTasks() {
+  _runTasks = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+    var result;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.prev = 0;
+            _context.next = 3;
+            return increase(0);
+
+          case 3:
+            result = _context.sent;
+            console.log(result);
+            _context.next = 7;
+            return increase(result);
+
+          case 7:
+            result = _context.sent;
+            console.log(result);
+            _context.next = 11;
+            return increase(result);
+
+          case 11:
+            result = _context.sent;
+            console.log(result);
+            _context.next = 15;
+            return increase(result);
+
+          case 15:
+            result = _context.sent;
+            console.log(result);
+            _context.next = 19;
+            return increase(result);
+
+          case 19:
+            result = _context.sent;
+            console.log(result);
+            _context.next = 23;
+            return increase(result);
+
+          case 23:
+            result = _context.sent;
+            console.log(result);
+            _context.next = 27;
+            return increase(result);
+
+          case 27:
+            result = _context.sent;
+            console.log(result);
+            _context.next = 31;
+            return increase(result);
+
+          case 31:
+            result = _context.sent;
+            console.log(result);
+            _context.next = 38;
+            break;
+
+          case 35:
+            _context.prev = 35;
+            _context.t0 = _context["catch"](0);
+            console.log(_context.t0);
+
+          case 38:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee, null, [[0, 35]]);
+  }));
+  return _runTasks.apply(this, arguments);
+}
+
+runTasks();
+},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -393,5 +423,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/css.81192ade.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+//# sourceMappingURL=/MillieRosponsiveWebsite.e31bb0bc.js.map

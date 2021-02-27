@@ -205,8 +205,28 @@ img {
       max-height: 140px; }
 
 #genre-introduction-container {
+  padding-top: 60px;
+  padding-left: 50px;
   min-height: 1024px;
   background: #FDFAF3; }
+  #genre-introduction-container .genre-main-copy {
+    margin-top: 15px;
+    font-size: 80px; }
+  #genre-introduction-container .genre-sub-copy {
+    font-size: 23px;
+    margin-top: 20px; }
+    #genre-introduction-container .genre-sub-copy strong {
+      color: #A451F7; }
+  #genre-introduction-container .descriptions {
+    margin-top: 30px; }
+  #genre-introduction-container .description {
+    margin-bottom: 15px; }
+    #genre-introduction-container .description p {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 500; }
+      #genre-introduction-container .description p strong {
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 900; }
 
 
 /*# sourceMappingURL=/css.81192ade.css.map */

@@ -274,6 +274,33 @@ img {
 }
 
 #genre-introduction-container {
+    padding-top: 60px;
+    padding-left: 50px;
     min-height: 1024px;
     background: $white;
+    .genre-main-copy {
+        margin-top: 15px;
+        font-size: $main-copy-size;
+    }
+    .genre-sub-copy {
+        strong {
+            color: $purple;
+        }
+        font-size: $fl;
+        margin-top: 20px;
+    }
+    .descriptions {
+        margin-top: 30px;
+    }
+    .description {
+        p {
+            strong {
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight: 900;
+            }
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 500;
+        }
+        margin-bottom: 15px;
+    }
 }
