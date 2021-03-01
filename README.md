@@ -4,7 +4,11 @@ https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq
 
 ## 2021.03.01
 
-구현 - contents-introduction-container section 구현
+구현 -
+
+1. contents-introduction-container section 구현
+2. subscribe-option-introduction-container 구현
+
 미구현 - event 미구현
 
 ## 2021.02.27
