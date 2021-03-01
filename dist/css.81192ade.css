@@ -31,6 +31,7 @@ button {
     cursor: pointer; }
 
 img {
+  max-width: 100%;
   vertical-align: top;
   border-style: none; }
 
@@ -227,6 +228,56 @@ img {
       #genre-introduction-container .description p strong {
         font-family: 'Noto Sans KR', sans-serif;
         font-weight: 900; }
+
+#contents-introduction-container {
+  padding-top: 60px;
+  padding-left: 50px;
+  min-height: 1024px;
+  background: #FDFAF3; }
+  #contents-introduction-container .contents-main-copy {
+    margin-top: 15px;
+    font-size: 80px; }
+  #contents-introduction-container .contents-sub-copy {
+    font-size: 23px;
+    margin-top: 20px; }
+    #contents-introduction-container .contents-sub-copy strong {
+      color: #A451F7; }
+  #contents-introduction-container .descriptions {
+    margin-top: 30px; }
+  #contents-introduction-container .description {
+    margin-bottom: 15px; }
+    #contents-introduction-container .description p {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 500; }
+      #contents-introduction-container .description p strong {
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 900; }
+  #contents-introduction-container .contents-img-box {
+    margin-top: 0;
+    position: absolute;
+    top: 740%;
+    right: 0;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap; }
+    #contents-introduction-container .contents-img-box .content {
+      width: 45%;
+      background-repeat: no-repeat;
+      background-size: contain; }
+      #contents-introduction-container .contents-img-box .content .content-first-model {
+        position: absolute;
+        z-index: 1;
+        left: -2%;
+        bottom: -8%;
+        width: 40%; }
+      #contents-introduction-container .contents-img-box .content .content-first-btn {
+        position: absolute;
+        z-index: 2;
+        left: -55%;
+        right: 0;
+        bottom: 14%;
+        margin: auto;
+        width: 40%; }
 
 
 /*# sourceMappingURL=/css.81192ade.css.map */

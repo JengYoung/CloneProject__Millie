@@ -54,7 +54,7 @@ button {
 }
 
 img {
-    // max-width: 100%;
+    max-width: 100%;
     vertical-align: top;
     border-style: none;
 }
@@ -302,5 +302,67 @@ img {
             font-weight: 500;
         }
         margin-bottom: 15px;
+    }
+}
+
+#contents-introduction-container {
+    padding-top: 60px;
+    padding-left: 50px;
+    min-height: 1024px;
+    background: $white;
+    .contents-main-copy {
+        margin-top: 15px;
+        font-size: $main-copy-size;
+    }
+    .contents-sub-copy {
+        strong {
+            color: $purple;
+        }
+        font-size: $fl;
+        margin-top: 20px;
+    }
+    .descriptions {
+        margin-top: 30px;
+    }
+    .description {
+        p {
+            strong {
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight: 900;
+            }
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 500;
+        }
+        margin-bottom: 15px;
+    }
+    .contents-img-box {
+        margin-top: 0;
+        position: absolute;
+        top: 740%;
+        right: 0;
+        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        .content {
+            width: 45%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            .content-first-model {
+                position: absolute;
+                z-index: 1;
+                left: -2%;
+                bottom: -8%;
+                width: 40%;
+            }
+            .content-first-btn {
+                position: absolute;
+                z-index: 2;
+                left: -55%;
+                right: 0;
+                bottom: 14%;
+                margin: auto;
+                width: 40%;
+            }
+        }
     }
 }

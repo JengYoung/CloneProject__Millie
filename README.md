@@ -2,6 +2,11 @@
 
 https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq0uD57A7114k7_hU-cXbSTDO8BKxpUFUy_Dkig9dTc0a_MGb6zdHIaAi39EALw_wcB
 
+## 2021.03.01
+
+구현 - contents-introduction-container section 구현
+미구현 - event 미구현
+
 ## 2021.02.27
 
 구현 - genre-introduction-container section 구현
