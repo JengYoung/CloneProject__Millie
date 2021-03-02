@@ -10,6 +10,7 @@
 /************ tag default setting ************/
 * {
   font-family: "Noto Serif KR", serif;
+  font-weight: 900;
   margin: 0;
   padding: 0;
   color: #333333; }
@@ -17,7 +18,6 @@
 body {
   background-color: #FFEB60;
   min-width: 320px;
-  overflow-y: scroll;
   font-family: "Noto Serif KR", serif; }
 
 button {
@@ -255,7 +255,7 @@ img {
   #contents-introduction-container .contents-img-box {
     margin-top: 0;
     position: absolute;
-    top: 740%;
+    top: 720%;
     right: 0;
     width: 60%;
     display: flex;
@@ -305,9 +305,10 @@ img {
         font-family: 'Noto Sans KR', sans-serif;
         font-weight: 900; }
   #subscribe-option-introduction-container .presents-wrapper {
-    width: 50%;
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    right: 0; }
+    right: 10%; }
     #subscribe-option-introduction-container .presents-wrapper .present {
       width: 400px;
       height: 400px; }
@@ -327,9 +328,207 @@ img {
       width: 225px;
       height: 222px; }
   #subscribe-option-introduction-container .original-logo {
+    display: inline;
     position: relative;
     top: 300px;
     left: 55px; }
+
+#fee-introduction-container {
+  padding-top: 60px;
+  padding-left: 50px;
+  min-height: 1024px;
+  background-color: #333333; }
+  #fee-introduction-container * {
+    color: #FDFAF3;
+    list-style: none; }
+  #fee-introduction-container .fee-sub-copy {
+    font-size: 23px;
+    margin-top: 20px; }
+  #fee-introduction-container .fee-main-copy {
+    margin-top: 50px;
+    font-size: 50px; }
+  #fee-introduction-container .fee-description-wraps {
+    position: relative;
+    bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    width: calc(50% - 4px);
+    position: relative;
+    left: 40%; }
+    #fee-introduction-container .fee-description-wraps div + div {
+      margin-left: 4px; }
+  #fee-introduction-container .ebook-subscription-fee-wrap {
+    border-radius: 5px;
+    background-color: #FDFAF3;
+    width: 350px; }
+    #fee-introduction-container .ebook-subscription-fee-wrap * {
+      color: black; }
+    #fee-introduction-container .ebook-subscription-fee-wrap span {
+      font-size: 20px;
+      font-family: "Noto Serif KR", serif; }
+      #fee-introduction-container .ebook-subscription-fee-wrap span p {
+        font-weight: 200; }
+      #fee-introduction-container .ebook-subscription-fee-wrap span em {
+        font-family: "Noto Serif KR", serif;
+        font-weight: 900; }
+    #fee-introduction-container .ebook-subscription-fee-wrap .fee-wrap-header {
+      border-radius: 5px 5px 0 0;
+      padding: 16px 8px 16px 16px;
+      min-height: 424px;
+      background-color: #FFEB60; }
+    #fee-introduction-container .ebook-subscription-fee-wrap .head {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-size: 40px; }
+      #fee-introduction-container .ebook-subscription-fee-wrap .head p {
+        font-family: "Noto Sans KR", sans-serif; }
+    #fee-introduction-container .ebook-subscription-fee-wrap .fee * {
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 24px;
+      font-weight: 300; }
+    #fee-introduction-container .ebook-subscription-fee-wrap .fee strong {
+      font-size: 32px;
+      font-weight: 900; }
+    #fee-introduction-container .ebook-subscription-fee-wrap .fee em {
+      font-style: normal;
+      text-decoration: line-through;
+      color: #A69B4D; }
+    #fee-introduction-container .ebook-subscription-fee-wrap .fee-wrap-body {
+      margin-top: 20px;
+      margin-left: 16px;
+      padding-bottom: 150px; }
+      #fee-introduction-container .ebook-subscription-fee-wrap .fee-wrap-body dt {
+        padding-bottom: 4px;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 400;
+        font-size: 12px; }
+        #fee-introduction-container .ebook-subscription-fee-wrap .fee-wrap-body dt * {
+          font-size: 14px;
+          font-style: normal;
+          font-family: "Noto Sans KR", sans-serif; }
+        #fee-introduction-container .ebook-subscription-fee-wrap .fee-wrap-body dt img {
+          position: relative;
+          top: 5px;
+          padding-right: 2px; }
+        #fee-introduction-container .ebook-subscription-fee-wrap .fee-wrap-body dt strong {
+          color: red; }
+      #fee-introduction-container .ebook-subscription-fee-wrap .fee-wrap-body dd {
+        padding-left: 12px;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 200;
+        font-size: 12px; }
+    #fee-introduction-container .ebook-subscription-fee-wrap .btn-wrap {
+      position: relative;
+      bottom: 5%;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      #fee-introduction-container .ebook-subscription-fee-wrap .btn-wrap .month-subscribe-btn {
+        background-color: #FFEB60;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 400;
+        border: none;
+        width: 83%;
+        height: 40px;
+        margin: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); }
+      #fee-introduction-container .ebook-subscription-fee-wrap .btn-wrap .year-subscribe-btn {
+        background-color: #FFC004;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 400;
+        border: none;
+        width: 83%;
+        height: 40px;
+        margin: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); }
+  #fee-introduction-container .paper-subscription-fee-wrap {
+    border-radius: 5px;
+    background-color: #FDFAF3;
+    width: 350px; }
+    #fee-introduction-container .paper-subscription-fee-wrap * {
+      color: black; }
+    #fee-introduction-container .paper-subscription-fee-wrap span {
+      font-size: 20px;
+      font-family: "Noto Serif KR", serif; }
+      #fee-introduction-container .paper-subscription-fee-wrap span p {
+        font-weight: 200; }
+      #fee-introduction-container .paper-subscription-fee-wrap span em {
+        font-family: "Noto Serif KR", serif;
+        font-weight: 900; }
+    #fee-introduction-container .paper-subscription-fee-wrap .fee-wrap-header {
+      border-radius: 5px 5px 0 0;
+      padding: 16px 8px 16px 16px;
+      min-height: 424px;
+      background-color: #6A31A4; }
+      #fee-introduction-container .paper-subscription-fee-wrap .fee-wrap-header * {
+        color: white; }
+    #fee-introduction-container .paper-subscription-fee-wrap .head {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-size: 40px; }
+      #fee-introduction-container .paper-subscription-fee-wrap .head p {
+        font-family: "Noto Sans KR", sans-serif; }
+    #fee-introduction-container .paper-subscription-fee-wrap .fee * {
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 24px;
+      font-weight: 300; }
+    #fee-introduction-container .paper-subscription-fee-wrap .fee strong {
+      font-size: 32px;
+      font-weight: 900; }
+    #fee-introduction-container .paper-subscription-fee-wrap .fee em {
+      font-style: normal;
+      text-decoration: line-through;
+      color: #c5c5c5; }
+    #fee-introduction-container .paper-subscription-fee-wrap .fee-wrap-body {
+      margin-top: 20px;
+      margin-left: 16px;
+      padding-bottom: 100px; }
+      #fee-introduction-container .paper-subscription-fee-wrap .fee-wrap-body dt {
+        padding-bottom: 4px;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 400;
+        font-size: 12px; }
+        #fee-introduction-container .paper-subscription-fee-wrap .fee-wrap-body dt * {
+          font-size: 14px;
+          font-style: normal;
+          font-family: "Noto Sans KR", sans-serif; }
+        #fee-introduction-container .paper-subscription-fee-wrap .fee-wrap-body dt img {
+          position: relative;
+          top: 5px;
+          padding-right: 2px; }
+        #fee-introduction-container .paper-subscription-fee-wrap .fee-wrap-body dt strong {
+          color: red; }
+      #fee-introduction-container .paper-subscription-fee-wrap .fee-wrap-body dd {
+        padding-left: 12px;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 200;
+        font-size: 12px; }
+    #fee-introduction-container .paper-subscription-fee-wrap .btn-wrap {
+      position: relative;
+      bottom: 5%;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      #fee-introduction-container .paper-subscription-fee-wrap .btn-wrap .month-subscribe-btn {
+        background-color: #A87DDF;
+        color: white;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 400;
+        border: none;
+        width: 83%;
+        height: 40px;
+        margin: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); }
+      #fee-introduction-container .paper-subscription-fee-wrap .btn-wrap .year-subscribe-btn {
+        background-color: #6A31A4;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 400;
+        border: none;
+        width: 83%;
+        height: 40px;
+        margin: 4px;
+        color: white;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); }
 
 
 /*# sourceMappingURL=/css.81192ade.css.map */
