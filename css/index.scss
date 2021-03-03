@@ -132,6 +132,25 @@ $slogan-font: "supilmyeongjo010";
     }
     margin-bottom: 15px;
 }
+@mixin setSubscriptionFeeWrap() {
+    border-radius: 5px;
+    background-color: $white;
+    width: 50%;
+    * {
+        color: black; 
+    }
+    span {
+        font-size: 20px;
+        font-family: $default-font;
+        p {
+            font-weight: 200;
+        }
+        em {
+            font-family: $default-font;
+            font-weight: 900;
+        }
+    }
+}
 
 /************ tag default setting ************/
 * {
@@ -492,24 +511,7 @@ img {
         }
     }
     .ebook-subscription-fee-wrap {
-        border-radius: 5px;
-        background-color: $white;
-        width: 50%;
-        // padding: 16px 8px 16px 16px;
-        * {
-            color: black; 
-        }
-        span {
-            font-size: 20px;
-            font-family: $default-font;
-            p {
-                font-weight: 200;
-            }
-            em {
-                font-family: $default-font;
-                font-weight: 900;
-            }
-        }
+        @include setSubscriptionFeeWrap();
         .fee-wrap-header {
             border-radius: 5px 5px 0 0 ;
             padding: 16px 8px 16px 16px;
@@ -546,23 +548,7 @@ img {
         }
     }
     .paper-subscription-fee-wrap {
-        border-radius: 5px;
-        background-color: $white;
-        width: 50%;
-        * {
-            color: black; 
-        }
-        span {
-            font-size: 20px;
-            font-family: $default-font;
-            p {
-                font-weight: 200;
-            }
-            em {
-                font-family: $default-font;
-                font-weight: 900;
-            }
-        }
+        @include setSubscriptionFeeWrap();
         .fee-wrap-header {
             * {
                 color: white;
