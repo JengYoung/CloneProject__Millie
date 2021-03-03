@@ -157,6 +157,15 @@ $slogan-font: "supilmyeongjo010";
     min-height: 424px;
     background-color: $color;
 }
+@mixin setFeeWrapHeadCopy() {
+    p {
+        font-family: $godic-font;
+    }
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
 /************ tag default setting ************/
 * {
     margin: 0;
@@ -520,13 +529,8 @@ img {
         .fee-wrap-header {
             @include setFeeWrapHeader($yellow);
         }
-        .head {
-            p {
-                font-family: $godic-font;
-            }
-            margin-top: 20px;
-            margin-bottom: 20px;
-            font-size: 40px;
+        .fee-wrap-head-copy {
+            @include setFeeWrapHeadCopy()
         }
         .fee {
             @include setSubscriptionWrapperHeadCopy(#A69B4D);
@@ -557,13 +561,8 @@ img {
                 color: white;
             }
         }
-        .head {
-            p {
-                font-family: $godic-font;
-            }
-            margin-top: 20px;
-            margin-bottom: 20px;
-            font-size: 40px;
+        .fee-wrap-head-copy {
+            @include setFeeWrapHeadCopy();
         }
         .fee {
             @include setSubscriptionWrapperHeadCopy(#c5c5c5);

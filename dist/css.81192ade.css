@@ -395,11 +395,11 @@ img {
       padding: 16px 8px 16px 16px;
       min-height: 424px;
       background-color: #FFEB60; }
-    #fee-introduction-container .ebook-subscription-fee-wrap .head {
+    #fee-introduction-container .ebook-subscription-fee-wrap .fee-wrap-head-copy {
       margin-top: 20px;
       margin-bottom: 20px;
       font-size: 40px; }
-      #fee-introduction-container .ebook-subscription-fee-wrap .head p {
+      #fee-introduction-container .ebook-subscription-fee-wrap .fee-wrap-head-copy p {
         font-family: "Noto Sans KR", sans-serif; }
     #fee-introduction-container .ebook-subscription-fee-wrap .fee * {
       font-family: "Noto Sans KR", sans-serif;
@@ -485,11 +485,11 @@ img {
       background-color: #6A31A4; }
       #fee-introduction-container .paper-subscription-fee-wrap .fee-wrap-header * {
         color: white; }
-    #fee-introduction-container .paper-subscription-fee-wrap .head {
+    #fee-introduction-container .paper-subscription-fee-wrap .fee-wrap-head-copy {
       margin-top: 20px;
       margin-bottom: 20px;
       font-size: 40px; }
-      #fee-introduction-container .paper-subscription-fee-wrap .head p {
+      #fee-introduction-container .paper-subscription-fee-wrap .fee-wrap-head-copy p {
         font-family: "Noto Sans KR", sans-serif; }
     #fee-introduction-container .paper-subscription-fee-wrap .fee * {
       font-family: "Noto Sans KR", sans-serif;
