@@ -64,6 +64,12 @@ $slogan-font: "supilmyeongjo010";
         color: $color;
     }
 }
+@mixin setIntroBookMovement($width, $top, $left) {
+    position: absolute;
+    width: $width;
+    top: $top;
+    left: $left;
+}
 @mixin setSubscriptionWrapperHeadCopy($color) {
     * {
         font-family: $godic-font;
@@ -274,16 +280,10 @@ img {
         max-width: 967px;
     }
     .book1-img {
-        position: absolute;
-        width: 5%;
-        top: 23%;
-        left: 36.70599900842836%;
+        @include setIntroBookMovement(5%, 23%, 36%);
     }
     .book2-img {
-        position: absolute;
-        width: 4%;
-        top: 23%;
-        left: 45%;
+        @include setIntroBookMovement(4%, 23%, 45%);
     }
 }
 
