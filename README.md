@@ -14,6 +14,7 @@ scss refactoring 시작
 6. mixin을 통한 fee-wrap-body 정리
 7. mixin을 통한 subscription-fee-wrap 정리
 8. mixin을 통한 fee-wrap-header 정리
+9. head -> fee-wrap-head-copy로 이름 변경, mixin을 통한 정리
 
 ## 2021.03.02
 
