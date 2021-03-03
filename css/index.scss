@@ -33,6 +33,24 @@ $slogan-font: "supilmyeongjo010";
     max-width: 100%;
     min-height: 1300px;
 }
+
+@mixin setBarBtn($backgroundColor, $color) {
+    position: fixed;
+    top: 35px;
+    width:$button-width;
+    height:$button-height;
+    border-radius: 50px;
+    border: 1px solid $color;
+    background-color: $backgroundColor;
+    color: $color;
+    font-weight: 900;
+    outline: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 @mixin setMainCopy($color) {
     padding-top: 40px;
     font-size: $main-copy-size;
@@ -64,6 +82,36 @@ $slogan-font: "supilmyeongjo010";
         color: $color;
     }
 }
+
+@mixin setFeeWrapBody() {
+    margin-top: 20px;
+    margin-left: 16px;
+    dt {
+        * {
+            font-size: 14px;
+            font-style: normal;
+            font-family: $godic-font;
+        }
+        img {
+            position: relative;
+            top: 5px;
+            padding-right: 2px;
+        }
+        strong {
+            color: red;
+        }
+        padding-bottom: 4px;
+        font-family: $godic-font;
+        font-weight: 400;
+        font-size: 12px;
+    }
+    dd {
+        padding-left: 12px;
+        font-family: $godic-font;
+        font-weight: 200;
+        font-size: 12px;
+    }
+}
 @mixin setSubscriptionWrapperBtn($backgroundColor, $color) {
     background-color: $backgroundColor;
     color: $color;
@@ -77,22 +125,6 @@ $slogan-font: "supilmyeongjo010";
     box-shadow: 0 1px 3px rgba(0,0,0,0.25);
 }
 
-@mixin setBarBtn($backgroundColor, $color) {
-    position: fixed;
-    top: 35px;
-    width:$button-width;
-    height:$button-height;
-    border-radius: 50px;
-    border: 1px solid $color;
-    background-color: $backgroundColor;
-    color: $color;
-    font-weight: 900;
-    outline: none;
-
-    &:hover {
-        cursor: pointer;
-    }
-}
 
 /************ tag default setting ************/
 * {
@@ -516,34 +548,8 @@ img {
             @include setSubscriptionWrapperHeadCopy(#A69B4D);
         }
         .fee-wrap-body {
-            margin-top: 20px;
-            margin-left: 16px;
+            @include setFeeWrapBody();
             padding-bottom: 150px;
-            dt {
-                * {
-                    font-size: 14px;
-                    font-style: normal;
-                    font-family: $godic-font;
-                }
-                img {
-                    position: relative;
-                    top: 5px;
-                    padding-right: 2px;
-                }
-                strong {
-                    color: red;
-                }
-                padding-bottom: 4px;
-                font-family: $godic-font;
-                font-weight: 400;
-                font-size: 12px;
-            }
-            dd {
-                padding-left: 12px;
-                font-family: $godic-font;
-                font-weight: 200;
-                font-size: 12px;
-            }
         }
         .btn-wrap {
             position: relative;
@@ -598,34 +604,8 @@ img {
             @include setSubscriptionWrapperHeadCopy(#c5c5c5);
         }
         .fee-wrap-body {
-            margin-top: 20px;
-            margin-left: 16px;
+            @include setFeeWrapBody();
             padding-bottom: 100px;
-            dt {
-                * {
-                    font-size: 14px;
-                    font-style: normal;
-                    font-family: $godic-font;
-                }
-                img {
-                    position: relative;
-                    top: 5px;
-                    padding-right: 2px;
-                }
-                strong {
-                    color: red;
-                }
-                padding-bottom: 4px;
-                font-family: $godic-font;
-                font-weight: 400;
-                font-size: 12px;
-            }
-            dd {
-                padding-left: 12px;
-                font-family: $godic-font;
-                font-weight: 200;
-                font-size: 12px;
-            }
         }
         .btn-wrap {
             position: relative;

@@ -6,10 +6,12 @@ https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq
 
 scss refactoring 시작
 
-1. mix-in을 통한 전체 main-copy 통일
-2. mix-in을 통한 전체 sub-copy 통일
+1. mix-in을 통한 전체 main-copy 정리
+2. mix-in을 통한 전체 sub-copy 정리
 3. mix-in을 통한 전체 container 정리
 4. fee-introduction-container 내 wrapper 폰트 정리
+5. mix-in을 통한 nav-bar 버튼 정리
+6. mix-in을 통한 fee-wrap-body 정리
 
 ## 2021.03.02
 
