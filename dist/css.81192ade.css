@@ -10,10 +10,10 @@
 /******************* mixin *******************/
 /************ tag default setting ************/
 * {
-  font-family: "Noto Serif KR", serif;
-  font-weight: 900;
   margin: 0;
   padding: 0;
+  font-family: "Noto Serif KR", serif;
+  font-weight: 900;
   color: #333333; }
 
 img {
@@ -24,7 +24,6 @@ img {
 #pages-container {
   background-color: #FFEB60;
   min-width: 320px;
-  max-width: 100%;
   height: auto; }
 
 #nav-bar * {
@@ -188,15 +187,20 @@ img {
       color: #A451F7; }
   #book-introduction-container .descriptions {
     margin-top: 30px; }
-    #book-introduction-container .descriptions p {
+  #book-introduction-container .description {
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 99; }
+    #book-introduction-container .description p {
       font-family: 'Noto Sans KR', sans-serif;
-      font-weight: 700; }
-    #book-introduction-container .descriptions div {
-      margin-top: 10px; }
+      font-weight: 500; }
+      #book-introduction-container .description p strong {
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 900; }
   #book-introduction-container .books-img-wrap {
     position: relative;
     top: -124px;
-    z-index: -1;
+    z-index: 1;
     opacity: 0.5; }
     #book-introduction-container .books-img-wrap img {
       margin: 10px;
@@ -375,7 +379,7 @@ img {
   #fee-introduction-container .ebook-subscription-fee-wrap {
     border-radius: 5px;
     background-color: #FDFAF3;
-    width: 350px; }
+    width: 50%; }
     #fee-introduction-container .ebook-subscription-fee-wrap * {
       color: black; }
     #fee-introduction-container .ebook-subscription-fee-wrap span {
@@ -463,7 +467,7 @@ img {
   #fee-introduction-container .paper-subscription-fee-wrap {
     border-radius: 5px;
     background-color: #FDFAF3;
-    width: 350px; }
+    width: 50%; }
     #fee-introduction-container .paper-subscription-fee-wrap * {
       color: black; }
     #fee-introduction-container .paper-subscription-fee-wrap span {

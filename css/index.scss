@@ -29,11 +29,11 @@ $slogan-font: "supilmyeongjo010";
 
 /******************* mixin *******************/
 @mixin setContainer() {
+    width: 100%;
     padding-left: 50px;
     max-width: 100%;
     min-height: 1300px;
 }
-
 @mixin setBarBtn($backgroundColor, $color) {
     position: fixed;
     top: 35px;
@@ -50,14 +50,12 @@ $slogan-font: "supilmyeongjo010";
         cursor: pointer;
     }
 }
-
 @mixin setMainCopy($color) {
     padding-top: 40px;
     font-size: $main-copy-size;
     font-weight: 900;
     color: $color;
 }
-
 @mixin setSubCopy($color) {
     position: relative;
     margin-top: 20px;
@@ -82,7 +80,6 @@ $slogan-font: "supilmyeongjo010";
         color: $color;
     }
 }
-
 @mixin setFeeWrapBody() {
     margin-top: 20px;
     margin-left: 16px;
@@ -124,14 +121,24 @@ $slogan-font: "supilmyeongjo010";
     margin: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.25);
 }
-
+@mixin setDescription() {
+    p {
+        strong {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 900;
+        }
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 500;
+    }
+    margin-bottom: 15px;
+}
 
 /************ tag default setting ************/
 * {
-    font-family: $default-font;
-    font-weight: 900;
     margin: 0;
     padding: 0;
+    font-family: $default-font;
+    font-weight: 900;
     color: $black;
 }
 
@@ -145,7 +152,6 @@ img {
 #pages-container {
     background-color: $yellow;
     min-width: 320px;
-    max-width: 100%;
     height: auto;
 }
 
@@ -308,18 +314,16 @@ img {
     }
     .descriptions {
         margin-top: 30px;
-        p {
-            font-family: 'Noto Sans KR', sans-serif;
-            font-weight: 700;
-        }
-        div {
-            margin-top:10px;
-        }
+    }
+    .description {
+        @include setDescription();
+        position: relative;
+        z-index: 99;
     }
     .books-img-wrap {
         position: relative;
         top: -124px;
-        z-index:-1;
+        z-index: 1;
         opacity: 0.5;
         img {
             margin: 10px;
@@ -345,15 +349,7 @@ img {
         margin-top: 30px;
     }
     .description {
-        p {
-            strong {
-                font-family: 'Noto Sans KR', sans-serif;
-                font-weight: 900;
-            }
-            font-family: 'Noto Sans KR', sans-serif;
-            font-weight: 500;
-        }
-        margin-bottom: 15px;
+        @include setDescription();
     }
 }
 
@@ -372,15 +368,7 @@ img {
         margin-top: 30px;
     }
     .description {
-        p {
-            strong {
-                font-family: 'Noto Sans KR', sans-serif;
-                font-weight: 900;
-            }
-            font-family: 'Noto Sans KR', sans-serif;
-            font-weight: 500;
-        }
-        margin-bottom: 15px;
+        @include setDescription();
     }
     .contents-img-box {
         margin-top: 0;
@@ -435,15 +423,7 @@ img {
         margin-top: 30px;
     }
     .description {
-        p {
-            strong {
-                font-family: 'Noto Sans KR', sans-serif;
-                font-weight: 900;
-            }
-            font-family: 'Noto Sans KR', sans-serif;
-            font-weight: 500;
-        }
-        margin-bottom: 15px;
+        @include setDescription()
     }
     .presents-wrapper {
         // width: 50%;
@@ -514,7 +494,7 @@ img {
     .ebook-subscription-fee-wrap {
         border-radius: 5px;
         background-color: $white;
-        width: 350px;
+        width: 50%;
         // padding: 16px 8px 16px 16px;
         * {
             color: black; 
@@ -568,7 +548,7 @@ img {
     .paper-subscription-fee-wrap {
         border-radius: 5px;
         background-color: $white;
-        width: 350px;
+        width: 50%;
         * {
             color: black; 
         }
