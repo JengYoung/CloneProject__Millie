@@ -1,21 +1,13 @@
-/* color */
+/******************* color *******************/
 $yellow: #FFEB60;
 $purple: #A451F7;
 $dark-purple: #542385;
 $black: #333333;
 $white: #FDFAF3;
 
-/* Layout size */
-$maxWidth: 1440px;
-$maxHeight: 1024px;
-
-/* font-size */
+/***************** font-size *****************/
 $main-copy-size: 80px;
 $sub-copy-size: 23px;
-
-/************* width and height **************/ 
-$button-width: 70px;
-$button-height: 31px;
 
 /******************* fonts *******************/
 $default-font: 'Noto Serif KR', serif;
@@ -28,24 +20,24 @@ $slogan-font: "supilmyeongjo010";
 }
 
 /******************* mixin *******************/
-@mixin setContainer() {
-    width: 100%;
-    padding-left: 50px;
+@mixin setContainer($backgroundColor) {
+    background-color: $backgroundColor;
     max-width: 100%;
-    min-height: 1300px;
+    padding-left: 50px;
 }
 @mixin setBarBtn($backgroundColor, $color) {
+    font-family: $godic-font;
     position: fixed;
+    z-index: 99;
     top: 35px;
-    width:$button-width;
-    height:$button-height;
+    width: 70px;
+    height: 31px;
     border-radius: 50px;
     border: 1px solid $color;
     background-color: $backgroundColor;
     color: $color;
     font-weight: 900;
     outline: none;
-
     &:hover {
         cursor: pointer;
     }
@@ -193,7 +185,6 @@ img {
     vertical-align: top;
 }
 
-
 /******************************************/
 #pages-container {
     background-color: $yellow;
@@ -202,9 +193,6 @@ img {
 }
 
 #nav-bar {
-    * {
-        font-family: $godic-font;
-    }
     #nav-logo {
         position: fixed;
         top: 30px;
@@ -221,18 +209,17 @@ img {
         right: 150px;
     }
     .go.fee-page.btn {
-        @include setBarBtn($purple, $yellow);
+        @include setBarBtn($purple, transparent);
         color: $yellow;
         right: 30px;
-        width: $button-width + 35px;
-        background-repeat: no-repeat;
+        width: 105px;
+        // background-repeat: no-repeat;
     }
 }
 
 .signup-button-box {
     display: flex;
     justify-content: center;
-
     .go-signup-button {
         position: fixed;
         top: 88%;
@@ -246,10 +233,8 @@ img {
 }
 
 #intro-container {
-    padding-left: 50px;
-    max-width: 100%;
+    @include setContainer($yellow);
     min-height: 1300px;
-    // background-color: $yellow;
     .logo {
         width: 80px;
         height: 26px;
@@ -288,63 +273,66 @@ img {
 }
 
 #slogan-container {
-    display: flex;
-    justify-content: center;
-    max-width: 100%;
+    @include setContainer($yellow);
+    margin-top: 60px;
+    padding-left: 0px;
     min-height: 1300px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
     .copy-and-logo-container {
+
         display: flex;
         z-index: 2;
         margin-bottom: 200px;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
         .main-copy {
+            position: relative;
+            z-index: 11;
             padding-top: 130px;
-            * {
-                font-family: $slogan-font;
-                font-size: 60px;
-            }
+            font-family: $slogan-font;
+            font-size: 60px;
+            font-weight: 300;
+            letter-spacing: -5px;
             strong {
+                font-family: $slogan-font;
                 font-weight: 900;
                 color: $purple;
             }
         }
     }
+    .shelf-image1 {
+        position: absolute;
+        top: 50px;
+        right: 0;
+    }
+    .shelf-image2 {
+        position: absolute;
+        top: 200px;
+        left: 0;
+    }
+    .shelf-image3 {
+        position: absolute;
+        top: 350px;
+        right: 150px;
+    }
 
-    .shelf-image-box {
-        position: relative;
-        z-index: 1;
-        top: 100%;
-        left: 20%;
-        display: flex;
-        max-width: 100%;
-        flex-direction: column;
-        img {
-            display: block;
-        }
-        & :nth-child(2) {
-            position: absolute;
-            left: -200%;
-            top: 100px;
-            padding-top: 70px;
-        }
-        & :last-child {
-            position: absolute;
-            right: 130px;
-            top: 330px;
-        }
-    }    
-    
     .slogan-and-logo {
+        position: absolute;
         width:150px;
         height:55px;
+        bottom: 15%;
     }
 }
 
 #book-introduction-container {
-    display: block;
+    @include setContainer($yellow);
+    margin-top: 60px;
     min-height: 1024px;     
-    padding-left: 50px;
     .book-main-copy {
         @include setMainCopy($black);
         // font-size: $main-copy-size;
@@ -361,24 +349,27 @@ img {
         z-index: 99;
     }
     .books-img-wrap {
+        display: flex;
         position: relative;
-        top: -124px;
+        width: 85%;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        margin-top: -10%;
         z-index: 1;
         opacity: 0.5;
+        margin-bottom: 100px;
         img {
-            margin: 10px;
-            width: 100px;
-            min-height: 140px;
-            max-height: 140px;
+            margin: 1%;
+            min-width: 6%;
+            width: 8%;
+            height: auto;
         }
     }
 }
 
 #genre-introduction-container {
-    padding-top: 60px;
-    padding-left: 50px;
+    @include setContainer($white);
     min-height: 1024px;
-    background: $white;
     .genre-main-copy {
         @include setMainCopy($black);
     }
@@ -394,10 +385,8 @@ img {
 }
 
 #contents-introduction-container {
-    padding-top: 60px;
-    padding-left: 50px;
+    @include setContainer($white);
     min-height: 1024px;
-    background: $white;
     .contents-main-copy {
         @include setMainCopy($black);
     }
@@ -444,12 +433,9 @@ img {
 }
 
 
-
 #subscribe-option-introduction-container {
-    padding-top: 60px;
-    padding-left: 50px;
+    @include setContainer($dark-purple);
     min-height: 2000px;
-    background: $dark-purple;
     * {
         color: white;
     }
