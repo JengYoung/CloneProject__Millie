@@ -16,16 +16,6 @@
   padding: 0;
   color: #333333; }
 
-button {
-  border-radius: 50px;
-  border: 1px solid #A451F7;
-  background-color: transparent;
-  color: #A451F7;
-  font-weight: 900;
-  outline: none; }
-  button:hover {
-    cursor: pointer; }
-
 img {
   max-width: 100%;
   vertical-align: top; }
@@ -51,21 +41,38 @@ img {
   background-image: url("/subLogo.ff816756.svg");
   object-fit: cover; }
 
-#nav-bar .btn {
-  top: 35px;
-  height: 31px;
-  width: 70px;
-  position: fixed; }
-
 #nav-bar .go.login.btn {
+  position: fixed;
+  top: 35px;
+  width: 70px;
+  height: 31px;
+  border-radius: 50px;
+  border: 1px solid #A451F7;
+  background-color: transparent;
+  color: #A451F7;
+  font-weight: 900;
+  outline: none;
   right: 150px; }
+  #nav-bar .go.login.btn:hover {
+    cursor: pointer; }
 
 #nav-bar .go.fee-page.btn {
+  position: fixed;
+  top: 35px;
+  width: 70px;
+  height: 31px;
+  border-radius: 50px;
+  border: 1px solid #FFEB60;
   background-color: #A451F7;
+  color: #FFEB60;
+  font-weight: 900;
+  outline: none;
   color: #FFEB60;
   right: 30px;
   width: 105px;
   background-repeat: no-repeat; }
+  #nav-bar .go.fee-page.btn:hover {
+    cursor: pointer; }
 
 .signup-button-box {
   display: flex;
@@ -105,16 +112,12 @@ img {
       font-size: 23px; }
       #intro-container .copy-wrap .sub-copy strong {
         color: #A451F7; }
-  #intro-container img {
-    max-width: 100%; }
   #intro-container .imgContainer {
     position: relative;
     top: -30px;
     right: -30%;
     width: 70%;
     max-width: 967px; }
-    #intro-container .imgContainer div {
-      display: block; }
   #intro-container .book1-img {
     position: absolute;
     width: 5%;
@@ -441,6 +444,7 @@ img {
         font-family: "Noto Sans KR", sans-serif;
         font-weight: 400;
         border: none;
+        border-radius: 50px;
         width: 83%;
         height: 40px;
         margin: 4px;
@@ -451,6 +455,7 @@ img {
         font-family: "Noto Sans KR", sans-serif;
         font-weight: 400;
         border: none;
+        border-radius: 50px;
         width: 83%;
         height: 40px;
         margin: 4px;
@@ -529,6 +534,7 @@ img {
         font-family: "Noto Sans KR", sans-serif;
         font-weight: 400;
         border: none;
+        border-radius: 50px;
         width: 83%;
         height: 40px;
         margin: 4px;
@@ -539,6 +545,7 @@ img {
         font-family: "Noto Sans KR", sans-serif;
         font-weight: 400;
         border: none;
+        border-radius: 50px;
         width: 83%;
         height: 40px;
         margin: 4px;

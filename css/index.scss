@@ -70,10 +70,28 @@ $slogan-font: "supilmyeongjo010";
     font-family: $godic-font;
     font-weight: 400;
     border: none;
+    border-radius: 50px;
     width: 83%;
     height: 40px;
     margin: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+
+@mixin setBarBtn($backgroundColor, $color) {
+    position: fixed;
+    top: 35px;
+    width:$button-width;
+    height:$button-height;
+    border-radius: 50px;
+    border: 1px solid $color;
+    background-color: $backgroundColor;
+    color: $color;
+    font-weight: 900;
+    outline: none;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 /************ tag default setting ************/
@@ -83,19 +101,6 @@ $slogan-font: "supilmyeongjo010";
     margin: 0;
     padding: 0;
     color: $black;
-}
-
-button {
-    border-radius: 50px;
-    border: 1px solid $purple;
-    background-color: transparent;
-    color: $purple;
-    font-weight: 900;
-    outline: none;
-
-    &:hover {
-        cursor: pointer;
-    }
 }
 
 img {
@@ -127,17 +132,12 @@ img {
         background-image: url("../img/subLogo.svg");
         object-fit: cover;
     }
-    .btn {
-        top: 35px;
-        height: $button-height;
-        width: $button-width;
-        position: fixed;
-    }
     .go.login.btn {
+        @include setBarBtn(transparent,$purple);
         right: 150px;
     }
     .go.fee-page.btn {
-        background-color: $purple;
+        @include setBarBtn($purple, $yellow);
         color: $yellow;
         right: 30px;
         width: $button-width + 35px;
@@ -187,18 +187,13 @@ img {
             @include setSubCopy($purple);
         }
     }
-    img {
-        max-width: 100%;
-    }
+
     .imgContainer {
         position: relative;
         top: -30px;
         right: -30%;
         width: 70%;
         max-width: 967px;
-        div {
-            display: block;
-        }
     }
     .book1-img {
         position: absolute;
@@ -568,7 +563,6 @@ img {
         border-radius: 5px;
         background-color: $white;
         width: 350px;
-        // padding: 16px 8px 16px 16px;
         * {
             color: black; 
         }
