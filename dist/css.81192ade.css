@@ -7,6 +7,7 @@
   font-family: "supilmyeongjo010";
   src: url("/supilmyeongjo010.36fa789e.ttf") format("truetype"); }
 
+/******************* mixin *******************/
 /************ tag default setting ************/
 * {
   font-family: "Noto Serif KR", serif;
@@ -14,11 +15,6 @@
   margin: 0;
   padding: 0;
   color: #333333; }
-
-body {
-  background-color: #FFEB60;
-  min-width: 320px;
-  font-family: "Noto Serif KR", serif; }
 
 button {
   border-radius: 50px;
@@ -32,10 +28,15 @@ button {
 
 img {
   max-width: 100%;
-  vertical-align: top;
-  border-style: none; }
+  vertical-align: top; }
 
 /******************************************/
+#pages-container {
+  background-color: #FFEB60;
+  min-width: 320px;
+  max-width: 100%;
+  height: auto; }
+
 #nav-bar * {
   font-family: "Noto Sans KR", sans-serif; }
 
@@ -53,21 +54,18 @@ img {
 #nav-bar .btn {
   top: 35px;
   height: 31px;
-  width: 70px; }
+  width: 70px;
+  position: fixed; }
 
 #nav-bar .go.login.btn {
-  position: fixed;
-  right: 150px;
-  cursor: pointer; }
+  right: 150px; }
 
 #nav-bar .go.fee-page.btn {
   background-color: #A451F7;
   color: #FFEB60;
-  position: fixed;
   right: 30px;
   width: 105px;
-  background-repeat: no-repeat;
-  cursor: pointer; }
+  background-repeat: no-repeat; }
 
 .signup-button-box {
   display: flex;
@@ -82,16 +80,10 @@ img {
     border: none;
     z-index: 10; }
 
-#pages-container {
-  max-width: 100%;
-  height: auto; }
-
 #intro-container {
   padding-left: 50px;
   max-width: 100%;
-  height: auto;
-  min-height: 1300px;
-  background-color: #FFEB60; }
+  min-height: 1300px; }
   #intro-container .logo {
     width: 80px;
     height: 26px;
@@ -105,7 +97,8 @@ img {
     #intro-container .copy-wrap .main-copy {
       padding-top: 40px;
       font-size: 80px;
-      font-weight: 900; }
+      font-weight: 900;
+      color: #333333; }
     #intro-container .copy-wrap .sub-copy {
       position: relative;
       margin-top: 20px;
@@ -136,12 +129,11 @@ img {
 #slogan-container {
   display: flex;
   justify-content: center;
-  background-color: #FFEB60;
   max-width: 100%;
-  min-height: 1300px;
-  font-family: 'Noto Serif KR', Serif; }
+  min-height: 1300px; }
   #slogan-container .copy-and-logo-container {
     display: flex;
+    z-index: 2;
     margin-bottom: 200px;
     flex-direction: column;
     justify-content: space-between; }
@@ -154,12 +146,13 @@ img {
         font-weight: 900;
         color: #A451F7; }
   #slogan-container .shelf-image-box {
+    position: relative;
+    z-index: 1;
+    top: 100%;
+    left: 20%;
     display: flex;
     max-width: 100%;
-    flex-direction: column;
-    position: absolute;
-    top: 190%;
-    left: 70%; }
+    flex-direction: column; }
     #slogan-container .shelf-image-box img {
       display: block; }
     #slogan-container .shelf-image-box :nth-child(2) {
@@ -180,8 +173,12 @@ img {
   min-height: 1024px;
   padding-left: 50px; }
   #book-introduction-container .book-main-copy {
-    font-size: 80px; }
+    padding-top: 40px;
+    font-size: 80px;
+    font-weight: 900;
+    color: #333333; }
   #book-introduction-container .book-sub-copy {
+    position: relative;
     margin-top: 20px;
     font-size: 23px; }
     #book-introduction-container .book-sub-copy strong {
@@ -196,7 +193,6 @@ img {
   #book-introduction-container .books-img-wrap {
     position: relative;
     top: -124px;
-    left: -50px;
     z-index: -1;
     opacity: 0.5; }
     #book-introduction-container .books-img-wrap img {
@@ -211,11 +207,14 @@ img {
   min-height: 1024px;
   background: #FDFAF3; }
   #genre-introduction-container .genre-main-copy {
-    margin-top: 15px;
-    font-size: 80px; }
+    padding-top: 40px;
+    font-size: 80px;
+    font-weight: 900;
+    color: #333333; }
   #genre-introduction-container .genre-sub-copy {
-    font-size: 23px;
-    margin-top: 20px; }
+    position: relative;
+    margin-top: 20px;
+    font-size: 23px; }
     #genre-introduction-container .genre-sub-copy strong {
       color: #A451F7; }
   #genre-introduction-container .descriptions {
@@ -235,11 +234,14 @@ img {
   min-height: 1024px;
   background: #FDFAF3; }
   #contents-introduction-container .contents-main-copy {
-    margin-top: 15px;
-    font-size: 80px; }
+    padding-top: 40px;
+    font-size: 80px;
+    font-weight: 900;
+    color: #333333; }
   #contents-introduction-container .contents-sub-copy {
-    font-size: 23px;
-    margin-top: 20px; }
+    position: relative;
+    margin-top: 20px;
+    font-size: 23px; }
     #contents-introduction-container .contents-sub-copy strong {
       color: #A451F7; }
   #contents-introduction-container .descriptions {
@@ -254,9 +256,10 @@ img {
         font-weight: 900; }
   #contents-introduction-container .contents-img-box {
     margin-top: 0;
-    position: absolute;
-    top: 720%;
-    right: 0;
+    position: relative;
+    z-index: 1;
+    top: -500px;
+    right: -35%;
     width: 60%;
     display: flex;
     flex-wrap: wrap; }
@@ -268,8 +271,8 @@ img {
         position: absolute;
         z-index: 1;
         left: -2%;
-        bottom: -8%;
-        width: 40%; }
+        bottom: 4%;
+        width: 25%; }
       #contents-introduction-container .contents-img-box .content .content-first-btn {
         position: absolute;
         z-index: 2;
@@ -286,13 +289,16 @@ img {
   background: #542385; }
   #subscribe-option-introduction-container * {
     color: white; }
-  #subscribe-option-introduction-container .contents-main-copy {
-    margin-top: 15px;
-    font-size: 80px; }
-  #subscribe-option-introduction-container .contents-sub-copy {
-    font-size: 23px;
-    margin-top: 20px; }
-    #subscribe-option-introduction-container .contents-sub-copy strong {
+  #subscribe-option-introduction-container .main-copy {
+    padding-top: 40px;
+    font-size: 80px;
+    font-weight: 900;
+    color: #FDFAF3; }
+  #subscribe-option-introduction-container .sub-copy {
+    position: relative;
+    margin-top: 20px;
+    font-size: 23px; }
+    #subscribe-option-introduction-container .sub-copy strong {
       color: #FFEB60; }
   #subscribe-option-introduction-container .descriptions {
     margin-top: 30px; }
@@ -342,10 +348,16 @@ img {
     color: #FDFAF3;
     list-style: none; }
   #fee-introduction-container .fee-sub-copy {
-    font-size: 23px;
-    margin-top: 20px; }
+    position: relative;
+    margin-top: 20px;
+    font-size: 23px; }
+    #fee-introduction-container .fee-sub-copy strong {
+      color: #FDFAF3; }
   #fee-introduction-container .fee-main-copy {
-    margin-top: 50px;
+    padding-top: 40px;
+    font-size: 80px;
+    font-weight: 900;
+    color: #FDFAF3;
     font-size: 50px; }
   #fee-introduction-container .fee-description-wraps {
     position: relative;
@@ -425,6 +437,7 @@ img {
       align-items: center; }
       #fee-introduction-container .ebook-subscription-fee-wrap .btn-wrap .month-subscribe-btn {
         background-color: #FFEB60;
+        color: black;
         font-family: "Noto Sans KR", sans-serif;
         font-weight: 400;
         border: none;
@@ -434,6 +447,7 @@ img {
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); }
       #fee-introduction-container .ebook-subscription-fee-wrap .btn-wrap .year-subscribe-btn {
         background-color: #FFC004;
+        color: black;
         font-family: "Noto Sans KR", sans-serif;
         font-weight: 400;
         border: none;
@@ -521,13 +535,13 @@ img {
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); }
       #fee-introduction-container .paper-subscription-fee-wrap .btn-wrap .year-subscribe-btn {
         background-color: #6A31A4;
+        color: white;
         font-family: "Noto Sans KR", sans-serif;
         font-weight: 400;
         border: none;
         width: 83%;
         height: 40px;
         margin: 4px;
-        color: white;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); }
 
 

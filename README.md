@@ -2,6 +2,28 @@
 
 https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq0uD57A7114k7_hU-cXbSTDO8BKxpUFUy_Dkig9dTc0a_MGb6zdHIaAi39EALw_wcB
 
+## 2021.03.03
+
+scss refactoring 시작
+
+1. mix-in을 통한 전체 main-copy 통일
+2. mix-in을 통한 전체 sub-copy 통일
+3. mix-in을 통한 전체 container 정리
+4. fee-introduction-container 내 wrapper 폰트 정리
+
+## 2021.03.02
+
+### 중간 점검
+
+필요 지식 - 스크롤 이벤트, 반응형 웹페이지 구현
+계획 -
+
+1. 관련 지식을 쌓기 위한 간단한 미니 프로젝트 개별 실시, velog에 정리
+2. 차후 로그인 및 다양한 페이지 구현은 미정.
+
+구현 - 이벤트 없는 정적인 클론 페이지 전체 구현
+미구현 - 이벤트 없음, 반응형 미구현.
+
 ## 2021.03.01
 
 구현 -

@@ -10,8 +10,8 @@ $maxWidth: 1440px;
 $maxHeight: 1024px;
 
 /* font-size */
-$fl: 23px;
 $main-copy-size: 80px;
+$sub-copy-size: 23px;
 
 /************* width and height **************/ 
 $button-width: 70px;
@@ -26,20 +26,63 @@ $slogan-font: "supilmyeongjo010";
     font-family: "supilmyeongjo010";
     src: url("../font/supilmyeongjo010.ttf") format('truetype');
 }
+
+/******************* mixin *******************/
+@mixin setContainer() {
+    padding-left: 50px;
+    max-width: 100%;
+    min-height: 1300px;
+}
+@mixin setMainCopy($color) {
+    padding-top: 40px;
+    font-size: $main-copy-size;
+    font-weight: 900;
+    color: $color;
+}
+
+@mixin setSubCopy($color) {
+    position: relative;
+    margin-top: 20px;
+    font-size: $sub-copy-size;
+    strong {
+        color: $color;
+    }
+}
+@mixin setSubscriptionWrapperHeadCopy($color) {
+    * {
+        font-family: $godic-font;
+        font-size: 24px;
+        font-weight: 300;
+    }
+    strong {
+        font-size: 32px;
+        font-weight: 900;
+    }
+    em {
+        font-style: normal;
+        text-decoration: line-through;
+        color: $color;
+    }
+}
+@mixin setSubscriptionWrapperBtn($backgroundColor, $color) {
+    background-color: $backgroundColor;
+    color: $color;
+    font-family: $godic-font;
+    font-weight: 400;
+    border: none;
+    width: 83%;
+    height: 40px;
+    margin: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+
 /************ tag default setting ************/
 * {
     font-family: $default-font;
     font-weight: 900;
     margin: 0;
     padding: 0;
-    color: #333333;
-}
-
-body {
-    background-color: $yellow;
-    min-width: 320px;
-    // overflow-y: scroll;
-    font-family: $default-font;
+    color: $black;
 }
 
 button {
@@ -58,11 +101,16 @@ button {
 img {
     max-width: 100%;
     vertical-align: top;
-    border-style: none;
 }
 
 
 /******************************************/
+#pages-container {
+    background-color: $yellow;
+    min-width: 320px;
+    max-width: 100%;
+    height: auto;
+}
 
 #nav-bar {
     * {
@@ -83,22 +131,20 @@ img {
         top: 35px;
         height: $button-height;
         width: $button-width;
+        position: fixed;
     }
     .go.login.btn {
-        position: fixed;
         right: 150px;
-        cursor: pointer;
     }
     .go.fee-page.btn {
         background-color: $purple;
         color: $yellow;
-        position: fixed;
         right: 30px;
         width: $button-width + 35px;
         background-repeat: no-repeat;
-        cursor: pointer;
     }
 }
+
 .signup-button-box {
     display: flex;
     justify-content: center;
@@ -115,17 +161,11 @@ img {
     }
 }
 
-#pages-container {
-    max-width: 100%;
-    height: auto;
-}
-
 #intro-container {
     padding-left: 50px;
     max-width: 100%;
-    height: auto;
     min-height: 1300px;
-    background-color: $yellow;
+    // background-color: $yellow;
     .logo {
         width: 80px;
         height: 26px;
@@ -140,18 +180,11 @@ img {
         position: relative;
         z-index: 1;
         .main-copy {
-            padding-top: 40px;
-            font-size: $main-copy-size;
-            font-weight: 900;
+            @include setMainCopy($black);
         }
         
         .sub-copy {
-            position: relative;
-            margin-top: 20px;
-            font-size: $fl;
-            strong {
-                color: $purple;
-            }
+            @include setSubCopy($purple);
         }
     }
     img {
@@ -181,16 +214,14 @@ img {
     }
 }
 
-
 #slogan-container {
     display: flex;
     justify-content: center;
-    background-color: $yellow;
     max-width: 100%;
     min-height: 1300px;
-    font-family: 'Noto Serif KR', Serif;
     .copy-and-logo-container {
         display: flex;
+        z-index: 2;
         margin-bottom: 200px;
         flex-direction: column;
         justify-content: space-between;
@@ -208,12 +239,13 @@ img {
     }
 
     .shelf-image-box {
+        position: relative;
+        z-index: 1;
+        top: 100%;
+        left: 20%;
         display: flex;
         max-width: 100%;
         flex-direction: column;
-        position: absolute;
-        top: 190%;
-        left: 70%;
         img {
             display: block;
         }
@@ -241,14 +273,11 @@ img {
     min-height: 1024px;     
     padding-left: 50px;
     .book-main-copy {
-        font-size: $main-copy-size;
+        @include setMainCopy($black);
+        // font-size: $main-copy-size;
     }
     .book-sub-copy  {
-        strong {
-            color: $purple;
-        }
-        margin-top: 20px;
-        font-size: $fl;
+        @include setSubCopy($purple);
     }
     .descriptions {
         margin-top: 30px;
@@ -263,7 +292,6 @@ img {
     .books-img-wrap {
         position: relative;
         top: -124px;
-        left: -50px;
         z-index:-1;
         opacity: 0.5;
         img {
@@ -281,15 +309,10 @@ img {
     min-height: 1024px;
     background: $white;
     .genre-main-copy {
-        margin-top: 15px;
-        font-size: $main-copy-size;
+        @include setMainCopy($black);
     }
     .genre-sub-copy {
-        strong {
-            color: $purple;
-        }
-        font-size: $fl;
-        margin-top: 20px;
+        @include setSubCopy($purple);
     }
     .descriptions {
         margin-top: 30px;
@@ -313,15 +336,10 @@ img {
     min-height: 1024px;
     background: $white;
     .contents-main-copy {
-        margin-top: 15px;
-        font-size: $main-copy-size;
+        @include setMainCopy($black);
     }
     .contents-sub-copy {
-        strong {
-            color: $purple;
-        }
-        font-size: $fl;
-        margin-top: 20px;
+        @include setSubCopy($purple);
     }
     .descriptions {
         margin-top: 30px;
@@ -339,9 +357,10 @@ img {
     }
     .contents-img-box {
         margin-top: 0;
-        position: absolute;
-        top: 720%;
-        right: 0;
+        position: relative;
+        z-index: 1;
+        top: -500px;
+        right: -35%;
         width: 60%;
         display: flex;
         flex-wrap: wrap;
@@ -353,8 +372,8 @@ img {
                 position: absolute;
                 z-index: 1;
                 left: -2%;
-                bottom: -8%;
-                width: 40%;
+                bottom: 4%;
+                width: 25%;
             }
             .content-first-btn {
                 position: absolute;
@@ -370,6 +389,7 @@ img {
 }
 
 
+
 #subscribe-option-introduction-container {
     padding-top: 60px;
     padding-left: 50px;
@@ -378,16 +398,11 @@ img {
     * {
         color: white;
     }
-    .contents-main-copy {
-        margin-top: 15px;
-        font-size: $main-copy-size;
+    .main-copy {
+        @include setMainCopy($white);
     }
-    .contents-sub-copy {
-        strong {
-            color: $yellow;
-        }
-        font-size: $fl;
-        margin-top: 20px;
+    .sub-copy {
+        @include setSubCopy($yellow);
     }
     .descriptions {
         margin-top: 30px;
@@ -451,11 +466,10 @@ img {
     background-color: $black;
 
     .fee-sub-copy {
-        font-size: $fl;
-        margin-top: 20px;
+        @include setSubCopy($white);
     }
     .fee-main-copy {
-        margin-top: 50px;
+        @include setMainCopy($white);
         font-size: 50px;
     }
     .fee-description-wraps {
@@ -504,20 +518,7 @@ img {
             font-size: 40px;
         }
         .fee {
-            * {
-                font-family: $godic-font;
-                font-size: 24px;
-                font-weight: 300;
-            }
-            strong {
-                font-size: 32px;
-                font-weight: 900;
-            }
-            em {
-                font-style: normal;
-                text-decoration: line-through;
-                color: #A69B4D;
-            }
+            @include setSubscriptionWrapperHeadCopy(#A69B4D);
         }
         .fee-wrap-body {
             margin-top: 20px;
@@ -556,24 +557,10 @@ img {
             flex-direction: column;
             align-items: center;
             .month-subscribe-btn {
-                background-color: $yellow;
-                font-family: $godic-font;
-                font-weight: 400;
-                border: none;
-                width: 83%;
-                height: 40px;
-                margin: 4px;
-                box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+                @include setSubscriptionWrapperBtn($yellow, black);
             }
             .year-subscribe-btn {
-                background-color: #FFC004;
-                font-family: $godic-font;
-                font-weight: 400;
-                border: none;
-                width: 83%;
-                height: 40px;
-                margin: 4px;
-                box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+                @include setSubscriptionWrapperBtn(#FFC004, black);
             }
         }
     }
@@ -614,20 +601,7 @@ img {
             font-size: 40px;
         }
         .fee {
-            * {
-                font-family: $godic-font;
-                font-size: 24px;
-                font-weight: 300;
-            }
-            strong {
-                font-size: 32px;
-                font-weight: 900;
-            }
-            em {
-                font-style: normal;
-                text-decoration: line-through;
-                color: #c5c5c5;
-            }
+            @include setSubscriptionWrapperHeadCopy(#c5c5c5);
         }
         .fee-wrap-body {
             margin-top: 20px;
@@ -667,26 +641,10 @@ img {
             // justify-content: center;
             align-items: center;
             .month-subscribe-btn {
-                background-color: #A87DDF;
-                color: white;
-                font-family: $godic-font;
-                font-weight: 400;
-                border: none;
-                width: 83%;
-                height: 40px;
-                margin: 4px;
-                box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+                @include setSubscriptionWrapperBtn(#A87DDF,white );
             }
             .year-subscribe-btn {
-                background-color: #6A31A4;
-                font-family: $godic-font;
-                font-weight: 400;
-                border: none;
-                width: 83%;
-                height: 40px;
-                margin: 4px;
-                color: white;
-                box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+                @include setSubscriptionWrapperBtn(#6A31A4, white);
             }
         }
     }
