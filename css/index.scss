@@ -151,7 +151,12 @@ $slogan-font: "supilmyeongjo010";
         }
     }
 }
-
+@mixin setFeeWrapHeader($color) {
+    border-radius: 5px 5px 0 0 ;
+    padding: 16px 8px 16px 16px;
+    min-height: 424px;
+    background-color: $color;
+}
 /************ tag default setting ************/
 * {
     margin: 0;
@@ -513,10 +518,7 @@ img {
     .ebook-subscription-fee-wrap {
         @include setSubscriptionFeeWrap();
         .fee-wrap-header {
-            border-radius: 5px 5px 0 0 ;
-            padding: 16px 8px 16px 16px;
-            min-height: 424px;
-            background-color: $yellow;
+            @include setFeeWrapHeader($yellow);
         }
         .head {
             p {
@@ -550,13 +552,10 @@ img {
     .paper-subscription-fee-wrap {
         @include setSubscriptionFeeWrap();
         .fee-wrap-header {
+            @include setFeeWrapHeader(#6A31A4);
             * {
                 color: white;
             }
-            border-radius: 5px 5px 0 0 ;
-            padding: 16px 8px 16px 16px;
-            min-height: 424px;
-            background-color: #6A31A4;
         }
         .head {
             p {
