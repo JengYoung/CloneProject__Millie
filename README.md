@@ -8,6 +8,7 @@ https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq
 2. mixin을 통한 go-signup-button 정리 (setGoSignUpButton)
 3. goSignupBtnScrollEvent 구현 (스크롤 위치에 따른 go-signjup-button 변화 기능)
 4. introSetOpacity 구현 (스크롤이 일정 부분을 지나면 intro-container copy-wrap이 투명해지는 기능)
+5. div.imgContainer html 위치 변경 및 imgContainer- img-wrap으로 수정
 
 ## 2021.03.03
 

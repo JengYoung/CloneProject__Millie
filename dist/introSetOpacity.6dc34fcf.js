@@ -119,9 +119,11 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"js/introSetOpacity.js":[function(require,module,exports) {
 var copyWrap = document.querySelector(".copy-wrap");
+var imgWrap = document.querySelector(".img-wrap");
 window.addEventListener('scroll', function () {
   if (window.scrollY <= 360) {
     copyWrap.style.opacity = 1 - window.scrollY / 360;
+    imgWrap.style.opacity = 1 - window.scrollY / 360;
   }
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
