@@ -172,6 +172,7 @@ $slogan-font: "supilmyeongjo010";
 }
 
 @mixin setGoSignUpButton($backgroundColor, $color) {
+    display: none;
     position: fixed;
     bottom: 10px;
     width: 330px;
@@ -245,20 +246,6 @@ img {
 .signup-button-box {
     display: flex;
     justify-content: center;
-    // .go-signup-button {
-    //     position: fixed;
-    //     top: 88%;
-    //     width: 330px;
-    //     height: 65px;
-    //     border-radius: 50px;
-    //     background-color: black;
-    //     border: none;
-    //     outline: none;
-    //     z-index: 10;
-    //     &:hover {
-    //         cursor: pointer;
-    //     }
-    // }
     .go-signup-button {
         @include setGoSignUpButton(black, white);
         &.book, 

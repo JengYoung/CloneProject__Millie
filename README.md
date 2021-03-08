@@ -6,6 +6,7 @@ https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq
 
 1. event에 따라 display를 설정할 go-signup-button html 추가
 2. mixin을 통한 go-signup-button 정리 (setGoSignUpButton)
+3. goSignupBtnScrollEvent 구현 (스크롤 위치에 따른 go-signjup-button 변화 기능)
 
 ## 2021.03.03
 

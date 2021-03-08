@@ -75,6 +75,7 @@ img {
   display: flex;
   justify-content: center; }
   .signup-button-box .go-signup-button {
+    display: none;
     position: fixed;
     bottom: 10px;
     width: 330px;
@@ -96,6 +97,7 @@ img {
       text-decoration: none;
       color: #FFEB60; }
     .signup-button-box .go-signup-button.book, .signup-button-box .go-signup-button.contents {
+      display: none;
       position: fixed;
       bottom: 10px;
       width: 330px;
@@ -117,6 +119,7 @@ img {
         text-decoration: none;
         color: #FFEB60; }
     .signup-button-box .go-signup-button.subscribe {
+      display: none;
       position: fixed;
       bottom: 10px;
       width: 330px;
