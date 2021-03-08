@@ -2,6 +2,11 @@
 
 https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq0uD57A7114k7_hU-cXbSTDO8BKxpUFUy_Dkig9dTc0a_MGb6zdHIaAi39EALw_wcB
 
+## 2021.03.08
+
+1. event에 따라 display를 설정할 go-signup-button html 추가
+2. mixin을 통한 go-signup-button 정리 (setGoSignUpButton)
+
 ## 2021.03.03
 
 scss refactoring 시작
@@ -15,6 +20,7 @@ scss refactoring 시작
 7. mixin을 통한 subscription-fee-wrap 정리
 8. mixin을 통한 fee-wrap-header 정리
 9. head -> fee-wrap-head-copy로 이름 변경, mixin을 통한 정리
+10. shelf-image 수정 ->
 
 ## 2021.03.02
 

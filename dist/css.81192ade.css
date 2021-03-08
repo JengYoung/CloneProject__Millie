@@ -76,13 +76,67 @@ img {
   justify-content: center; }
   .signup-button-box .go-signup-button {
     position: fixed;
-    top: 88%;
+    bottom: 10px;
     width: 330px;
-    height: 65px;
+    height: 60px;
     border-radius: 50px;
     background-color: black;
+    font-size: 17px;
+    font-family: "Noto Sans KR", sans-serif;
+    letter-spacing: -.2px;
+    color: white;
     border: none;
-    z-index: 10; }
+    outline: none;
+    z-index: 10;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2); }
+    .signup-button-box .go-signup-button:hover {
+      cursor: pointer; }
+    .signup-button-box .go-signup-button b {
+      font-family: "Noto Sans KR", sans-serif;
+      text-decoration: none;
+      color: #FFEB60; }
+    .signup-button-box .go-signup-button.book, .signup-button-box .go-signup-button.contents {
+      position: fixed;
+      bottom: 10px;
+      width: 330px;
+      height: 60px;
+      border-radius: 50px;
+      background-color: #A451F7;
+      font-size: 17px;
+      font-family: "Noto Sans KR", sans-serif;
+      letter-spacing: -.2px;
+      color: white;
+      border: none;
+      outline: none;
+      z-index: 10;
+      box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2); }
+      .signup-button-box .go-signup-button.book:hover, .signup-button-box .go-signup-button.contents:hover {
+        cursor: pointer; }
+      .signup-button-box .go-signup-button.book b, .signup-button-box .go-signup-button.contents b {
+        font-family: "Noto Sans KR", sans-serif;
+        text-decoration: none;
+        color: #FFEB60; }
+    .signup-button-box .go-signup-button.subscribe {
+      position: fixed;
+      bottom: 10px;
+      width: 330px;
+      height: 60px;
+      border-radius: 50px;
+      background-color: #FDFAF3;
+      font-size: 17px;
+      font-family: "Noto Sans KR", sans-serif;
+      letter-spacing: -.2px;
+      color: #542385;
+      border: none;
+      outline: none;
+      z-index: 10;
+      box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2); }
+      .signup-button-box .go-signup-button.subscribe:hover {
+        cursor: pointer; }
+      .signup-button-box .go-signup-button.subscribe b {
+        font-family: "Noto Sans KR", sans-serif;
+        text-decoration: none;
+        color: #FFEB60; }
 
 #intro-container {
   background-color: #FFEB60;
@@ -207,7 +261,7 @@ img {
   #book-introduction-container .books-img-wrap {
     display: flex;
     position: relative;
-    width: 85%;
+    width: 100%;
     align-items: flex-end;
     flex-wrap: wrap;
     margin-top: -10%;

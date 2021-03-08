@@ -171,6 +171,31 @@ $slogan-font: "supilmyeongjo010";
     font-size: 40px;
 }
 
+@mixin setGoSignUpButton($backgroundColor, $color) {
+    position: fixed;
+    bottom: 10px;
+    width: 330px;
+    height: 60px;
+    border-radius: 50px;
+    background-color: $backgroundColor;
+    font-size: 17px;
+    font-family: $godic-font;
+    letter-spacing: -.2px;
+    color: $color;
+    border: none;
+    outline: none;
+    z-index: 10;
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.2);
+    &:hover {
+        cursor: pointer;
+    }
+    b {
+        font-family: $godic-font;
+        text-decoration: none;
+        color: $yellow;
+    }
+}
+
 /************ tag default setting ************/
 * {
     margin: 0;
@@ -220,15 +245,29 @@ img {
 .signup-button-box {
     display: flex;
     justify-content: center;
+    // .go-signup-button {
+    //     position: fixed;
+    //     top: 88%;
+    //     width: 330px;
+    //     height: 65px;
+    //     border-radius: 50px;
+    //     background-color: black;
+    //     border: none;
+    //     outline: none;
+    //     z-index: 10;
+    //     &:hover {
+    //         cursor: pointer;
+    //     }
+    // }
     .go-signup-button {
-        position: fixed;
-        top: 88%;
-        width: 330px;
-        height: 65px;
-        border-radius: 50px;
-        background-color: black;
-        border: none;
-        z-index: 10;
+        @include setGoSignUpButton(black, white);
+        &.book, 
+        &.contents {
+            @include setGoSignUpButton($purple, white);
+        }
+        &.subscribe {
+            @include setGoSignUpButton($white, $dark-purple);
+        }
     }
 }
 
@@ -351,7 +390,7 @@ img {
     .books-img-wrap {
         display: flex;
         position: relative;
-        width: 85%;
+        width: 100%;
         align-items: flex-end;
         flex-wrap: wrap;
         margin-top: -10%;

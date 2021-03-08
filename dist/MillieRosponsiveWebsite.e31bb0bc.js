@@ -118,107 +118,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function increase(number) {
-  var promise = new Promise(function (resolve, reject) {
-    //resolve: 성공, reject: 실패
-    setTimeout(function () {
-      var result = number + 10;
-
-      if (result > 50) {
-        //50보다 높으면 에러
-        var e = new Error('NumberTooBig');
-        return reject(e);
-      }
-
-      resolve(result);
-    }, 1000);
-  });
-  return promise;
-}
-
-function runTasks() {
-  return _runTasks.apply(this, arguments);
-}
-
-function _runTasks() {
-  _runTasks = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-    var result;
-    return regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            _context.prev = 0;
-            _context.next = 3;
-            return increase(0);
-
-          case 3:
-            result = _context.sent;
-            console.log(result);
-            _context.next = 7;
-            return increase(result);
-
-          case 7:
-            result = _context.sent;
-            console.log(result);
-            _context.next = 11;
-            return increase(result);
-
-          case 11:
-            result = _context.sent;
-            console.log(result);
-            _context.next = 15;
-            return increase(result);
-
-          case 15:
-            result = _context.sent;
-            console.log(result);
-            _context.next = 19;
-            return increase(result);
-
-          case 19:
-            result = _context.sent;
-            console.log(result);
-            _context.next = 23;
-            return increase(result);
-
-          case 23:
-            result = _context.sent;
-            console.log(result);
-            _context.next = 27;
-            return increase(result);
-
-          case 27:
-            result = _context.sent;
-            console.log(result);
-            _context.next = 31;
-            return increase(result);
-
-          case 31:
-            result = _context.sent;
-            console.log(result);
-            _context.next = 38;
-            break;
-
-          case 35:
-            _context.prev = 35;
-            _context.t0 = _context["catch"](0);
-            console.log(_context.t0);
-
-          case 38:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee, null, [[0, 35]]);
-  }));
-  return _runTasks.apply(this, arguments);
-}
-
-runTasks();
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -247,7 +147,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55809" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50133" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
