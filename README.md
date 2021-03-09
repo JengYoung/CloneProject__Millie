@@ -2,6 +2,11 @@
 
 https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq0uD57A7114k7_hU-cXbSTDO8BKxpUFUy_Dkig9dTc0a_MGb6zdHIaAi39EALw_wcB
 
+## 2021.03.09
+
+1. intro 시작 시 book image와 copy가 이동하는 event 구현
+2. 일정 스크롤에 따라 go-signup-button 내용이 바뀌는 기능 구현
+
 ## 2021.03.08
 
 1. event에 따라 display를 설정할 go-signup-button html 추가

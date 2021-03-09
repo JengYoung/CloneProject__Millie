@@ -43,6 +43,7 @@ $slogan-font: "supilmyeongjo010";
     }
 }
 @mixin setMainCopy($color) {
+    position: relative;
     padding-top: 40px;
     font-size: $main-copy-size;
     font-weight: 900;
@@ -53,7 +54,7 @@ $slogan-font: "supilmyeongjo010";
     margin-top: 20px;
     font-size: $sub-copy-size;
     strong {
-        color: $color;
+        animation: fontColorChange 2s ease-out 2s forwards;
     }
 }
 @mixin setIntroBookMovement($width, $top, $left) {
@@ -61,6 +62,7 @@ $slogan-font: "supilmyeongjo010";
     width: $width;
     top: $top;
     left: $left;
+    opacity: 0;
 }
 @mixin setSubscriptionWrapperHeadCopy($color) {
     * {
@@ -197,6 +199,39 @@ $slogan-font: "supilmyeongjo010";
     }
 }
 
+/***************** Keyframes *****************/
+
+@keyframes moveCopies {
+    0% {
+        opacity: 0;
+        top: -500px;
+    }
+    100% {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
+@keyframes moveIntroBooks {
+    0% {
+        opacity: 0;
+        top: 15%;
+    }
+    100% {
+        opacity: 1;
+        top: 23%;
+    }
+}
+
+@keyframes fontColorChange {
+    from {
+        color: black;
+    }
+    to {
+        color: $purple;
+    }
+}
+
 /************ tag default setting ************/
 * {
     margin: 0;
@@ -273,7 +308,10 @@ img {
 
     .copy-wrap {
         position: relative;
+        top: -500px;
         z-index: 1;
+        opacity: 0;
+        animation: moveCopies 1.5s ease-out 1.5s forwards;
         .main-copy {
             @include setMainCopy($black);
         }
@@ -289,12 +327,15 @@ img {
         right: -30%;
         width: 70%;
         max-width: 967px;
-    }
-    .book1-img {
-        @include setIntroBookMovement(5%, 23%, 36%);
-    }
-    .book2-img {
-        @include setIntroBookMovement(4%, 23%, 45%);
+
+        .book1-img {
+            @include setIntroBookMovement(5%, 15%, 36%);
+            animation: moveIntroBooks 2s ease-out forwards;
+        }
+        .book2-img {
+            @include setIntroBookMovement(4%, 15%, 45%);
+            animation: moveIntroBooks 2s ease-out 1s forwards;
+        }
     }
 }
 

@@ -6,6 +6,29 @@
   src: url("/supilmyeongjo010.36fa789e.ttf") format("truetype"); }
 
 /******************* mixin *******************/
+/***************** Keyframes *****************/
+@keyframes moveCopies {
+  0% {
+    opacity: 0;
+    top: -500px; }
+  100% {
+    opacity: 1;
+    top: 0px; } }
+
+@keyframes moveIntroBooks {
+  0% {
+    opacity: 0;
+    top: 15%; }
+  100% {
+    opacity: 1;
+    top: 23%; } }
+
+@keyframes fontColorChange {
+  from {
+    color: black; }
+  to {
+    color: #A451F7; } }
+
 /************ tag default setting ************/
 * {
   margin: 0;
@@ -155,8 +178,12 @@ img {
       height: 100%; }
   #intro-container .copy-wrap {
     position: relative;
-    z-index: 1; }
+    top: -500px;
+    z-index: 1;
+    opacity: 0;
+    animation: moveCopies 1.5s ease-out 1.5s forwards; }
     #intro-container .copy-wrap .main-copy {
+      position: relative;
       padding-top: 40px;
       font-size: 80px;
       font-weight: 900;
@@ -166,23 +193,27 @@ img {
       margin-top: 20px;
       font-size: 23px; }
       #intro-container .copy-wrap .sub-copy strong {
-        color: #A451F7; }
+        animation: fontColorChange 2s ease-out 2s forwards; }
   #intro-container .img-wrap {
     position: relative;
     top: -30px;
     right: -30%;
     width: 70%;
     max-width: 967px; }
-  #intro-container .book1-img {
-    position: absolute;
-    width: 5%;
-    top: 23%;
-    left: 36%; }
-  #intro-container .book2-img {
-    position: absolute;
-    width: 4%;
-    top: 23%;
-    left: 45%; }
+    #intro-container .img-wrap .book1-img {
+      position: absolute;
+      width: 5%;
+      top: 15%;
+      left: 36%;
+      opacity: 0;
+      animation: moveIntroBooks 2s ease-out forwards; }
+    #intro-container .img-wrap .book2-img {
+      position: absolute;
+      width: 4%;
+      top: 15%;
+      left: 45%;
+      opacity: 0;
+      animation: moveIntroBooks 2s ease-out 1s forwards; }
 
 #slogan-container {
   background-color: #FFEB60;
@@ -239,6 +270,7 @@ img {
   margin-top: 60px;
   min-height: 1024px; }
   #book-introduction-container .book-main-copy {
+    position: relative;
     padding-top: 40px;
     font-size: 80px;
     font-weight: 900;
@@ -248,7 +280,7 @@ img {
     margin-top: 20px;
     font-size: 23px; }
     #book-introduction-container .book-sub-copy strong {
-      color: #A451F7; }
+      animation: fontColorChange 2s ease-out 2s forwards; }
   #book-introduction-container .descriptions {
     margin-top: 30px; }
   #book-introduction-container .description {
@@ -283,6 +315,7 @@ img {
   padding-left: 50px;
   min-height: 1024px; }
   #genre-introduction-container .genre-main-copy {
+    position: relative;
     padding-top: 40px;
     font-size: 80px;
     font-weight: 900;
@@ -292,7 +325,7 @@ img {
     margin-top: 20px;
     font-size: 23px; }
     #genre-introduction-container .genre-sub-copy strong {
-      color: #A451F7; }
+      animation: fontColorChange 2s ease-out 2s forwards; }
   #genre-introduction-container .descriptions {
     margin-top: 30px; }
   #genre-introduction-container .description {
@@ -310,6 +343,7 @@ img {
   padding-left: 50px;
   min-height: 1024px; }
   #contents-introduction-container .contents-main-copy {
+    position: relative;
     padding-top: 40px;
     font-size: 80px;
     font-weight: 900;
@@ -319,7 +353,7 @@ img {
     margin-top: 20px;
     font-size: 23px; }
     #contents-introduction-container .contents-sub-copy strong {
-      color: #A451F7; }
+      animation: fontColorChange 2s ease-out 2s forwards; }
   #contents-introduction-container .descriptions {
     margin-top: 30px; }
   #contents-introduction-container .description {
@@ -366,6 +400,7 @@ img {
   #subscribe-option-introduction-container * {
     color: white; }
   #subscribe-option-introduction-container .main-copy {
+    position: relative;
     padding-top: 40px;
     font-size: 80px;
     font-weight: 900;
@@ -375,7 +410,7 @@ img {
     margin-top: 20px;
     font-size: 23px; }
     #subscribe-option-introduction-container .sub-copy strong {
-      color: #FFEB60; }
+      animation: fontColorChange 2s ease-out 2s forwards; }
   #subscribe-option-introduction-container .descriptions {
     margin-top: 30px; }
   #subscribe-option-introduction-container .description {
@@ -428,8 +463,9 @@ img {
     margin-top: 20px;
     font-size: 23px; }
     #fee-introduction-container .fee-sub-copy strong {
-      color: #FDFAF3; }
+      animation: fontColorChange 2s ease-out 2s forwards; }
   #fee-introduction-container .fee-main-copy {
+    position: relative;
     padding-top: 40px;
     font-size: 80px;
     font-weight: 900;
