@@ -1,5 +1,4 @@
 const books = document.querySelectorAll('.books-wrap-book');
-console.log(books[0].style)
 const moveBooks = () => {
     for (let i=0; i < books.length; i++) {
         let book = books[i]

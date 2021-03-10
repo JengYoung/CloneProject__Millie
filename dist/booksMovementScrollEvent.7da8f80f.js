@@ -119,7 +119,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"js/booksMovementScrollEvent.js":[function(require,module,exports) {
 var books = document.querySelectorAll('.books-wrap-book');
-console.log(books[0].style);
 
 var moveBooks = function moveBooks() {
   for (var i = 0; i < books.length; i++) {
