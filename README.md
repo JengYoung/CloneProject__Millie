@@ -4,9 +4,23 @@ https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq
 
 ## 2021.03.10
 
+### commit "genre-introduction-container background scroll-event 구현"
+
+1. 스크롤에 따른 페이지 색 변화 추가
+
+- changeGenrePageBackgroundColor.js를 통해 class를 추가함으로써 transition을 통해 전체 색깔을 변경
+
+2. gradient가 스크롤 시 적용되는 이벤트 발견
+
+- genre-introduction-container의 가상요소 ::before css에 추가.
+- keyframe을 통한 gradient-animation 구현
+
 ### commit "books-wrap-book scroll-event 구현"
 
 1. booksMovmentScrollEvent.js를 통해 book image가 스크롤에 따라 움직이는 애니메이션 추가
+
+- flex-end를 통해 book의 밑 높이를 일정하게 유지시킨 후, for문을 통해 스크롤에 따른 같은 행 책들의 움직임을 일정하게 적용.
+
 2. book-introduction-container의 overflow-x: hidden 속성 추가
 
 ## 2021.03.09

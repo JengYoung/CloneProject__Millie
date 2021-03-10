@@ -117,21 +117,17 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/booksMovementScrollEvent.js":[function(require,module,exports) {
-var books = document.querySelectorAll('.books-wrap-book');
+})({"js/changeGenrePageBackroundColor.js":[function(require,module,exports) {
+var genreContainer = document.querySelector("#genre-introduction-container");
+window.addEventListener('scroll', function () {
+  var changePointY = 200;
 
-var moveBooks = function moveBooks() {
-  for (var i = 0; i < books.length; i++) {
-    var book = books[i];
-    var nowHeight = window.innerHeight - book.getBoundingClientRect().y;
-
-    if (-window.innerHeight < nowHeight && nowHeight < window.innerHeight) {
-      book.style = "transform: translateX(".concat(-nowHeight / (window.innerHeight / 100), "px) translateY(").concat(-nowHeight / (window.innerHeight / 100), "px)");
-    }
+  if (genreContainer.offsetTop - document.documentElement.scrollTop < changePointY) {
+    genreContainer.classList.add("black");
+  } else {
+    genreContainer.classList.remove("black");
   }
-};
-
-window.addEventListener('scroll', moveBooks);
+});
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -336,5 +332,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/booksMovementScrollEvent.js"], null)
-//# sourceMappingURL=/booksMovementScrollEvent.7da8f80f.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/changeGenrePageBackroundColor.js"], null)
+//# sourceMappingURL=/changeGenrePageBackroundColor.c3a8907d.js.map

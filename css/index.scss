@@ -233,6 +233,18 @@ $slogan-font: "supilmyeongjo010";
     }
 }
 
+@keyframes genrePageGradientEffect {
+    0% {
+        height: 80px;
+        background: linear-gradient(rgba(33,33,33,0.5), rgba(33,33,33,0.2));
+        opacity: 1;
+    }
+    100% {
+        height: 400px;
+        background: $black;
+        opacity: 0;
+    }
+}
 /************ tag default setting ************/
 * {
     margin: 0;
@@ -449,6 +461,31 @@ img {
 #genre-introduction-container {
     @include setContainer($white);
     min-height: 1024px;
+    transition: all 1s;
+    &::before {
+        overflow-x: hidden;
+        position: absolute;
+        display: block;
+        left: -50px;
+        content:'';
+        width: 103%;
+        background-color: $white;
+    }
+    &.black {
+        &::before {
+            overflow-x:hidden;
+            position: absolute;
+            display: block;
+            left: -50px;
+            content:'';
+            width: 103%;
+            animation: genrePageGradientEffect 0.7s ease-in-out;
+        }
+        background-color: $black;
+        * {
+            color: white;
+        }
+    }
     .genre-main-copy {
         @include setMainCopy($black);
     }
