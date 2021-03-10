@@ -24,6 +24,7 @@ $slogan-font: "supilmyeongjo010";
     background-color: $backgroundColor;
     max-width: 100%;
     padding-left: 50px;
+    overflow-x: hidden;
 }
 @mixin setBarBtn($backgroundColor, $color) {
     font-family: $godic-font;
@@ -398,6 +399,7 @@ img {
 
 #book-introduction-container {
     @include setContainer($yellow);
+    padding-bottom: 100px;
     margin-top: 60px;
     min-height: 1024px;     
     .book-main-copy {
@@ -419,17 +421,27 @@ img {
         display: flex;
         position: relative;
         width: 100%;
+        right: -5%;
         align-items: flex-end;
         flex-wrap: wrap;
         margin-top: -10%;
         z-index: 1;
         opacity: 0.5;
-        margin-bottom: 100px;
-        img {
+        .books-wrap-book {
+            display: relative;
+            margin: 1%;
+            min-width: 6%;
+            width: 10%;
+            height: auto;
+            transition: all;
+        }
+        .show {
+            display: relative;
             margin: 1%;
             min-width: 6%;
             width: 8%;
             height: auto;
+            transform: translate(80px, 0);
         }
     }
 }

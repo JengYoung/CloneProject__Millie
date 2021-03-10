@@ -117,20 +117,22 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/introSetOpacity.js":[function(require,module,exports) {
-var mainCopy = document.querySelector(".main-copy");
-var subCopy = document.querySelector(".sub-copy");
-var imgWrap = document.querySelector(".img-wrap");
-var opacityZeroHeight = 360;
-window.addEventListener('scroll', function () {
-  var nowScrollTop = document.documentElement.scrollTop; // console.log(document.documentElement.scrollTop);
+})({"js/booksMovementScrollEvent.js":[function(require,module,exports) {
+var books = document.querySelectorAll('.books-wrap-book');
+console.log(books[0].style);
 
-  if (nowScrollTop <= 360) {
-    mainCopy.style.opacity = 1 - nowScrollTop / 340;
-    subCopy.style.opacity = 1 - nowScrollTop / 340;
-    imgWrap.style.opacity = 1 - nowScrollTop / 340;
+var moveBooks = function moveBooks() {
+  for (var i = 0; i < books.length; i++) {
+    var book = books[i];
+    var nowHeight = window.innerHeight - book.getBoundingClientRect().y;
+
+    if (-window.innerHeight < nowHeight && nowHeight < window.innerHeight) {
+      book.style = "transform: translateX(".concat(-nowHeight / (window.innerHeight / 100), "px) translateY(").concat(-nowHeight / (window.innerHeight / 100), "px)");
+    }
   }
-});
+};
+
+window.addEventListener('scroll', moveBooks);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -335,5 +337,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/introSetOpacity.js"], null)
-//# sourceMappingURL=/introSetOpacity.6dc34fcf.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/booksMovementScrollEvent.js"], null)
+//# sourceMappingURL=/booksMovementScrollEvent.7da8f80f.js.map

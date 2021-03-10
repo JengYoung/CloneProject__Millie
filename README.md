@@ -2,6 +2,13 @@
 
 https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq0uD57A7114k7_hU-cXbSTDO8BKxpUFUy_Dkig9dTc0a_MGb6zdHIaAi39EALw_wcB
 
+## 2021.03.10
+
+### commit "books-wrap-book scroll-event 구현"
+
+1. booksMovmentScrollEvent.js를 통해 book image가 스크롤에 따라 움직이는 애니메이션 추가
+2. book-introduction-container의 overflow-x: hidden 속성 추가
+
 ## 2021.03.09
 
 1. intro 시작 시 book image와 copy가 이동하는 event 구현
