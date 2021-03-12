@@ -4,7 +4,12 @@ https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq
 
 ## 2021.03.12
 
-### commit "rotate-box 생성 및 css설정"
+### commit "changeBoxRotationRateScrollEvent 구현"
+
+1. 일정 스크롤을 지날 시 rotated-box 회전 효과 구현
+2. 2번째, 6번째는 시계방향, 나머지는 시계 반대방향으로 돌아가는 것을 확인, 구현.
+
+### commit "rotated-box 생성 및 css 설정"
 
 1. rotated-box-wrapper 및 rotate-box html에 추가.
 2. setRotateBox mixin 추가, css property value setting.
