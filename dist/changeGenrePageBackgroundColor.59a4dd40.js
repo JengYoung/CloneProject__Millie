@@ -117,8 +117,17 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"index.js":[function(require,module,exports) {
+})({"js/changeGenrePageBackgroundColor.js":[function(require,module,exports) {
+var genreContainer = document.querySelector("#genre-introduction-container");
+window.addEventListener('scroll', function () {
+  var changePointY = 200;
 
+  if (genreContainer.offsetTop - document.documentElement.scrollTop < changePointY) {
+    genreContainer.classList.add("black");
+  } else {
+    genreContainer.classList.remove("black");
+  }
+});
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -323,5 +332,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/MillieRosponsiveWebsite.e31bb0bc.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/changeGenrePageBackgroundColor.js"], null)
+//# sourceMappingURL=/changeGenrePageBackgroundColor.59a4dd40.js.map

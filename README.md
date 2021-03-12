@@ -2,6 +2,13 @@
 
 https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq0uD57A7114k7_hU-cXbSTDO8BKxpUFUy_Dkig9dTc0a_MGb6zdHIaAi39EALw_wcB
 
+## 2021.03.12
+
+### commit "rotate-box 생성 및 css설정"
+
+1. rotated-box-wrapper 및 rotate-box html에 추가.
+2. setRotateBox mixin 추가, css property value setting.
+
 ## 2021.03.10
 
 ### commit "genre-introduction-container background scroll-event 구현"

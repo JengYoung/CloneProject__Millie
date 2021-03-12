@@ -125,7 +125,7 @@ var opacityZeroHeight = 360;
 window.addEventListener('scroll', function () {
   var nowScrollTop = document.documentElement.scrollTop; // console.log(document.documentElement.scrollTop);
 
-  if (nowScrollTop <= 360) {
+  if (nowScrollTop <= 380) {
     mainCopy.style.opacity = 1 - nowScrollTop / 340;
     subCopy.style.opacity = 1 - nowScrollTop / 340;
     imgWrap.style.opacity = 1 - nowScrollTop / 340;
@@ -159,7 +159,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53816" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61897" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
