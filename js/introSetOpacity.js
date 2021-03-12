@@ -5,9 +5,13 @@ const opacityZeroHeight = 360;
 window.addEventListener('scroll', () => {
     const nowScrollTop = document.documentElement.scrollTop;
     // console.log(document.documentElement.scrollTop);
-    if (nowScrollTop <= 380) {
-        mainCopy.style.opacity = 1 - (nowScrollTop / 340);
-        subCopy.style.opacity = 1 - (nowScrollTop / 340);
-        imgWrap.style.opacity = 1 - (nowScrollTop / 340);
+    if (nowScrollTop <= opacityZeroHeight) {
+        mainCopy.style.opacity = 1 - (nowScrollTop / opacityZeroHeight);
+        subCopy.style.opacity = 1 - (nowScrollTop / opacityZeroHeight);
+        imgWrap.style.opacity = 1 - (nowScrollTop / opacityZeroHeight);
+    } else {
+        mainCopy.style.opacity = 0;
+        subCopy.style.opacity = 0;
+        imgWrap.style.opacity = 0;
     }
 })

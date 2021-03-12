@@ -9,6 +9,11 @@ https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq
 1. rotated-box-wrapper 및 rotate-box html에 추가.
 2. setRotateBox mixin 추가, css property value setting.
 
+### commit "introSetOpacity 이상현상 수정"
+
+1. 빠르게 스크롤을 돌릴 때, 제대로 투명도가 설정되지 않는 현상 발견
+2. 조건문을 통한 예외처리, 결과적으로 정상 작동
+
 ## 2021.03.10
 
 ### commit "genre-introduction-container background scroll-event 구현"
