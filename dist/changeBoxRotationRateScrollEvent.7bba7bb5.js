@@ -119,21 +119,24 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"js/changeBoxRotationRateScrollEvent.js":[function(require,module,exports) {
 var boxs = document.querySelectorAll('.rotated-box');
-var wrapper = document.querySelector('.rotated-box-wrapper'); // console.log(boxs);
-// console.log(boxs[0].getBoundingClientRect().y, wrapper.offsetTop)
-
+var wrapper = document.querySelector('.rotated-box-wrapper');
 window.addEventListener('scroll', function () {
-  boxs.forEach(function (box) {
+  for (var i = 0; i < 7; i++) {
+    var velocityArray = [2.5, 2.2, 2, 2.1, 3, 2.8, 2.7]; // const rotateRateArray = [0.5,0.5,0.3,0.5,0.5,0.3,0.3]
+
+    var box = boxs[i];
     var nowHeight = box.getBoundingClientRect().y;
 
     if (-window.innerHeight < nowHeight && nowHeight < window.innerHeight) {
-      if (box === boxs[1] || box === boxs[5]) {
-        box.style.transform = "rotate(".concat(box.getBoundingClientRect().y * 0.3, "deg)");
+      if (i == 1 || i == 5) {
+        box.style.transform = "translateX(".concat((800 - nowHeight) * velocityArray[i], "px) rotate(").concat(box.getBoundingClientRect().y * 0.4, "deg)");
       } else {
-        box.style.transform = "rotate(".concat(-box.getBoundingClientRect().y * 0.3, "deg)");
+        box.style.transform = "translateX(".concat((800 - nowHeight) * velocityArray[i], "px) rotate(").concat(-box.getBoundingClientRect().y * 0.5, "deg)");
       }
+
+      console.log(box.style.transform);
     }
-  });
+  }
 }); // window.addEventListener("scroll", function() {
 //     leftgear.style.transform = "rotate("+window.pageYOffset+"deg)";
 //     rightgear.style.transform = "rotate(-"+window.pageYOffset+"deg)";

@@ -515,26 +515,28 @@ img {
     }
     .rotated-box {
         &:nth-child(1) {
-            @include setRotateBox(-20px, -100px, 35px, 35px, $yellow, 10deg);
+            @include setRotateBox(-20px, 100px, 35px, 35px, $yellow, 10deg);
         }
         &:nth-child(2) {
-            @include setRotateBox(0, -50px, 50px, 50px, #EDD943, 30deg);
+            @include setRotateBox(0, 50px, 50px, 50px, #EDD943, 30deg);
             z-index: 2;
         }
         &:nth-child(3) {
-            @include setRotateBox(-20px, -20px, 60px, 60px, $purple, 20deg);
+            @include setRotateBox(-20px, 0px, 60px, 60px, $purple, 20deg);
         }
         &:nth-child(4) {
-            @include setRotateBox(-25px, -120px, 60px, 60px, $white, 10deg);
+            @include setRotateBox(-40px, -100px, 60px, 60px, $white, 10deg);
         }
         &:nth-child(5) {
-            @include setRotateBox(0, -120px, 20px, 20px, #57CAF0, 60deg);
+            @include setRotateBox(-20px, -120px, 20px, 20px, #57CAF0, 60deg);
+            z-index: 1;
         }
         &:nth-child(6) {
-            @include setRotateBox(-5px, -140px, 50px, 50px, #EDD943, 30deg);
+            @include setRotateBox(-25px, -140px, 50px, 50px, #EDD943, 30deg);
         }
         &:nth-child(7) {
-            @include setRotateBox(-10px, -200px, 35px, 35px, $dark-purple, 40deg);
+            @include setRotateBox(-10px, -300px, 35px, 35px, $dark-purple, 40deg);
+            z-index: 1;
         }
     }
 }

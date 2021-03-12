@@ -388,7 +388,7 @@ img {
   #genre-introduction-container .rotated-box:nth-child(1) {
     position: relative;
     top: -20px;
-    right: -100px;
+    right: 100px;
     width: 35px;
     height: 35px;
     background-color: #FFEB60;
@@ -396,7 +396,7 @@ img {
   #genre-introduction-container .rotated-box:nth-child(2) {
     position: relative;
     top: 0;
-    right: -50px;
+    right: 50px;
     width: 50px;
     height: 50px;
     background-color: #EDD943;
@@ -405,30 +405,31 @@ img {
   #genre-introduction-container .rotated-box:nth-child(3) {
     position: relative;
     top: -20px;
-    right: -20px;
+    right: 0px;
     width: 60px;
     height: 60px;
     background-color: #A451F7;
     transform: rotate(20deg); }
   #genre-introduction-container .rotated-box:nth-child(4) {
     position: relative;
-    top: -25px;
-    right: -120px;
+    top: -40px;
+    right: -100px;
     width: 60px;
     height: 60px;
     background-color: #FDFAF3;
     transform: rotate(10deg); }
   #genre-introduction-container .rotated-box:nth-child(5) {
     position: relative;
-    top: 0;
+    top: -20px;
     right: -120px;
     width: 20px;
     height: 20px;
     background-color: #57CAF0;
-    transform: rotate(60deg); }
+    transform: rotate(60deg);
+    z-index: 1; }
   #genre-introduction-container .rotated-box:nth-child(6) {
     position: relative;
-    top: -5px;
+    top: -25px;
     right: -140px;
     width: 50px;
     height: 50px;
@@ -437,11 +438,12 @@ img {
   #genre-introduction-container .rotated-box:nth-child(7) {
     position: relative;
     top: -10px;
-    right: -200px;
+    right: -300px;
     width: 35px;
     height: 35px;
     background-color: #542385;
-    transform: rotate(40deg); }
+    transform: rotate(40deg);
+    z-index: 1; }
 
 #contents-introduction-container {
   background-color: #FDFAF3;

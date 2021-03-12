@@ -1,19 +1,21 @@
 const boxs = document.querySelectorAll('.rotated-box');
 const wrapper = document.querySelector('.rotated-box-wrapper');
-// console.log(boxs);
-// console.log(boxs[0].getBoundingClientRect().y, wrapper.offsetTop)
 
 window.addEventListener('scroll', () => {
-    boxs.forEach((box) => {
+    for (let i=0; i<7; i++) {
+        const velocityArray = [2.5, 2.2, 2, 2.1, 3, 2.8, 2.7];
+        // const rotateRateArray = [0.5,0.5,0.3,0.5,0.5,0.3,0.3]
+        const box = boxs[i];
         const nowHeight = box.getBoundingClientRect().y;
         if (-window.innerHeight < nowHeight && nowHeight < window.innerHeight) {
-            if (box === boxs[1] || box === boxs[5]) {
-                box.style.transform = `rotate(${box.getBoundingClientRect().y * 0.3}deg)`;
+            if (i == 1 || i == 5) {
+                box.style.transform = `translateX(${(800-nowHeight) * velocityArray[i]}px) rotate(${box.getBoundingClientRect().y * 0.4}deg)`;
             } else {
-                box.style.transform = `rotate(${-box.getBoundingClientRect().y * 0.3}deg)`;
+                box.style.transform = `translateX(${(800-nowHeight) * velocityArray[i]}px) rotate(${-box.getBoundingClientRect().y * 0.5}deg)`;
             }
+            console.log(box.style.transform)
         }
-    })
+    }
 })
 
 // window.addEventListener("scroll", function() {
