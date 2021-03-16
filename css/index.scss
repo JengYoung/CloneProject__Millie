@@ -54,6 +54,9 @@ $slogan-font: "supilmyeongjo010";
     position: relative;
     margin-top: 20px;
     font-size: $sub-copy-size;
+    strong {
+        color: $color;
+    }
 }
 @mixin setIntroBookMovement($width, $top, $left) {
     position: absolute;
@@ -337,7 +340,7 @@ img {
         }
         
         .sub-copy {
-            @include setSubCopy($purple);
+            @include setSubCopy($black);
             strong {
                 animation: fontColorChange 2s ease-out 2s forwards;
             }
@@ -570,20 +573,23 @@ img {
             background-repeat: no-repeat;
             background-size: contain;
             .content-first-model {
-                position: absolute;
+                position: relative;
                 z-index: 1;
-                left: -2%;
-                bottom: 4%;
-                width: 25%;
+                width: 55%;
+                top: -20%;
+                // left: -2%;
+                // bottom: 4%;
+                // width: 25%;
             }
             .content-first-btn {
-                position: absolute;
+                position: relative;
                 z-index: 2;
-                left: -55%;
-                right: 0;
-                bottom: 14%;
+                top: -33%;
+                // left: -55%;
+                // right: 0;
+                // bottom: 14%;
                 margin: auto;
-                width: 40%;
+                width: 60%;
             }
         }
     }
