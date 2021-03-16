@@ -117,22 +117,18 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/changeImgBoxScaleScrollEvent.js":[function(require,module,exports) {
-var content1 = document.querySelector('.content.first');
-var content2 = document.querySelector('.content.second');
+})({"js/changeImgBoxTranslateYScrollEvent.js":[function(require,module,exports) {
+var content = document.querySelector('.content.first');
 var section = document.querySelector('#contents-introduction-container');
 window.addEventListener('scroll', function () {
   var startHeight = section.getBoundingClientRect().y;
-  var nowHeight = content1.getBoundingClientRect().y; // if (innerHeight > startHeight && startHeight > innerHeight - 300) {
-  //     content1.style.cssText = `transform: scale(${0.5 + (innerHeight - startHeight)/600})`;      
-  //     content2.style.cssText = `transform: scale(${0.5 + (innerHeight - startHeight)/600})`;      
-  // }
+  var nowHeight = content.getBoundingClientRect().y;
 
-  if (innerHeight - 100 > startHeight && startHeight > innerHeight - 1100) {
-    console.log(innerHeight - startHeight);
-    var checkScale = (innerHeight - startHeight) / 400;
-    content1.style.cssText = "transform: scale(".concat(checkScale > 1 ? 1 : checkScale, ") translateY(").concat(-(innerHeight - startHeight) / 11, "px)");
-    section.style.paddingTop = content2.style.cssText = "transform: scale(".concat(checkScale > 1 ? 1 : checkScale, ")");
+  if (innerHeight > startHeight && startHeight > innerHeight - 1000) {
+    console.log(startHeight);
+    content.style.transform = "translateY(".concat(-(innerHeight - startHeight) / 10, "px)");
+    section.style.paddingTop = "".concat((innerHeight - startHeight) / 10, "px");
+    console.log(content.style.transform);
   }
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -339,5 +335,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/changeImgBoxScaleScrollEvent.js"], null)
-//# sourceMappingURL=/changeImgBoxScaleScrollEvent.73bf8260.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/changeImgBoxTranslateYScrollEvent.js"], null)
+//# sourceMappingURL=/changeImgBoxTranslateYScrollEvent.c5325627.js.map

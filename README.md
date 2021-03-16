@@ -4,6 +4,12 @@ https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq
 
 ## 2021.03.16
 
+### commit "changeBoxScaleScrollEvent 파일명 수정 및 translateY 스크롤 이벤트 구현"
+
+1. changeImgBoxScrollEvent.js로 파일명 수정
+2. content-first의 스크롤에 따른 translateY 변화 이벤트 추가
+3. 스크롤 이벤트에 따른 content-introduction-section의 padding-top도 함께 증가하는 것을 확인, 구현.
+
 ### commit "changeBoxScaleScrollEvent 구현"
 
 스크롤에 따른 이미지 크기 조정 효과 추가
