@@ -293,8 +293,6 @@ img {
     position: relative;
     margin-top: 20px;
     font-size: 23px; }
-    #book-introduction-container .book-sub-copy strong {
-      animation: fontColorChange 2s ease-out 2s forwards; }
   #book-introduction-container .descriptions {
     margin-top: 30px; }
   #book-introduction-container .description {
@@ -369,8 +367,6 @@ img {
     position: relative;
     margin-top: 20px;
     font-size: 23px; }
-    #genre-introduction-container .genre-sub-copy strong {
-      animation: fontColorChange 2s ease-out 2s forwards; }
   #genre-introduction-container .descriptions {
     margin-top: 30px; }
   #genre-introduction-container .description {
@@ -461,8 +457,6 @@ img {
     position: relative;
     margin-top: 20px;
     font-size: 23px; }
-    #contents-introduction-container .contents-sub-copy strong {
-      animation: fontColorChange 2s ease-out 2s forwards; }
   #contents-introduction-container .descriptions {
     margin-top: 30px; }
   #contents-introduction-container .description {
@@ -519,8 +513,6 @@ img {
     position: relative;
     margin-top: 20px;
     font-size: 23px; }
-    #subscribe-option-introduction-container .sub-copy strong {
-      animation: fontColorChange 2s ease-out 2s forwards; }
   #subscribe-option-introduction-container .descriptions {
     margin-top: 30px; }
   #subscribe-option-introduction-container .description {
@@ -572,8 +564,6 @@ img {
     position: relative;
     margin-top: 20px;
     font-size: 23px; }
-    #fee-introduction-container .fee-sub-copy strong {
-      animation: fontColorChange 2s ease-out 2s forwards; }
   #fee-introduction-container .fee-main-copy {
     position: relative;
     padding-top: 40px;

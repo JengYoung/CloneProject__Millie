@@ -13,7 +13,6 @@ window.addEventListener('scroll', () => {
             } else {
                 box.style.transform = `translateX(${(800-nowHeight) * velocityArray[i]}px) rotate(${-box.getBoundingClientRect().y * 0.5}deg)`;
             }
-            console.log(box.style.transform)
         }
     }
 })

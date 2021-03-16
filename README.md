@@ -2,6 +2,13 @@
 
 https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq0uD57A7114k7_hU-cXbSTDO8BKxpUFUy_Dkig9dTc0a_MGb6zdHIaAi39EALw_wcB
 
+## 2021.03.16
+
+### commit "changStringColor 구현"
+
+genre-introduction-container의 sub-copy strong 태그 부분이 일정 스크롤에서 계속해서 바뀌어 보이는 이벤트 구현
+
+
 ## 2021.03.12
 
 ### commit "changeBoxRotationRateScrollEvent 구현"

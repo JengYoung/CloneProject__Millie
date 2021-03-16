@@ -54,9 +54,6 @@ $slogan-font: "supilmyeongjo010";
     position: relative;
     margin-top: 20px;
     font-size: $sub-copy-size;
-    strong {
-        animation: fontColorChange 2s ease-out 2s forwards;
-    }
 }
 @mixin setIntroBookMovement($width, $top, $left) {
     position: absolute;
@@ -341,6 +338,9 @@ img {
         
         .sub-copy {
             @include setSubCopy($purple);
+            strong {
+                animation: fontColorChange 2s ease-out 2s forwards;
+            }
         }
     }
 

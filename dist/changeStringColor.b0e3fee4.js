@@ -117,22 +117,16 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/introSetOpacity.js":[function(require,module,exports) {
-var mainCopy = document.querySelector(".main-copy");
-var subCopy = document.querySelector(".sub-copy");
-var imgWrap = document.querySelector(".img-wrap");
-var opacityZeroHeight = 360;
+})({"js/changeStringColor.js":[function(require,module,exports) {
+var colorArray = ['#9FD259', '#C6C7E6', '#74E1E5', '#75FA95', '#FFEB60', '#62EFAC'];
+var strongString = document.querySelector('#genre-introduction-container strong');
 window.addEventListener('scroll', function () {
-  var nowScrollTop = document.documentElement.scrollTop; // console.log(document.documentElement.scrollTop);
+  var strongStringY = strongString.getBoundingClientRect().y;
 
-  if (nowScrollTop <= opacityZeroHeight) {
-    mainCopy.style.opacity = 1 - nowScrollTop / opacityZeroHeight;
-    subCopy.style.opacity = 1 - nowScrollTop / opacityZeroHeight;
-    imgWrap.style.opacity = 1 - nowScrollTop / opacityZeroHeight;
+  if (strongStringY < 700 && strongStringY > 400) {
+    strongString.style.color = colorArray[parseInt(strongString.getBoundingClientRect().y % 6)];
   } else {
-    mainCopy.style.opacity = 0;
-    subCopy.style.opacity = 0;
-    imgWrap.style.opacity = 0;
+    strongString.style.color = '#FFEB60';
   }
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -339,5 +333,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/introSetOpacity.js"], null)
-//# sourceMappingURL=/introSetOpacity.6dc34fcf.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/changeStringColor.js"], null)
+//# sourceMappingURL=/changeStringColor.b0e3fee4.js.map
