@@ -4,6 +4,15 @@ https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq
 
 ## 2021.03.16
 
+### commit "changeBoxScaleScrollEvent 구현"
+
+스크롤에 따른 이미지 크기 조정 효과 추가
+
+### commit "content-second-img 추가"
+
+html에 추가되지 않았던 이미지 추가
+
+
 ### commit "changeBoxRotationOpacityEvent 구현"
 
 스크롤 시 rotated-box의 특정 구간 투명도 변화 이벤트 구현

@@ -545,8 +545,11 @@ img {
 }
 
 #contents-introduction-container {
+    position: relative;
     @include setContainer($white);
     min-height: 1024px;
+    // position: relative;
+    // display: block;
     .contents-main-copy {
         @include setMainCopy($black);
     }
@@ -561,14 +564,18 @@ img {
     }
     .contents-img-box {
         margin-top: 0;
-        position: relative;
+        position: absolute;
         z-index: 1;
-        top: -500px;
-        right: -35%;
+        top: 17%;
+        right: 0;
         width: 60%;
         display: flex;
         flex-wrap: wrap;
         .content {
+            position: relative;
+            &.first {
+                top: -100px;
+            }
             width: 45%;
             background-repeat: no-repeat;
             background-size: contain;
@@ -576,19 +583,23 @@ img {
                 position: relative;
                 z-index: 1;
                 width: 55%;
-                top: -20%;
+                top: -25%;
                 // left: -2%;
                 // bottom: 4%;
                 // width: 25%;
             }
-            .content-first-btn {
+            .content-first-btn-box {
                 position: relative;
                 z-index: 2;
-                top: -33%;
-                // left: -55%;
-                // right: 0;
-                // bottom: 14%;
-                margin: auto;
+                top: -40%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            .content-second-img {
+                position: relative;
+                top: -35%;
+                left: 1%;
                 width: 60%;
             }
         }
