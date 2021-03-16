@@ -255,6 +255,34 @@ $slogan-font: "supilmyeongjo010";
         opacity: 0;
     }
 }
+
+@keyframes presentBoxActive {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes presentBoxBodyRotateAnimation {
+    0% {
+        bottom: -30px;
+        transform: rotate(0deg);
+    }
+    60% {
+        bottom: -50px;
+        transform: rotate(30deg);
+    }
+    90% {
+        bottom: 30px;
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+            
+}
+
 /************ tag default setting ************/
 * {
     margin: 0;
@@ -546,6 +574,7 @@ img {
 
 #contents-introduction-container {
     position: relative;
+    overflow-y: hidden;
     @include setContainer($white);
     min-height: 1024px;
     // position: relative;
@@ -609,6 +638,7 @@ img {
 
 #subscribe-option-introduction-container {
     @include setContainer($dark-purple);
+    overflow-x: visible;
     min-height: 2000px;
     * {
         color: white;
@@ -627,31 +657,43 @@ img {
     }
     .presents-wrapper {
         // width: 50%;
-        display: flex;
-        flex-direction: column;
         position: absolute;
         right: 10%;
-        .present {
-            width: 400px;
-            height: 400px;
-        }
     }
     .present-box {
-        width: 400px;
-        height: 400px;
+        max-width: 400px;
+        width: 100%;
         display: flex;
         justify-content: center;
-        position: absolute;
-        top: -40%;
+        position: fixed;
+        bottom: 0;
+        transition: all 1s;
         .head {
-            top: -60%;
+            top: 60%;
             width: 255px;
             height: 128px;
             z-index: 1;
+            transition: all 1s;
         }
         .body {
             width: 225px;
             height: 222px;
+            transition: all 3s;
+
+            &.animation {
+                animation: presentBoxBodyRotateAnimation 0.7s ease-in-out;
+            }
+        }
+        &.active {
+            animation: presentBoxActive 1s forwards;
+        }
+    }
+    .presents {
+        display: flex;
+        flex-direction: column;
+        .present {
+            max-width:400px;
+            width:100%;
         }
     }
     .original-logo {
