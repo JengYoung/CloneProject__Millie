@@ -117,27 +117,24 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/changeBoxRotationRateScrollEvent.js":[function(require,module,exports) {
+})({"js/changeBoxRotationOpacityEvent.js":[function(require,module,exports) {
 var boxs = document.querySelectorAll('.rotated-box');
 var wrapper = document.querySelector('.rotated-box-wrapper');
 window.addEventListener('scroll', function () {
   for (var i = 0; i < 7; i++) {
-    var velocityArray = [2.5, 2.2, 2, 2.1, 3, 2.8, 2.7];
     var box = boxs[i];
     var nowHeight = box.getBoundingClientRect().y;
+    var nowWidth = box.getBoundingClientRect().x;
 
-    if (-window.innerHeight < nowHeight && nowHeight < window.innerHeight) {
-      if (i == 1 || i == 5) {
-        box.style.transform = "translateX(".concat((800 - nowHeight) * velocityArray[i], "px) rotate(").concat(box.getBoundingClientRect().y * 0.4, "deg)");
-      } else {
-        box.style.transform = "translateX(".concat((800 - nowHeight) * velocityArray[i], "px) rotate(").concat(-box.getBoundingClientRect().y * 0.5, "deg)");
-      }
+    if (nowHeight < innerHeight && nowWidth < innerWidth * 0.3) {
+      box.style.opacity = 1 - (innerWidth * 0.3 - nowWidth) / (innerWidth * 0.3);
+    } else if (innerWidth > nowWidth && nowWidth > innerWidth * 0.8) {
+      box.style.opacity = (innerWidth - nowWidth) / (innerWidth * 0.2);
+    } else {
+      box.style.opacity = 1;
     }
   }
-}); // window.addEventListener("scroll", function() {
-//     leftgear.style.transform = "rotate("+window.pageYOffset+"deg)";
-//     rightgear.style.transform = "rotate(-"+window.pageYOffset+"deg)";
-// });
+});
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -342,5 +339,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/changeBoxRotationRateScrollEvent.js"], null)
-//# sourceMappingURL=/changeBoxRotationRateScrollEvent.7bba7bb5.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/changeBoxRotationOpacityEvent.js"], null)
+//# sourceMappingURL=/changeBoxRotationOpacityEvent.7107292a.js.map

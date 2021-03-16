@@ -4,6 +4,10 @@ https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq
 
 ## 2021.03.16
 
+### commit "changeBoxRotationOpacityEvent 구현"
+
+스크롤 시 rotated-box의 특정 구간 투명도 변화 이벤트 구현
+
 ### commit "changStringColor 구현"
 
 genre-introduction-container의 sub-copy strong 태그 부분이 일정 스크롤에서 계속해서 바뀌어 보이는 이벤트 구현
