@@ -3,7 +3,7 @@ const presentBoxHead = document.querySelector('.present-box.head');
 const presentBoxBody = document.querySelector('.present-box.body');
 const section = document.querySelector('#subscribe-option-introduction-container')
 // console.log(presentWrapper.getBoundingClientRect());
-
+presentBox.style.opacity = 0;
 window.addEventListener('scroll', () => {
     if (section.getBoundingClientRect().y < innerHeight-250) {
         presentBox.classList.add('active');

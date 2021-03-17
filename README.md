@@ -2,7 +2,20 @@
 
 https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq0uD57A7114k7_hU-cXbSTDO8BKxpUFUy_Dkig9dTc0a_MGb6zdHIaAi39EALw_wcB
 
+## 2021.03.17
+
+### commit "present-box head 애니메이션 구현"
+
+1. present-box가 일정 스크롤 이상 이동 시, 각도 및 움직임 변화 구현
+2. px 단위로 translate할 시 width에 따른 일정한 모양이 유지되지 않는 현상을 발견,
+   %단위로 이동하도록 presentBoxBodyRotateAnimation keyframes 수정.
+
 ## 2021.03.16
+
+### commit "presentBoxActive, present-box body 애니메이션 구현"
+
+1. 일정 스크롤 이동 시 present-box가 나타나는 효과 구현
+2. 일정 스크롤을 추가 이동 시, present-box body의 각도 및 움직임 변화 구현
 
 ### commit "changeBoxScaleScrollEvent 파일명 수정 및 translateY 스크롤 이벤트 구현"
 
@@ -18,7 +31,6 @@ https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq
 
 html에 추가되지 않았던 이미지 추가
 
-
 ### commit "changeBoxRotationOpacityEvent 구현"
 
 스크롤 시 rotated-box의 특정 구간 투명도 변화 이벤트 구현
@@ -26,7 +38,6 @@ html에 추가되지 않았던 이미지 추가
 ### commit "changStringColor 구현"
 
 genre-introduction-container의 sub-copy strong 태그 부분이 일정 스크롤에서 계속해서 바뀌어 보이는 이벤트 구현
-
 
 ## 2021.03.12
 

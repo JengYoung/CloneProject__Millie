@@ -261,21 +261,36 @@ $slogan-font: "supilmyeongjo010";
         opacity: 0;
     }
     to {
-        opacity: 1
+        opacity: 1;
     }
 }
 
+@keyframes presentBoxHeadRotateAnimation {
+    0% {
+        transform: translate(15%, 0%) rotate(20deg);
+    }
+    30% {
+        transform: translate(15%, 0%) rotate(20deg);
+    }
+    70% {
+        transform: translate(-55%, -140%) rotate(-40deg);
+    }
+    85% {
+        transform: translate(-65%, 75%) rotate(-60deg);
+    } 
+    100% {
+        transform: translate(-65%, 75%) rotate(-70deg);
+    }
+}
 @keyframes presentBoxBodyRotateAnimation {
     0% {
-        bottom: -30px;
-        transform: rotate(0deg);
+        transform: translate(0%, 0%) rotate(0deg);
+    }
+    30% {
+        transform: translate(0%, 10%) rotate(20deg);
     }
     60% {
-        bottom: -50px;
-        transform: rotate(30deg);
-    }
-    90% {
-        bottom: 30px;
+        transform: translate(0%, -20%) rotate(0deg);
     }
     100% {
         transform: rotate(0deg);
@@ -668,24 +683,24 @@ img {
         position: fixed;
         bottom: 0;
         transition: all 1s;
+        &.active {
+            animation: presentBoxActive 1s forwards;
+        }
         .head {
             top: 60%;
             width: 255px;
             height: 128px;
             z-index: 1;
-            transition: all 1s;
+            &.animation {
+                animation: presentBoxHeadRotateAnimation 0.7s 0.5s ease-out forwards;
+            }
         }
         .body {
             width: 225px;
             height: 222px;
-            transition: all 3s;
-
             &.animation {
-                animation: presentBoxBodyRotateAnimation 0.7s ease-in-out;
+                animation: presentBoxBodyRotateAnimation 0.7s 0.4s ease-out;
             }
-        }
-        &.active {
-            animation: presentBoxActive 1s forwards;
         }
     }
     .presents {

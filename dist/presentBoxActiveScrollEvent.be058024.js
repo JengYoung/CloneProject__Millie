@@ -123,6 +123,7 @@ var presentBoxHead = document.querySelector('.present-box.head');
 var presentBoxBody = document.querySelector('.present-box.body');
 var section = document.querySelector('#subscribe-option-introduction-container'); // console.log(presentWrapper.getBoundingClientRect());
 
+presentBox.style.opacity = 0;
 window.addEventListener('scroll', function () {
   if (section.getBoundingClientRect().y < innerHeight - 250) {
     presentBox.classList.add('active'); // presentBox.classList.add('animation');
@@ -169,7 +170,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60380" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65375" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
