@@ -4,6 +4,12 @@ https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq
 
 ## 2021.03.17
 
+### commit "changeScalePaperSubscriptionFeeWrapScrollEvent 구현"
+
+1. 스크롤에 따른 scale 변화 이벤트 구현
+2. 기타 - present-box의 zIndex로 인한 버튼 가려짐 현상 발생,presentBoxActiveScrollEvent.js 파일 내 zIndex 수정.
+3. 기타 - 둘리의 서재로 명칭 바꿈, 세부 로고 수정
+
 ### commit "changePresentBoxPositionScrollEvent 구현"
 
 1. position을 바꾸기 위해서 presentBoxActiveScrollEvent에 기존 presentBox css 삽입

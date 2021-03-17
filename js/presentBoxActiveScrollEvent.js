@@ -12,7 +12,7 @@ window.addEventListener('scroll', () => {
         presentBox.style.display = 'flex';
         presentBox.style.alignItems = 'center';
         presentBox.style.flexDirection = 'column';
-        presentBox.style.zIndex = '100';
+        presentBox.style.zIndex = '1';
         presentBox.style.transition = 'opacity 1s';
         presentBox.style.bottom = '0';
 

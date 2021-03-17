@@ -119,15 +119,15 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"js/changePresentBoxPositionScrollEvent.js":[function(require,module,exports) {
 var section = document.querySelector('#subscribe-option-introduction-container');
-console.log(section);
 window.addEventListener('scroll', function () {
   var presentBox = document.querySelector('.present-box');
 
   if (innerHeight >= section.getBoundingClientRect().bottom) {
-    console.log(presentBox);
     presentBox.style.position = 'absolute';
     presentBox.style.bottom = '-15%';
   }
+
+  ;
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
