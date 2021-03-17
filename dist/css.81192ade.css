@@ -575,27 +575,20 @@ img {
     right: 10%; }
   #subscribe-option-introduction-container .present-box {
     max-width: 400px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    bottom: 0;
-    transition: all 1s;
-    z-index: 100; }
+    width: 100%; }
     #subscribe-option-introduction-container .present-box.active {
       animation: presentBoxActive 1s forwards; }
     #subscribe-option-introduction-container .present-box .head {
-      top: 60%;
       width: 255px;
       height: 128px;
       z-index: 101; }
       #subscribe-option-introduction-container .present-box .head.animation {
-        animation: presentBoxHeadRotateAnimation 0.7s 0.5s ease-out forwards; }
+        animation: presentBoxHeadRotateAnimation 1s 0.5s ease-out forwards; }
     #subscribe-option-introduction-container .present-box .body {
       width: 225px;
       height: 222px; }
       #subscribe-option-introduction-container .present-box .body.animation {
-        animation: presentBoxBodyRotateAnimation 0.7s 0.4s ease-out; }
+        animation: presentBoxBodyRotateAnimation 1s 0.4s ease-out; }
   #subscribe-option-introduction-container .present-infos {
     display: flex;
     flex-direction: column; }

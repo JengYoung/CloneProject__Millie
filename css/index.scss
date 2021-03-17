@@ -671,36 +671,28 @@ img {
         @include setDescription()
     }
     .presents-wrapper {
-        // width: 50%;
         position: absolute;
         right: 10%;
     }
     .present-box {
         max-width: 400px;
         width: 100%;
-        display: flex;
-        justify-content: center;
-        position: fixed;
-        bottom: 0;
-        transition: all 1s;
-        z-index: 100;
         &.active {
             animation: presentBoxActive 1s forwards;
         }
         .head {
-            top: 60%;
             width: 255px;
             height: 128px;
             z-index: 101;
             &.animation {
-                animation: presentBoxHeadRotateAnimation 0.7s 0.5s ease-out forwards;
+                animation: presentBoxHeadRotateAnimation 1s 0.5s ease-out forwards;
             }
         }
         .body {
             width: 225px;
             height: 222px;
             &.animation {
-                animation: presentBoxBodyRotateAnimation 0.7s 0.4s ease-out;
+                animation: presentBoxBodyRotateAnimation 1s 0.4s ease-out;
             }
         }
     }

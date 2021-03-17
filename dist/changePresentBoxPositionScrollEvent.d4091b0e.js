@@ -117,38 +117,16 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/presentBoxActiveScrollEvent.js":[function(require,module,exports) {
-var presentBox = document.querySelector('.present-box');
-var presentBoxHead = document.querySelector('.present-box.head');
-var presentBoxBody = document.querySelector('.present-box.body');
+})({"js/changePresentBoxPositionScrollEvent.js":[function(require,module,exports) {
 var section = document.querySelector('#subscribe-option-introduction-container');
-presentBox.style.opacity = 0;
+console.log(section);
 window.addEventListener('scroll', function () {
-  if (section.getBoundingClientRect().y < innerHeight - 250) {
-    /* presentBox */
-    presentBox.classList.add('active');
-    presentBox.style.position = 'fixed';
-    presentBox.style.display = 'flex';
-    presentBox.style.alignItems = 'center';
-    presentBox.style.flexDirection = 'column';
-    presentBox.style.zIndex = '100';
-    presentBox.style.transition = 'opacity 1s';
-    presentBox.style.bottom = '0';
-    /* presentBoxHead Style */
+  var presentBox = document.querySelector('.present-box');
 
-    presentBoxHead.style.position = 'absolute';
-    presentBoxHead.style.top = '-30%';
-  } else {
-    presentBox.classList.remove('active');
-    presentBox.style.opacity = 0;
-  }
-
-  if (section.getBoundingClientRect().y < innerHeight - 400) {
-    presentBoxHead.classList.add('animation');
-    presentBoxBody.classList.add('animation');
-  } else {
-    presentBoxHead.classList.remove('animation');
-    presentBoxBody.classList.remove('animation');
+  if (innerHeight >= section.getBoundingClientRect().bottom) {
+    console.log(presentBox);
+    presentBox.style.position = 'absolute';
+    presentBox.style.bottom = '-15%';
   }
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -355,5 +333,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/presentBoxActiveScrollEvent.js"], null)
-//# sourceMappingURL=/presentBoxActiveScrollEvent.be058024.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/changePresentBoxPositionScrollEvent.js"], null)
+//# sourceMappingURL=/changePresentBoxPositionScrollEvent.d4091b0e.js.map

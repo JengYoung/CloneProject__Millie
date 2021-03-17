@@ -4,6 +4,11 @@ https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq
 
 ## 2021.03.17
 
+### commit "changePresentBoxPositionScrollEvent 구현"
+
+1. position을 바꾸기 위해서 presentBoxActiveScrollEvent에 기존 presentBox css 삽입
+2. 이후 특정 스크롤에 도달 시 position을 fixed -> absolute로 변경
+
 ### commit "presents 클래스명 수정 및 changeScalePresentInfoScrollEvent 구현"
 
 1. presents -> present-infos, present -> present-info로, 좀 더 명확히 클래스명 지정

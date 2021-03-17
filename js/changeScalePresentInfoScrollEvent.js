@@ -1,4 +1,5 @@
 const infos = document.querySelectorAll('.present-info');
+
 function scrollHandler(info) {
     const nowHeight = info.getBoundingClientRect().y;
     if (nowHeight > innerHeight + 300) return;
@@ -7,6 +8,7 @@ function scrollHandler(info) {
         info.style.transform = `scale(${checkScale > 1 ? 1 : checkScale})`
     }
 }
+
 window.addEventListener('scroll', () => {
     for (i= 0; i < infos.length; i++) {
         scrollHandler(infos[i]);
