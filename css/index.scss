@@ -683,6 +683,7 @@ img {
         position: fixed;
         bottom: 0;
         transition: all 1s;
+        z-index: 100;
         &.active {
             animation: presentBoxActive 1s forwards;
         }
@@ -690,7 +691,7 @@ img {
             top: 60%;
             width: 255px;
             height: 128px;
-            z-index: 1;
+            z-index: 101;
             &.animation {
                 animation: presentBoxHeadRotateAnimation 0.7s 0.5s ease-out forwards;
             }
@@ -703,10 +704,10 @@ img {
             }
         }
     }
-    .presents {
+    .present-infos {
         display: flex;
         flex-direction: column;
-        .present {
+        .present-info {
             max-width:400px;
             width:100%;
         }

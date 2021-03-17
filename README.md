@@ -4,7 +4,12 @@ https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq
 
 ## 2021.03.17
 
-### commit "present-box head 애니메이션 구현"
+### commit "presents 클래스명 수정 및 changeScalePresentInfoScrollEvent 구현"
+
+1. presents -> present-infos, present -> present-info로, 좀 더 명확히 클래스명 지정
+2. present-info 의 스크롤 이동 시 scale 변화 이벤트 구현
+
+### commit "present-box head 애니메이션 구현 및 presentBoxBodyRotateAnimation 수정"
 
 1. present-box가 일정 스크롤 이상 이동 시, 각도 및 움직임 변화 구현
 2. px 단위로 translate할 시 width에 따른 일정한 모양이 유지되지 않는 현상을 발견,
