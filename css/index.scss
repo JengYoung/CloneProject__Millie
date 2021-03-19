@@ -332,17 +332,17 @@ img {
             background-image: url("../img/혜리\ 보라로고.png");
             object-fit: cover;
         }
-    }
-    #nav-logo.yellow {
-        position: fixed;
-        top: 30px;
-        left: 30px;
-        width: 40px;
-        height: 40px;
-        background-size: 25px 25px;
-        background-repeat: no-repeat;
-        object-fit: cover;
-        background-image: url("../img/혜리\ 노랑로고.png");
+        &.yellow {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            width: 40px;
+            height: 40px;
+            background-size: 25px 25px;
+            background-repeat: no-repeat;
+            object-fit: cover;
+            background-image: url("../img/혜리\ 노랑로고.png");
+        }
     }
     .go.login.btn {
         @include setBarBtn(transparent,$purple);
