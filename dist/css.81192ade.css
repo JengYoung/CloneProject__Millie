@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /******************* color *******************/
 /***************** font-size *****************/
 /******************* fonts *******************/
@@ -85,7 +86,7 @@ img {
   min-width: 320px;
   height: auto; }
 
-#nav-bar #nav-logo {
+#nav-bar #nav-logo.default {
   position: fixed;
   top: 30px;
   left: 30px;
@@ -93,8 +94,19 @@ img {
   height: 40px;
   background-size: 25px 25px;
   background-repeat: no-repeat;
-  background-image: url("/subLogo.ff816756.svg");
+  background-image: url("/혜리 보라로고.8c172013.png");
   object-fit: cover; }
+
+#nav-bar #nav-logo.yellow {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  width: 40px;
+  height: 40px;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-image: url("/혜리 노랑로고.8af321ec.png"); }
 
 #nav-bar .go.login.btn {
   font-family: "Noto Sans KR", sans-serif;

@@ -4,6 +4,11 @@ https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq
 
 ## 2021.03.19
 
+### commit "changeNavLogoScrollEvent 구현"
+
+1. 스크롤에 따른 로고 색깔 변화 구현
+2. 이에 따른, 새로운 로고 삽입 및 selector명 수정
+
 ### commit "translateCopies 구현"
 
 1. 스크롤에 따른 전체 카피 이동 구현
