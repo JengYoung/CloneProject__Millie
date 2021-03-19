@@ -20,9 +20,12 @@ window.addEventListener('scroll', () => {
     } else {
         contentsGoSignupBtn.style.display = 'none';
     }
-    if (scrollLocation >= 5740) {
+    if (scrollLocation >= 5740 && scrollLocation < 8800) {
         subscribeGoSignupBtn.style.display = 'block';
     } else {
+        sloganGoSignupBtn.style.display = 'none';
+        bookGoSignupBtn.style.display = 'none';
+        contentsGoSignupBtn.style.display = 'none';
         subscribeGoSignupBtn.style.display = 'none';
     }
 })
