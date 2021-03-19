@@ -44,11 +44,21 @@ $slogan-font: "supilmyeongjo010";
     }
 }
 @mixin setMainCopy($color) {
-    position: relative;
-    padding-top: 40px;
-    font-size: $main-copy-size;
-    font-weight: 900;
-    color: $color;
+    @media (min-width: 768px) {
+        position: relative;
+        padding-top: 40px;
+        font-size: $main-copy-size;
+        font-weight: 900;
+        color: $color;
+    }
+
+    @media (max-width: 768px) {
+        position: relative;
+        padding-top: 40px;
+        font-size: 40px;
+        font-weight: 900;
+        color: $color;
+    }
 }
 @mixin setSubCopy($color) {
     position: relative;
@@ -75,14 +85,14 @@ $slogan-font: "supilmyeongjo010";
     background-color: $backgroundColor;
     transform: rotate($degree)
 }
-@mixin setSubscriptionWrapperHeadCopy($color) {
+@mixin setSubscriptionWrapperHeadCopy($color, $fontSize, $strongFontSize) {
     * {
         font-family: $godic-font;
-        font-size: 24px;
+        font-size: $fontSize;
         font-weight: 300;
     }
     strong {
-        font-size: 32px;
+        font-size: $strongFontSize;
         font-weight: 900;
     }
     em {
@@ -150,15 +160,15 @@ $slogan-font: "supilmyeongjo010";
     }
     margin-bottom: 15px;
 }
-@mixin setSubscriptionFeeWrap() {
+@mixin setSubscriptionFeeWrap($width, $spanFontSize) {
     border-radius: 5px;
     background-color: $white;
-    width: 50%;
+    width: $width;
     * {
         color: black; 
     }
     span {
-        font-size: 20px;
+        font-size: $spanFontSize;
         font-family: $default-font;
         p {
             font-weight: 200;
@@ -172,16 +182,16 @@ $slogan-font: "supilmyeongjo010";
 @mixin setFeeWrapHeader($color) {
     border-radius: 5px 5px 0 0 ;
     padding: 16px 8px 16px 16px;
-    min-height: 424px;
+    min-height: 220px;
     background-color: $color;
 }
-@mixin setFeeWrapHeadCopy() {
+@mixin setFeeWrapHeadCopy($fontSize) {
     p {
         font-family: $godic-font;
+        font-size: $fontSize;
     }
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: 40px;
 }
 
 @mixin setGoSignUpButton($backgroundColor, $color) {
@@ -313,496 +323,1009 @@ img {
 }
 
 /******************************************/
-#pages-container {
-    background-color: $yellow;
-    min-width: 320px;
-    height: auto;
-}
 
-#nav-bar {
-    #nav-logo{
-        &.default {
-            position: fixed;
-            top: 30px;
-            left: 30px;
-            width: 40px;
-            height: 40px;
-            background-size: 25px 25px;
-            background-repeat: no-repeat;
-            background-image: url("../img/혜리\ 보라로고.png");
-            object-fit: cover;
+@media (min-width: 768px) {
+    #pages-container {
+        background-color: $yellow;
+        min-width: 320px;
+        height: auto;
+    }
+    
+    #nav-bar {
+        #nav-logo{
+            &.default {
+                position: fixed;
+                top: 30px;
+                left: 30px;
+                width: 40px;
+                height: 40px;
+                background-size: 25px 25px;
+                background-repeat: no-repeat;
+                background-image: url("../img/혜리\ 보라로고.png");
+                object-fit: cover;
+            }
+            &.yellow {
+                position: fixed;
+                top: 30px;
+                left: 30px;
+                width: 40px;
+                height: 40px;
+                background-size: 25px 25px;
+                background-repeat: no-repeat;
+                object-fit: cover;
+                background-image: url("../img/혜리\ 노랑로고.png");
+            }
         }
-        &.yellow {
-            position: fixed;
-            top: 30px;
-            left: 30px;
-            width: 40px;
-            height: 40px;
-            background-size: 25px 25px;
-            background-repeat: no-repeat;
-            object-fit: cover;
-            background-image: url("../img/혜리\ 노랑로고.png");
+        .go.login.btn {
+            @include setBarBtn(transparent,$purple);
+            right: 150px;
+        }
+        .go.fee-page.btn {
+            @include setBarBtn($purple, transparent);
+            color: $yellow;
+            right: 30px;
+            width: 105px;
+            // background-repeat: no-repeat;
         }
     }
-    .go.login.btn {
-        @include setBarBtn(transparent,$purple);
-        right: 150px;
-    }
-    .go.fee-page.btn {
-        @include setBarBtn($purple, transparent);
-        color: $yellow;
-        right: 30px;
-        width: 105px;
-        // background-repeat: no-repeat;
-    }
-}
-
-.signup-button-box {
-    display: flex;
-    justify-content: center;
-    .go-signup-button {
-        @include setGoSignUpButton(black, white);
-        &.book, 
-        &.contents {
-            @include setGoSignUpButton($purple, white);
-        }
-        &.subscribe {
-            @include setGoSignUpButton($white, $dark-purple);
-        }
-    }
-}
-
-#intro-container {
-    @include setContainer($yellow);
-    min-height: 1300px;
-    .logo {
-        width: 130px;
-        padding-top: 110px; 
-        background-repeat: no-repeat;
-        img {
-            width: 100%;
-        }
-    }
-
-    .copy-wrap {
-        position: relative;
-        top: -500px;
-        z-index: 1;
-        opacity: 0;
-        animation: moveCopies 1.5s ease-out 1.5s forwards;
-        .intro-main-copy {
-            @include setMainCopy($black);
-        }
-        
-        .intro-sub-copy {
-            @include setSubCopy($black);
-            strong {
-                animation: fontColorChange 2s ease-out 2s forwards;
+    
+    .signup-button-box {
+        display: flex;
+        justify-content: center;
+        .go-signup-button {
+            @include setGoSignUpButton(black, white);
+            &.book, 
+            &.contents {
+                @include setGoSignUpButton($purple, white);
+            }
+            &.subscribe {
+                @include setGoSignUpButton($white, $dark-purple);
             }
         }
     }
-
-    .img-wrap {
-        position: relative;
-        top: -30px;
-        right: -30%;
-        width: 70%;
-        max-width: 967px;
-
-        .book1-img {
-            @include setIntroBookMovement(5%, 15%, 36%);
-            animation: moveIntroBooks 2s ease-out forwards;
+    
+    #intro-container {
+        @include setContainer($yellow);
+        min-height: 1300px;
+        .logo {
+            width: 130px;
+            padding-top: 110px; 
+            background-repeat: no-repeat;
+            img {
+                width: 100%;
+            }
         }
-        .book2-img {
-            @include setIntroBookMovement(4%, 15%, 45%);
-            animation: moveIntroBooks 2s ease-out 1s forwards;
-        }
-    }
-}
-
-#slogan-container {
-    @include setContainer($yellow);
-    margin-top: 60px;
-    padding-left: 0px;
-    min-height: 1300px;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    // justify-content: center;
-    .copy-and-logo-container {
-
-        display: flex;
-        z-index: 2;
-        margin-bottom: 200px;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        .slogan-main-copy {
+    
+        .copy-wrap {
             position: relative;
-            z-index: 11;
-            padding-top: 130px;
-            font-family: $slogan-font;
-            font-size: 60px;
-            font-weight: 300;
-            letter-spacing: -5px;
-            strong {
-                font-family: $slogan-font;
-                font-weight: 900;
-                color: $purple;
+            top: -500px;
+            z-index: 1;
+            opacity: 0;
+            animation: moveCopies 1.5s ease-out 1.5s forwards;
+            .intro-main-copy {
+                @include setMainCopy($black);
+            }
+            
+            .intro-sub-copy {
+                @include setSubCopy($black);
+                strong {
+                    animation: fontColorChange 2s ease-out 2s forwards;
+                }
+            }
+        }
+    
+        .img-wrap {
+            position: relative;
+            top: -30px;
+            right: -30%;
+            width: 70%;
+            max-width: 967px;
+    
+            .book1-img {
+                @include setIntroBookMovement(5%, 15%, 36%);
+                animation: moveIntroBooks 2s ease-out forwards;
+            }
+            .book2-img {
+                @include setIntroBookMovement(4%, 15%, 45%);
+                animation: moveIntroBooks 2s ease-out 1s forwards;
             }
         }
     }
-    .shelf-image1 {
-        position: absolute;
-        top: 50px;
-        right: 0;
-    }
-    .shelf-image2 {
-        position: absolute;
-        top: 200px;
-        left: 0;
-    }
-    .shelf-image3 {
-        position: absolute;
-        top: 350px;
-        right: 150px;
-    }
-
-    .slogan-and-logo {
-        position: absolute;
-        width:150px;
-        bottom: 15%;
-    }
-}
-
-#book-introduction-container {
-    @include setContainer($yellow);
-    padding-bottom: 100px;
-    margin-top: 60px;
-    min-height: 1024px;     
-    .book.main-copy {
-        @include setMainCopy($black);
-        // font-size: $main-copy-size;
-    }
-    .book.sub-copy  {
-        @include setSubCopy($purple);
-    }
-    .descriptions {
-        margin-top: 30px;
-    }
-    .description {
-        @include setDescription();
-        position: relative;
-        z-index: 99;
-    }
-    .books-img-wrap {
+    
+    #slogan-container {
+        @include setContainer($yellow);
+        margin-top: 60px;
+        padding-left: 0px;
+        min-height: 1300px;
         display: flex;
         position: relative;
-        width: 100%;
-        right: -5%;
-        align-items: flex-end;
-        flex-wrap: wrap;
-        margin-top: -10%;
-        z-index: 1;
-        opacity: 0.5;
-        .books-wrap-book {
-            display: relative;
-            margin: 1%;
-            min-width: 6%;
-            width: 10%;
-            height: auto;
-            transition: all;
+        flex-direction: column;
+        align-items: center;
+        // justify-content: center;
+        .copy-and-logo-container {
+    
+            display: flex;
+            z-index: 2;
+            margin-bottom: 200px;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            .slogan-main-copy {
+                position: relative;
+                z-index: 11;
+                padding-top: 130px;
+                font-family: $slogan-font;
+                font-size: 60px;
+                font-weight: 300;
+                letter-spacing: -5px;
+                strong {
+                    font-family: $slogan-font;
+                    font-weight: 900;
+                    color: $purple;
+                }
+            }
         }
-        .show {
-            display: relative;
-            margin: 1%;
-            min-width: 6%;
-            width: 8%;
-            height: auto;
-            transform: translate(80px, 0);
+        .shelf-image1 {
+            position: absolute;
+            top: 50px;
+            right: 0;
+        }
+        .shelf-image2 {
+            position: absolute;
+            top: 200px;
+            left: 0;
+        }
+        .shelf-image3 {
+            position: absolute;
+            top: 350px;
+            right: 150px;
+        }
+    
+        .slogan-and-logo {
+            position: absolute;
+            width:150px;
+            bottom: 15%;
         }
     }
-}
-
-#genre-introduction-container {
-    @include setContainer($white);
-    min-height: 1024px;
-    transition: all 1s;
-    &::before {
-        overflow-x: hidden;
-        position: absolute;
-        display: block;
-        left: -50px;
-        content:'';
-        width: 103%;
-        background-color: $white;
+    
+    #book-introduction-container {
+        @include setContainer($yellow);
+        padding-bottom: 100px;
+        margin-top: 60px;
+        min-height: 1024px;     
+        .book.main-copy {
+            @include setMainCopy($black);
+            // font-size: $main-copy-size;
+        }
+        .book.sub-copy  {
+            @include setSubCopy($purple);
+        }
+        .descriptions {
+            margin-top: 30px;
+        }
+        .description {
+            @include setDescription();
+            position: relative;
+            z-index: 99;
+        }
+        .books-img-wrap {
+            display: flex;
+            position: relative;
+            width: 100%;
+            right: -5%;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            margin-top: -10%;
+            z-index: 1;
+            opacity: 0.5;
+            .books-wrap-book {
+                display: relative;
+                margin: 1%;
+                min-width: 6%;
+                width: 10%;
+                height: auto;
+                transition: all;
+            }
+            .show {
+                display: relative;
+                margin: 1%;
+                min-width: 6%;
+                width: 8%;
+                height: auto;
+                transform: translate(80px, 0);
+            }
+        }
     }
-    &.black {
+    
+    #genre-introduction-container {
+        @include setContainer($white);
+        min-height: 1024px;
+        transition: all 1s;
         &::before {
-            overflow-x:hidden;
+            overflow-x: hidden;
             position: absolute;
             display: block;
             left: -50px;
             content:'';
             width: 103%;
-            animation: genrePageGradientEffect 0.7s ease-in-out;
+            background-color: $white;
         }
-        background-color: $black;
-        * {
-            color: white;
-        }
-    }
-    .genre.main-copy {
-        @include setMainCopy($black);
-    }
-    .genre.sub-copy {
-        @include setSubCopy($purple);
-    }
-    .descriptions {
-        margin-top: 30px;
-    }
-    .description {
-        @include setDescription();
-    }
-    .rotated-box-wrapper {
-        position: relative;
-        top: -170px;
-        left: -5%;
-    }
-    .rotated-box {
-        &:nth-child(1) {
-            @include setRotateBox(-20px, 100px, 35px, 35px, $yellow, 10deg);
-        }
-        &:nth-child(2) {
-            @include setRotateBox(0, 50px, 50px, 50px, #EDD943, 30deg);
-            z-index: 2;
-        }
-        &:nth-child(3) {
-            @include setRotateBox(-20px, 0px, 60px, 60px, $purple, 20deg);
-        }
-        &:nth-child(4) {
-            @include setRotateBox(-40px, -100px, 60px, 60px, $white, 10deg);
-        }
-        &:nth-child(5) {
-            @include setRotateBox(-20px, -120px, 20px, 20px, #57CAF0, 60deg);
-            z-index: 1;
-        }
-        &:nth-child(6) {
-            @include setRotateBox(-25px, -140px, 50px, 50px, #EDD943, 30deg);
-        }
-        &:nth-child(7) {
-            @include setRotateBox(-10px, -300px, 35px, 35px, $dark-purple, 40deg);
-            z-index: 1;
-        }
-    }
-}
-
-#contents-introduction-container {
-    position: relative;
-    overflow-y: hidden;
-    @include setContainer($white);
-    min-height: 1024px;
-    // position: relative;
-    // display: block;
-    .contents.main-copy {
-        @include setMainCopy($black);
-    }
-    .contents.sub-copy {
-        @include setSubCopy($purple);
-    }
-    .descriptions {
-        margin-top: 30px;
-    }
-    .description {
-        @include setDescription();
-    }
-    .contents-img-box {
-        margin-top: 0;
-        position: absolute;
-        z-index: 1;
-        top: 17%;
-        right: 0;
-        width: 60%;
-        display: flex;
-        flex-wrap: wrap;
-        .content {
-            position: relative;
-            &.first {
-                top: -100px;
+        &.black {
+            &::before {
+                overflow-x:hidden;
+                position: absolute;
+                display: block;
+                left: -50px;
+                content:'';
+                width: 103%;
+                animation: genrePageGradientEffect 0.7s ease-in-out;
             }
-            width: 45%;
-            background-repeat: no-repeat;
-            background-size: contain;
-            .content-first-model {
-                position: relative;
-                z-index: 1;
-                width: 55%;
-                top: -25%;
-                // left: -2%;
-                // bottom: 4%;
-                // width: 25%;
-            }
-            .content-first-btn-box {
-                position: relative;
-                z-index: 2;
-                top: -40%;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-            }
-            .content-second-img {
-                position: relative;
-                top: -35%;
-                left: 1%;
-                width: 60%;
-            }
-        }
-    }
-}
-
-
-#subscribe-option-introduction-container {
-    @include setContainer($dark-purple);
-    overflow-x: visible;
-    min-height: 2000px;
-    * {
-        color: white;
-    }
-    .main-copy {
-        @include setMainCopy($white);
-    }
-    .sub-copy {
-        @include setSubCopy($yellow);
-    }
-    .descriptions {
-        margin-top: 30px;
-    }
-    .description {
-        @include setDescription()
-    }
-    .presents-wrapper {
-        position: absolute;
-        right: 10%;
-    }
-    .present-box {
-        max-width: 400px;
-        width: 100%;
-        &.active {
-            animation: presentBoxActive 1s forwards;
-        }
-        .head {
-            width: 255px;
-            height: 128px;
-            z-index: 101;
-            &.animation {
-                animation: presentBoxHeadRotateAnimation 1s 0.5s ease-out forwards;
-            }
-        }
-        .body {
-            width: 225px;
-            height: 222px;
-            &.animation {
-                animation: presentBoxBodyRotateAnimation 1s 0.4s ease-out;
-            }
-        }
-    }
-    .present-infos {
-        display: flex;
-        flex-direction: column;
-        .present-info {
-            max-width:400px;
-            width:100%;
-        }
-    }
-    .original-logo {
-        display: inline;
-        position: relative;
-        top: 300px;
-        left: 55px;
-    }
-}
-
-#fee-introduction-container {
-    * {
-        color: $white;
-        list-style: none;
-    }
-    padding-top: 60px;
-    padding-left: 50px;
-    min-height: 1024px;
-    background-color: $black;
-
-    .fee.sub-copy {
-        @include setSubCopy($white);
-    }
-    .fee.main-copy {
-        @include setMainCopy($white);
-        font-size: 50px;
-    }
-    .fee-description-wraps {
-        position: relative;
-        bottom: 50px;
-        display: flex;
-        flex-direction: row;
-        width: calc(50% - 4px);
-        position: relative;
-        left: 40%;
-        div + div {
-            margin-left: 4px;
-        }
-    }
-    .ebook-subscription-fee-wrap {
-        @include setSubscriptionFeeWrap();
-        .fee-wrap-header {
-            @include setFeeWrapHeader($yellow);
-        }
-        .fee-wrap-head-copy {
-            @include setFeeWrapHeadCopy()
-        }
-        .fee {
-            @include setSubscriptionWrapperHeadCopy(#A69B4D);
-        }
-        .fee-wrap-body {
-            @include setFeeWrapBody();
-            padding-bottom: 150px;
-        }
-        .fee-wrap-btn-box {
-            @include setFeeWrapBtnBox();
-            .month-subscribe-btn {
-                @include setSubscriptionWrapperBtn($yellow, black);
-            }
-            .year-subscribe-btn {
-                @include setSubscriptionWrapperBtn(#FFC004, black);
-            }
-        }
-    }
-    .paper-subscription-fee-wrap {
-        @include setSubscriptionFeeWrap();
-        .fee-wrap-header {
-            @include setFeeWrapHeader(#6A31A4);
+            background-color: $black;
             * {
                 color: white;
             }
         }
-        .fee-wrap-head-copy {
-            @include setFeeWrapHeadCopy();
+        .genre.main-copy {
+            @include setMainCopy($black);
         }
-        .fee {
-            @include setSubscriptionWrapperHeadCopy(#c5c5c5);
+        .genre.sub-copy {
+            @include setSubCopy($purple);
         }
-        .fee-wrap-body {
-            @include setFeeWrapBody();
-            padding-bottom: 100px;
+        .descriptions {
+            margin-top: 30px;
         }
-        .fee-wrap-btn-box {
-            @include setFeeWrapBtnBox();
-            .month-subscribe-btn {
-                @include setSubscriptionWrapperBtn(#A87DDF,white );
+        .description {
+            @include setDescription();
+        }
+        .rotated-box-wrapper {
+            position: relative;
+            top: -170px;
+            left: -5%;
+        }
+        .rotated-box {
+            &:nth-child(1) {
+                @include setRotateBox(-20px, 100px, 35px, 35px, $yellow, 10deg);
             }
-            .year-subscribe-btn {
-                @include setSubscriptionWrapperBtn(#6A31A4, white);
+            &:nth-child(2) {
+                @include setRotateBox(0, 50px, 50px, 50px, #EDD943, 30deg);
+                z-index: 2;
+            }
+            &:nth-child(3) {
+                @include setRotateBox(-20px, 0px, 60px, 60px, $purple, 20deg);
+            }
+            &:nth-child(4) {
+                @include setRotateBox(-40px, -100px, 60px, 60px, $white, 10deg);
+            }
+            &:nth-child(5) {
+                @include setRotateBox(-20px, -120px, 20px, 20px, #57CAF0, 60deg);
+                z-index: 1;
+            }
+            &:nth-child(6) {
+                @include setRotateBox(-25px, -140px, 50px, 50px, #EDD943, 30deg);
+            }
+            &:nth-child(7) {
+                @include setRotateBox(-10px, -300px, 35px, 35px, $dark-purple, 40deg);
+                z-index: 1;
             }
         }
     }
+    
+    #contents-introduction-container {
+        position: relative;
+        overflow-y: hidden;
+        @include setContainer($white);
+        min-height: 1024px;
+        // position: relative;
+        // display: block;
+        .contents.main-copy {
+            @include setMainCopy($black);
+        }
+        .contents.sub-copy {
+            @include setSubCopy($purple);
+        }
+        .descriptions {
+            margin-top: 30px;
+        }
+        .description {
+            @include setDescription();
+        }
+        .contents-img-box {
+            margin-top: 0;
+            position: absolute;
+            z-index: 1;
+            top: 17%;
+            right: 0;
+            width: 60%;
+            display: flex;
+            flex-wrap: wrap;
+            .content {
+                position: relative;
+                &.first {
+                    top: -100px;
+                }
+                width: 45%;
+                background-repeat: no-repeat;
+                background-size: contain;
+                .content-first-model {
+                    position: relative;
+                    z-index: 1;
+                    width: 55%;
+                    top: -25%;
+                    // left: -2%;
+                    // bottom: 4%;
+                    // width: 25%;
+                }
+                .content-first-btn-box {
+                    position: relative;
+                    z-index: 2;
+                    top: -40%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+                .content-second-img {
+                    position: relative;
+                    top: -35%;
+                    left: 1%;
+                    width: 60%;
+                }
+            }
+        }
+    }
+    
+    
+    #subscribe-option-introduction-container {
+        @include setContainer($dark-purple);
+        overflow-x: visible;
+        min-height: 2000px;
+        * {
+            color: white;
+        }
+        .main-copy {
+            @include setMainCopy($white);
+        }
+        .sub-copy {
+            @include setSubCopy($yellow);
+        }
+        .descriptions {
+            margin-top: 30px;
+        }
+        .description {
+            @include setDescription()
+        }
+        .presents-wrapper {
+            position: absolute;
+            right: 10%;
+        }
+        .present-box {
+            max-width: 400px;
+            width: 100%;
+            &.active {
+                animation: presentBoxActive 1s forwards;
+            }
+            .head {
+                width: 255px;
+                height: 128px;
+                z-index: 101;
+                &.animation {
+                    animation: presentBoxHeadRotateAnimation 1s 0.5s ease-out forwards;
+                }
+            }
+            .body {
+                width: 225px;
+                height: 222px;
+                &.animation {
+                    animation: presentBoxBodyRotateAnimation 1s 0.4s ease-out;
+                }
+            }
+        }
+        .present-infos {
+            display: flex;
+            flex-direction: column;
+            .present-info {
+                max-width:400px;
+                width:100%;
+            }
+        }
+        .original-logo {
+            display: inline;
+            position: relative;
+            top: 300px;
+            left: 55px;
+        }
+    }
+    
+    #fee-introduction-container {
+        * {
+            color: $white;
+            list-style: none;
+        }
+        padding-top: 60px;
+        padding-left: 50px;
+        min-height: 1024px;
+        background-color: $black;
+    
+        .fee.sub-copy {
+            @include setSubCopy($white);
+        }
+        .fee.main-copy {
+            @include setMainCopy($white);
+            font-size: 50px;
+        }
+        .fee-description-wraps {
+            position: relative;
+            bottom: 50px;
+            display: flex;
+            flex-direction: row;
+            width: calc(50% - 4px);
+            position: relative;
+            left: 40%;
+            div + div {
+                margin-left: 4px;
+            }
+        }
+        .ebook-subscription-fee-wrap {
+            @include setSubscriptionFeeWrap(60%, 20px);
+            .fee-wrap-header {
+                @include setFeeWrapHeader($yellow);
+            }
+            .fee-wrap-head-copy {
+                @include setFeeWrapHeadCopy(40px.2 )
+            }
+            .fee {
+                @include setSubscriptionWrapperHeadCopy(#A69B4D, 24px, 32px);
+            }
+            .fee-wrap-body {
+                @include setFeeWrapBody();
+                padding-bottom: 150px;
+            }
+            .fee-wrap-btn-box {
+                @include setFeeWrapBtnBox();
+                .month-subscribe-btn {
+                    @include setSubscriptionWrapperBtn($yellow, black);
+                }
+                .year-subscribe-btn {
+                    @include setSubscriptionWrapperBtn(#FFC004, black);
+                }
+            }
+        }
+        .paper-subscription-fee-wrap {
+            @include setSubscriptionFeeWrap(60%, 20px);
+            .fee-wrap-header {
+                @include setFeeWrapHeader(#6A31A4);
+                * {
+                    color: white;
+                }
+            }
+            .fee-wrap-head-copy {
+                @include setFeeWrapHeadCopy(40px);
+            }
+            .fee {
+                @include setSubscriptionWrapperHeadCopy(#c5c5c5, 24px, 32px);
+            }
+            .fee-wrap-body {
+                @include setFeeWrapBody();
+                padding-bottom: 100px;
+            }
+            .fee-wrap-btn-box {
+                @include setFeeWrapBtnBox();
+                display: flex;
+                .month-subscribe-btn {
+                    @include setSubscriptionWrapperBtn(#A87DDF,white );
+                }
+                .year-subscribe-btn {
+                    @include setSubscriptionWrapperBtn(#6A31A4, white);
+                }
+            }
+        }
+    }
+    
+}
+
+
+@media (max-width: 768px) {
+    #pages-container {
+        background-color: $yellow;
+        min-width: 320px;
+        height: auto;
+    }
+    
+    #nav-bar {
+        #nav-logo{
+            &.default {
+                position: fixed;
+                top: 30px;
+                left: 30px;
+                width: 40px;
+                height: 40px;
+                background-size: 25px 25px;
+                background-repeat: no-repeat;
+                background-image: url("../img/혜리\ 보라로고.png");
+                object-fit: cover;
+            }
+            &.yellow {
+                position: fixed;
+                top: 30px;
+                left: 30px;
+                width: 40px;
+                height: 40px;
+                background-size: 25px 25px;
+                background-repeat: no-repeat;
+                object-fit: cover;
+                background-image: url("../img/혜리\ 노랑로고.png");
+            }
+        }
+        .go.login.btn {
+            @include setBarBtn(transparent,$purple);
+            right: 150px;
+        }
+        .go.fee-page.btn {
+            @include setBarBtn($purple, transparent);
+            color: $yellow;
+            right: 30px;
+            width: 105px;
+            // background-repeat: no-repeat;
+        }
+    }
+    
+    .signup-button-box {
+        display: flex;
+        justify-content: center;
+        .go-signup-button {
+            @include setGoSignUpButton(black, white);
+            &.book, 
+            &.contents {
+                @include setGoSignUpButton($purple, white);
+            }
+            &.subscribe {
+                @include setGoSignUpButton($white, $dark-purple);
+            }
+        }
+    }
+    
+    #intro-container {
+        @include setContainer($yellow);
+        min-height: 1300px;
+        .logo {
+            width: 130px;
+            padding-top: 110px; 
+            background-repeat: no-repeat;
+            img {
+                width: 100%;
+            }
+        }
+    
+        .copy-wrap {
+            position: relative;
+            top: -500px;
+            z-index: 1;
+            opacity: 0;
+            animation: moveCopies 1.5s ease-out 1.5s forwards;
+            .intro-main-copy {
+                @include setMainCopy($black);
+            }
+            
+            .intro-sub-copy {
+                @include setSubCopy($black);
+                strong {
+                    animation: fontColorChange 2s ease-out 2s forwards;
+                }
+            }
+        }
+    
+        .img-wrap {
+            position: relative;
+            top: -30px;
+            right: -30%;
+            width: 70%;
+            max-width: 967px;
+    
+            .book1-img {
+                @include setIntroBookMovement(5%, 15%, 36%);
+                animation: moveIntroBooks 2s ease-out forwards;
+            }
+            .book2-img {
+                @include setIntroBookMovement(4%, 15%, 45%);
+                animation: moveIntroBooks 2s ease-out 1s forwards;
+            }
+        }
+    }
+    
+    #slogan-container {
+        @include setContainer($yellow);
+        margin-top: 60px;
+        padding-left: 0px;
+        min-height: 1300px;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        // justify-content: center;
+        .copy-and-logo-container {
+    
+            display: flex;
+            z-index: 2;
+            margin-bottom: 200px;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            .slogan-main-copy {
+                position: relative;
+                z-index: 11;
+                padding-top: 130px;
+                font-family: $slogan-font;
+                font-size: 60px;
+                font-weight: 300;
+                letter-spacing: -5px;
+                strong {
+                    font-family: $slogan-font;
+                    font-weight: 900;
+                    color: $purple;
+                }
+            }
+        }
+        .shelf-image1 {
+            position: absolute;
+            top: 50px;
+            right: 0;
+        }
+        .shelf-image2 {
+            position: absolute;
+            top: 200px;
+            left: 0;
+        }
+        .shelf-image3 {
+            position: absolute;
+            top: 350px;
+            right: 150px;
+        }
+    
+        .slogan-and-logo {
+            position: absolute;
+            width:150px;
+            bottom: 15%;
+        }
+    }
+    
+    #book-introduction-container {
+        @include setContainer($yellow);
+        padding-bottom: 100px;
+        margin-top: 60px;
+        min-height: 1024px;     
+        .book.main-copy {
+            @include setMainCopy($black);
+            // font-size: $main-copy-size;
+        }
+        .book.sub-copy  {
+            @include setSubCopy($purple);
+        }
+        .descriptions {
+            margin-top: 30px;
+        }
+        .description {
+            @include setDescription();
+            position: relative;
+            z-index: 99;
+        }
+        .books-img-wrap {
+            display: flex;
+            position: relative;
+            width: 100%;
+            right: -5%;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            margin-top: -10%;
+            z-index: 1;
+            opacity: 0.5;
+            .books-wrap-book {
+                display: relative;
+                margin: 1%;
+                min-width: 6%;
+                width: 10%;
+                height: auto;
+                transition: all;
+            }
+            .show {
+                display: relative;
+                margin: 1%;
+                min-width: 6%;
+                width: 8%;
+                height: auto;
+                transform: translate(80px, 0);
+            }
+        }
+    }
+    
+    #genre-introduction-container {
+        @include setContainer($white);
+        min-height: 1024px;
+        transition: all 1s;
+        &::before {
+            overflow-x: hidden;
+            position: absolute;
+            display: block;
+            left: -50px;
+            content:'';
+            width: 103%;
+            background-color: $white;
+        }
+        &.black {
+            &::before {
+                overflow-x:hidden;
+                position: absolute;
+                display: block;
+                left: -50px;
+                content:'';
+                width: 103%;
+                animation: genrePageGradientEffect 0.7s ease-in-out;
+            }
+            background-color: $black;
+            * {
+                color: white;
+            }
+        }
+        .genre.main-copy {
+            @include setMainCopy($black);
+        }
+        .genre.sub-copy {
+            @include setSubCopy($purple);
+        }
+        .descriptions {
+            margin-top: 30px;
+        }
+        .description {
+            @include setDescription();
+        }
+        .rotated-box-wrapper {
+            position: relative;
+            top: -170px;
+            left: -5%;
+        }
+        .rotated-box {
+            &:nth-child(1) {
+                @include setRotateBox(-20px, 100px, 35px, 35px, $yellow, 10deg);
+            }
+            &:nth-child(2) {
+                @include setRotateBox(0, 50px, 50px, 50px, #EDD943, 30deg);
+                z-index: 2;
+            }
+            &:nth-child(3) {
+                @include setRotateBox(-20px, 0px, 60px, 60px, $purple, 20deg);
+            }
+            &:nth-child(4) {
+                @include setRotateBox(-40px, -100px, 60px, 60px, $white, 10deg);
+            }
+            &:nth-child(5) {
+                @include setRotateBox(-20px, -120px, 20px, 20px, #57CAF0, 60deg);
+                z-index: 1;
+            }
+            &:nth-child(6) {
+                @include setRotateBox(-25px, -140px, 50px, 50px, #EDD943, 30deg);
+            }
+            &:nth-child(7) {
+                @include setRotateBox(-10px, -300px, 35px, 35px, $dark-purple, 40deg);
+                z-index: 1;
+            }
+        }
+    }
+    
+    #contents-introduction-container {
+        position: relative;
+        overflow-y: hidden;
+        @include setContainer($white);
+        min-height: 1024px;
+        // position: relative;
+        // display: block;
+        .contents.main-copy {
+            @include setMainCopy($black);
+        }
+        .contents.sub-copy {
+            @include setSubCopy($purple);
+        }
+        .descriptions {
+            margin-top: 30px;
+        }
+        .description {
+            @include setDescription();
+        }
+        .contents-img-box {
+            margin-top: 0;
+            position: absolute;
+            z-index: 1;
+            top: 17%;
+            right: 0;
+            width: 60%;
+            display: flex;
+            flex-wrap: wrap;
+            .content {
+                position: relative;
+                &.first {
+                    top: -100px;
+                }
+                width: 45%;
+                background-repeat: no-repeat;
+                background-size: contain;
+                .content-first-model {
+                    position: relative;
+                    z-index: 1;
+                    width: 55%;
+                    top: -25%;
+                    // left: -2%;
+                    // bottom: 4%;
+                    // width: 25%;
+                }
+                .content-first-btn-box {
+                    position: relative;
+                    z-index: 2;
+                    top: -40%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+                .content-second-img {
+                    position: relative;
+                    top: -35%;
+                    left: 1%;
+                    width: 60%;
+                }
+            }
+        }
+    }
+    
+    
+    #subscribe-option-introduction-container {
+        @include setContainer($dark-purple);
+        padding-left: 0;
+        overflow-x: visible;
+        min-height: 2000px;
+        * {
+            color: white;
+        }
+        .main-copy {
+            @include setMainCopy($white);
+            padding-left: 5%;
+        }
+        .sub-copy {
+            @include setSubCopy($yellow);
+            padding-left: 5%;
+        }
+        .descriptions {
+            margin-top: 30px;
+            padding-left: 5%;
+        }
+        .description {
+            @include setDescription()
+        }
+        .presents-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+        }
+        .present-box {
+            max-width: 400px;
+            width: 100%;
+            &.active {
+                animation: presentBoxActive 1s forwards;
+            }
+            .head {
+                width: 255px;
+                height: 128px;
+                z-index: 101;
+                &.animation {
+                    animation: presentBoxHeadRotateAnimation 1s 0.5s ease-out forwards;
+                }
+            }
+            .body {
+                width: 225px;
+                height: 222px;
+                &.animation {
+                    animation: presentBoxBodyRotateAnimation 1s 0.4s ease-out;
+                }
+            }
+        }
+        .present-infos {
+            display: flex;
+            flex-direction: column;
+            .present-info {
+                max-width:400px;
+                width:100%;
+            }
+        }
+        .original-logo {
+            display: inline;
+            position: relative;
+            top: 300px;
+            left: 55px;
+        }
+    }
+    
+    #fee-introduction-container {
+        * {
+            color: $white;
+            list-style: none;
+        }
+        position: relative;
+        padding-top: 60px;
+        padding-left: 0px;
+        min-height: 1300px;
+        background-color: $black;
+    
+        .fee.sub-copy {
+            @include setSubCopy($white);
+            padding-left: 30px;
+        }
+        .fee.main-copy {
+            @include setMainCopy($white);
+            padding-left: 30px;
+            font-size: 50px;
+        }
+        .fee-description-wraps {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            padding-left: 2%;
+            flex-direction: row;
+            width: 96%;
+            .ebook-subscription-fee-wrap + .paper-subscription-fee-wrap {
+                margin-left: 3%;
+            }
+        }
+        .ebook-subscription-fee-wrap {
+            @include setSubscriptionFeeWrap(60%, 11px);
+            .fee-wrap-header {
+                @include setFeeWrapHeader($yellow);
+            }
+            .fee-wrap-head-copy {
+                @include setFeeWrapHeadCopy(21px)
+            }
+            .fee {
+                @include setSubscriptionWrapperHeadCopy(#A69B4D, 15px, 15px);
+            }
+            .fee-wrap-body {
+                @include setFeeWrapBody();
+                padding-bottom: 150px;
+            }
+            .fee-wrap-btn-box {
+                @include setFeeWrapBtnBox();
+                .month-subscribe-btn {
+                    @include setSubscriptionWrapperBtn($yellow, black);
+                }
+                .year-subscribe-btn {
+                    @include setSubscriptionWrapperBtn(#FFC004, black);
+                }
+            }
+        }
+        .paper-subscription-fee-wrap {
+            @include setSubscriptionFeeWrap(60%, 11px);
+            .fee-wrap-header {
+                @include setFeeWrapHeader(#6A31A4);
+                * {
+                    color: white;
+                }
+            }
+            .fee-wrap-head-copy {
+                @include setFeeWrapHeadCopy(21px);
+            }
+            .fee {
+                @include setSubscriptionWrapperHeadCopy(#c5c5c5, 15px, 15px);
+            }
+            .fee-wrap-body {
+                @include setFeeWrapBody();
+                padding-bottom: 100px;
+            }
+            .fee-wrap-btn-box {
+                @include setFeeWrapBtnBox();
+
+                .month-subscribe-btn {
+                    @include setSubscriptionWrapperBtn(#A87DDF,white );
+                }
+                .year-subscribe-btn {
+                    @include setSubscriptionWrapperBtn(#6A31A4, white);
+                }
+            }
+        }
+    }
+    
 }

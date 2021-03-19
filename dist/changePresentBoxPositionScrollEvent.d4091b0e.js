@@ -119,12 +119,14 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"js/changePresentBoxPositionScrollEvent.js":[function(require,module,exports) {
 var section = document.querySelector('#subscribe-option-introduction-container');
+var presentThird = document.querySelector('.present-info.third');
 window.addEventListener('scroll', function () {
   var presentBox = document.querySelector('.present-box');
+  var bot = presentThird.getBoundingClientRect().bottom - section.getBoundingClientRect().bottom;
 
   if (innerHeight >= section.getBoundingClientRect().bottom) {
     presentBox.style.position = 'absolute';
-    presentBox.style.bottom = '-15%';
+    presentBox.style.bottom = "".concat(bot, "px");
   }
 
   ;
