@@ -130,6 +130,9 @@ window.addEventListener('scroll', function () {
     navLogoDefault.style.opacity = 1;
     navLogoDefault.style.zIndex = 99;
     navLogoDefault.style.transition = 'all 1s';
+  } else {
+    navLogoDefault.style.opacity = 0;
+    return;
   }
 
   if (innerHeight * 0.2 > genreSection.getBoundingClientRect().y && -innerHeight < genreSection.getBoundingClientRect().y) {
