@@ -4,6 +4,16 @@ https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq
 
 ## 2021.03.19
 
+### commit "slogan-container을 제외한 전체 반응형 구현"
+
+1. room-img position 변경을 통한 intro 효과 구현
+2. flex 구조 및 width 등 반응형으로 조정
+
+### commit "subscribe-option-introduction-container,fee-introduction-container 반응형 구현"
+
+1. 전반적인 크기 반응형으로 조정 및 flex 변경
+2. 768px 이하에서 선물상자가 밑으로 내려가지 않는 현상 발생 -> changePresentBoxPositionScrollEvent에서 style bottom 스크롤마다 조정하며 이상현상 수정
+
 ### commit "changeNavLogoScrollEvent 구현"
 
 1. 스크롤에 따른 로고 색깔 변화 구현

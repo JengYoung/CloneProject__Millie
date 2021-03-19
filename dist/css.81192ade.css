@@ -76,12 +76,15 @@
   font-weight: 900;
   color: #333333; }
 
+body {
+  overflow-x: hidden; }
+
 img {
   max-width: 100%;
   vertical-align: top; }
 
 /******************************************/
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   #pages-container {
     background-color: #FFEB60;
     min-width: 320px;
@@ -212,7 +215,7 @@ img {
   #intro-container {
     background-color: #FFEB60;
     max-width: 100%;
-    padding-left: 50px;
+    padding-left: 5%;
     overflow-x: hidden;
     min-height: 1300px; }
     #intro-container .logo {
@@ -227,14 +230,14 @@ img {
       z-index: 1;
       opacity: 0;
       animation: moveCopies 1.5s ease-out 1.5s forwards; } }
-    @media (min-width: 768px) and (min-width: 768px) {
+    @media (min-width: 769px) and (min-width: 769px) {
       #intro-container .copy-wrap .intro-main-copy {
         position: relative;
         padding-top: 40px;
         font-size: 80px;
         font-weight: 900;
         color: #333333; } }
-    @media (min-width: 768px) and (max-width: 768px) {
+    @media (min-width: 769px) and (max-width: 768px) {
       #intro-container .copy-wrap .intro-main-copy {
         position: relative;
         padding-top: 40px;
@@ -242,7 +245,7 @@ img {
         font-weight: 900;
         color: #333333; } }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
       #intro-container .copy-wrap .intro-sub-copy {
         position: relative;
         margin-top: 20px;
@@ -274,7 +277,7 @@ img {
   #slogan-container {
     background-color: #FFEB60;
     max-width: 100%;
-    padding-left: 50px;
+    padding-left: 5%;
     overflow-x: hidden;
     margin-top: 60px;
     padding-left: 0px;
@@ -321,19 +324,19 @@ img {
   #book-introduction-container {
     background-color: #FFEB60;
     max-width: 100%;
-    padding-left: 50px;
+    padding-left: 5%;
     overflow-x: hidden;
     padding-bottom: 100px;
     margin-top: 60px;
     min-height: 1024px; } }
-  @media (min-width: 768px) and (min-width: 768px) {
+  @media (min-width: 769px) and (min-width: 769px) {
     #book-introduction-container .book.main-copy {
       position: relative;
       padding-top: 40px;
       font-size: 80px;
       font-weight: 900;
       color: #333333; } }
-  @media (min-width: 768px) and (max-width: 768px) {
+  @media (min-width: 769px) and (max-width: 768px) {
     #book-introduction-container .book.main-copy {
       position: relative;
       padding-top: 40px;
@@ -341,7 +344,7 @@ img {
       font-weight: 900;
       color: #333333; } }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     #book-introduction-container .book.sub-copy {
       position: relative;
       margin-top: 20px;
@@ -371,7 +374,6 @@ img {
       z-index: 1;
       opacity: 0.5; }
       #book-introduction-container .books-img-wrap .books-wrap-book {
-        display: relative;
         margin: 1%;
         min-width: 6%;
         width: 10%;
@@ -387,7 +389,7 @@ img {
   #genre-introduction-container {
     background-color: #FDFAF3;
     max-width: 100%;
-    padding-left: 50px;
+    padding-left: 5%;
     overflow-x: hidden;
     min-height: 1024px;
     transition: all 1s; }
@@ -411,14 +413,14 @@ img {
         animation: genrePageGradientEffect 0.7s ease-in-out; }
       #genre-introduction-container.black * {
         color: white; } }
-  @media (min-width: 768px) and (min-width: 768px) {
+  @media (min-width: 769px) and (min-width: 769px) {
     #genre-introduction-container .genre.main-copy {
       position: relative;
       padding-top: 40px;
       font-size: 80px;
       font-weight: 900;
       color: #333333; } }
-  @media (min-width: 768px) and (max-width: 768px) {
+  @media (min-width: 769px) and (max-width: 768px) {
     #genre-introduction-container .genre.main-copy {
       position: relative;
       padding-top: 40px;
@@ -426,7 +428,7 @@ img {
       font-weight: 900;
       color: #333333; } }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     #genre-introduction-container .genre.sub-copy {
       position: relative;
       margin-top: 20px;
@@ -511,17 +513,17 @@ img {
     overflow-y: hidden;
     background-color: #FDFAF3;
     max-width: 100%;
-    padding-left: 50px;
+    padding-left: 5%;
     overflow-x: hidden;
     min-height: 1024px; } }
-  @media (min-width: 768px) and (min-width: 768px) {
+  @media (min-width: 769px) and (min-width: 769px) {
     #contents-introduction-container .contents.main-copy {
       position: relative;
       padding-top: 40px;
       font-size: 80px;
       font-weight: 900;
       color: #333333; } }
-  @media (min-width: 768px) and (max-width: 768px) {
+  @media (min-width: 769px) and (max-width: 768px) {
     #contents-introduction-container .contents.main-copy {
       position: relative;
       padding-top: 40px;
@@ -529,7 +531,7 @@ img {
       font-weight: 900;
       color: #333333; } }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     #contents-introduction-container .contents.sub-copy {
       position: relative;
       margin-top: 20px;
@@ -582,20 +584,20 @@ img {
   #subscribe-option-introduction-container {
     background-color: #542385;
     max-width: 100%;
-    padding-left: 50px;
+    padding-left: 5%;
     overflow-x: hidden;
     overflow-x: visible;
     min-height: 2000px; }
     #subscribe-option-introduction-container * {
       color: white; } }
-  @media (min-width: 768px) and (min-width: 768px) {
+  @media (min-width: 769px) and (min-width: 769px) {
     #subscribe-option-introduction-container .main-copy {
       position: relative;
       padding-top: 40px;
       font-size: 80px;
       font-weight: 900;
       color: #FDFAF3; } }
-  @media (min-width: 768px) and (max-width: 768px) {
+  @media (min-width: 769px) and (max-width: 768px) {
     #subscribe-option-introduction-container .main-copy {
       position: relative;
       padding-top: 40px;
@@ -603,7 +605,7 @@ img {
       font-weight: 900;
       color: #FDFAF3; } }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     #subscribe-option-introduction-container .sub-copy {
       position: relative;
       margin-top: 20px;
@@ -666,14 +668,14 @@ img {
         color: #FDFAF3; }
     #fee-introduction-container .fee.main-copy {
       font-size: 50px; } }
-    @media (min-width: 768px) and (min-width: 768px) {
+    @media (min-width: 769px) and (min-width: 769px) {
       #fee-introduction-container .fee.main-copy {
         position: relative;
         padding-top: 40px;
         font-size: 80px;
         font-weight: 900;
         color: #FDFAF3; } }
-    @media (min-width: 768px) and (max-width: 768px) {
+    @media (min-width: 769px) and (max-width: 768px) {
       #fee-introduction-container .fee.main-copy {
         position: relative;
         padding-top: 40px;
@@ -681,7 +683,7 @@ img {
         font-weight: 900;
         color: #FDFAF3; } }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     #fee-introduction-container .fee-description-wraps {
       position: relative;
       bottom: 50px;
@@ -1003,9 +1005,9 @@ img {
   #intro-container {
     background-color: #FFEB60;
     max-width: 100%;
-    padding-left: 50px;
+    padding-left: 5%;
     overflow-x: hidden;
-    min-height: 1300px; }
+    min-height: 677px; }
     #intro-container .logo {
       width: 130px;
       padding-top: 110px;
@@ -1018,7 +1020,7 @@ img {
       z-index: 1;
       opacity: 0;
       animation: moveCopies 1.5s ease-out 1.5s forwards; } }
-    @media (max-width: 768px) and (min-width: 768px) {
+    @media (max-width: 768px) and (min-width: 769px) {
       #intro-container .copy-wrap .intro-main-copy {
         position: relative;
         padding-top: 40px;
@@ -1043,11 +1045,13 @@ img {
         #intro-container .copy-wrap .intro-sub-copy strong {
           animation: fontColorChange 2s ease-out 2s forwards; }
     #intro-container .img-wrap {
-      position: relative;
-      top: -30px;
-      right: -30%;
-      width: 70%;
-      max-width: 967px; }
+      position: absolute;
+      top: 50%;
+      z-index: 50;
+      width: 135%; }
+      #intro-container .img-wrap .room.img {
+        width: 100%;
+        height: 100%; }
       #intro-container .img-wrap .book1-img {
         position: absolute;
         width: 5%;
@@ -1065,7 +1069,7 @@ img {
   #slogan-container {
     background-color: #FFEB60;
     max-width: 100%;
-    padding-left: 50px;
+    padding-left: 5%;
     overflow-x: hidden;
     margin-top: 60px;
     padding-left: 0px;
@@ -1112,12 +1116,12 @@ img {
   #book-introduction-container {
     background-color: #FFEB60;
     max-width: 100%;
-    padding-left: 50px;
+    padding-left: 5%;
     overflow-x: hidden;
     padding-bottom: 100px;
     margin-top: 60px;
     min-height: 1024px; } }
-  @media (max-width: 768px) and (min-width: 768px) {
+  @media (max-width: 768px) and (min-width: 769px) {
     #book-introduction-container .book.main-copy {
       position: relative;
       padding-top: 40px;
@@ -1155,19 +1159,17 @@ img {
       display: flex;
       position: relative;
       width: 100%;
-      right: -5%;
+      right: -10%;
       align-items: flex-end;
       flex-wrap: wrap;
       margin-top: -10%;
       z-index: 1;
       opacity: 0.5; }
       #book-introduction-container .books-img-wrap .books-wrap-book {
-        display: relative;
-        margin: 1%;
+        margin: 0.5%;
         min-width: 6%;
-        width: 10%;
-        height: auto;
-        transition: all; }
+        width: 15%;
+        height: auto; }
       #book-introduction-container .books-img-wrap .show {
         display: relative;
         margin: 1%;
@@ -1178,7 +1180,7 @@ img {
   #genre-introduction-container {
     background-color: #FDFAF3;
     max-width: 100%;
-    padding-left: 50px;
+    padding-left: 5%;
     overflow-x: hidden;
     min-height: 1024px;
     transition: all 1s; }
@@ -1202,7 +1204,7 @@ img {
         animation: genrePageGradientEffect 0.7s ease-in-out; }
       #genre-introduction-container.black * {
         color: white; } }
-  @media (max-width: 768px) and (min-width: 768px) {
+  @media (max-width: 768px) and (min-width: 769px) {
     #genre-introduction-container .genre.main-copy {
       position: relative;
       padding-top: 40px;
@@ -1302,33 +1304,38 @@ img {
     overflow-y: hidden;
     background-color: #FDFAF3;
     max-width: 100%;
-    padding-left: 50px;
+    padding-left: 5%;
     overflow-x: hidden;
-    min-height: 1024px; } }
-  @media (max-width: 768px) and (min-width: 768px) {
+    padding-left: 0;
+    min-height: 1024px; }
     #contents-introduction-container .contents.main-copy {
-      position: relative;
-      padding-top: 40px;
-      font-size: 80px;
-      font-weight: 900;
-      color: #333333; } }
-  @media (max-width: 768px) and (max-width: 768px) {
-    #contents-introduction-container .contents.main-copy {
-      position: relative;
-      padding-top: 40px;
-      font-size: 40px;
-      font-weight: 900;
-      color: #333333; } }
+      padding-left: 5%; } }
+    @media (max-width: 768px) and (min-width: 769px) {
+      #contents-introduction-container .contents.main-copy {
+        position: relative;
+        padding-top: 40px;
+        font-size: 80px;
+        font-weight: 900;
+        color: #333333; } }
+    @media (max-width: 768px) and (max-width: 768px) {
+      #contents-introduction-container .contents.main-copy {
+        position: relative;
+        padding-top: 40px;
+        font-size: 40px;
+        font-weight: 900;
+        color: #333333; } }
 
 @media (max-width: 768px) {
     #contents-introduction-container .contents.sub-copy {
       position: relative;
       margin-top: 20px;
-      font-size: 23px; }
+      font-size: 23px;
+      padding-left: 5%; }
       #contents-introduction-container .contents.sub-copy strong {
         color: #A451F7; }
     #contents-introduction-container .descriptions {
-      margin-top: 30px; }
+      margin-top: 30px;
+      padding-left: 5%; }
     #contents-introduction-container .description {
       margin-bottom: 15px; }
       #contents-introduction-container .description p {
@@ -1338,30 +1345,28 @@ img {
           font-family: 'Noto Sans KR', sans-serif;
           font-weight: 900; }
     #contents-introduction-container .contents-img-box {
-      margin-top: 0;
-      position: absolute;
-      z-index: 1;
-      top: 17%;
-      right: 0;
-      width: 60%;
+      position: relative;
+      margin-top: 50%;
+      width: 100%;
       display: flex;
+      justify-content: center;
       flex-wrap: wrap; }
       #contents-introduction-container .contents-img-box .content {
+        min-width: 85%;
         position: relative;
-        width: 45%;
+        width: 50%;
         background-repeat: no-repeat;
         background-size: contain; }
-        #contents-introduction-container .contents-img-box .content.first {
-          top: -100px; }
         #contents-introduction-container .contents-img-box .content .content-first-model {
-          position: relative;
+          position: absolute;
           z-index: 1;
-          width: 55%;
-          top: -25%; }
+          width: 65%;
+          top: 45%;
+          left: -2%; }
         #contents-introduction-container .contents-img-box .content .content-first-btn-box {
-          position: relative;
+          position: absolute;
           z-index: 2;
-          top: -40%;
+          top: 85%;
           width: 100%;
           display: flex;
           justify-content: center; }
@@ -1373,7 +1378,7 @@ img {
   #subscribe-option-introduction-container {
     background-color: #542385;
     max-width: 100%;
-    padding-left: 50px;
+    padding-left: 5%;
     overflow-x: hidden;
     padding-left: 0;
     overflow-x: visible;
@@ -1382,7 +1387,7 @@ img {
       color: white; }
     #subscribe-option-introduction-container .main-copy {
       padding-left: 5%; } }
-    @media (max-width: 768px) and (min-width: 768px) {
+    @media (max-width: 768px) and (min-width: 769px) {
       #subscribe-option-introduction-container .main-copy {
         position: relative;
         padding-top: 40px;
@@ -1462,13 +1467,13 @@ img {
       position: relative;
       margin-top: 20px;
       font-size: 23px;
-      padding-left: 30px; }
+      padding-left: 5%; }
       #fee-introduction-container .fee.sub-copy strong {
         color: #FDFAF3; }
     #fee-introduction-container .fee.main-copy {
-      padding-left: 30px;
+      padding-left: 5%;
       font-size: 50px; } }
-    @media (max-width: 768px) and (min-width: 768px) {
+    @media (max-width: 768px) and (min-width: 769px) {
       #fee-introduction-container .fee.main-copy {
         position: relative;
         padding-top: 40px;

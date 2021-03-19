@@ -23,7 +23,7 @@ $slogan-font: "supilmyeongjo010";
 @mixin setContainer($backgroundColor) {
     background-color: $backgroundColor;
     max-width: 100%;
-    padding-left: 50px;
+    padding-left: 5%;
     overflow-x: hidden;
 }
 @mixin setBarBtn($backgroundColor, $color) {
@@ -44,7 +44,7 @@ $slogan-font: "supilmyeongjo010";
     }
 }
 @mixin setMainCopy($color) {
-    @media (min-width: 768px) {
+    @media (min-width: 769px) {
         position: relative;
         padding-top: 40px;
         font-size: $main-copy-size;
@@ -317,6 +317,9 @@ $slogan-font: "supilmyeongjo010";
     color: $black;
 }
 
+body {
+    overflow-x: hidden;
+}
 img {
     max-width: 100%;
     vertical-align: top;
@@ -324,7 +327,7 @@ img {
 
 /******************************************/
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     #pages-container {
         background-color: $yellow;
         min-width: 320px;
@@ -519,7 +522,6 @@ img {
             z-index: 1;
             opacity: 0.5;
             .books-wrap-book {
-                display: relative;
                 margin: 1%;
                 min-width: 6%;
                 width: 10%;
@@ -885,7 +887,7 @@ img {
     
     #intro-container {
         @include setContainer($yellow);
-        min-height: 1300px;
+        min-height: 677px;
         .logo {
             width: 130px;
             padding-top: 110px; 
@@ -914,12 +916,14 @@ img {
         }
     
         .img-wrap {
-            position: relative;
-            top: -30px;
-            right: -30%;
-            width: 70%;
-            max-width: 967px;
-    
+            position: absolute;
+            top: 50%;
+            z-index: 50;
+            width: 135%;
+            .room.img {
+                width: 100%;
+                height: 100%;
+            }
             .book1-img {
                 @include setIntroBookMovement(5%, 15%, 36%);
                 animation: moveIntroBooks 2s ease-out forwards;
@@ -1011,19 +1015,17 @@ img {
             display: flex;
             position: relative;
             width: 100%;
-            right: -5%;
+            right: -10%;
             align-items: flex-end;
             flex-wrap: wrap;
             margin-top: -10%;
             z-index: 1;
             opacity: 0.5;
             .books-wrap-book {
-                display: relative;
-                margin: 1%;
+                margin: 0.5%;
                 min-width: 6%;
-                width: 10%;
+                width: 15%;
                 height: auto;
-                transition: all;
             }
             .show {
                 display: relative;
@@ -1113,51 +1115,57 @@ img {
         position: relative;
         overflow-y: hidden;
         @include setContainer($white);
+        padding-left: 0;
         min-height: 1024px;
         // position: relative;
         // display: block;
         .contents.main-copy {
             @include setMainCopy($black);
+            padding-left: 5%;
         }
         .contents.sub-copy {
             @include setSubCopy($purple);
+            padding-left: 5%;
         }
         .descriptions {
             margin-top: 30px;
+            padding-left: 5%;
         }
         .description {
             @include setDescription();
         }
         .contents-img-box {
-            margin-top: 0;
-            position: absolute;
-            z-index: 1;
-            top: 17%;
-            right: 0;
-            width: 60%;
+            position: relative;
+            // z-index: 1;
+            // top: 17%;
+            // right: 0;
+            margin-top: 50%;
+            width: 100%;
             display: flex;
+            justify-content: center;
             flex-wrap: wrap;
             .content {
+                min-width: 85%;
                 position: relative;
-                &.first {
-                    top: -100px;
-                }
-                width: 45%;
+                // &.first {
+                //     top: -100px;
+                // } 
+                width: 50%;
                 background-repeat: no-repeat;
                 background-size: contain;
                 .content-first-model {
-                    position: relative;
+                    position: absolute;
                     z-index: 1;
-                    width: 55%;
-                    top: -25%;
-                    // left: -2%;
+                    width: 65%;
+                    top: 45%;
+                    left: -2%;
                     // bottom: 4%;
                     // width: 25%;
                 }
                 .content-first-btn-box {
-                    position: relative;
+                    position: absolute;
                     z-index: 2;
-                    top: -40%;
+                    top: 85%;
                     width: 100%;
                     display: flex;
                     justify-content: center;
@@ -1254,11 +1262,11 @@ img {
     
         .fee.sub-copy {
             @include setSubCopy($white);
-            padding-left: 30px;
+            padding-left: 5%;
         }
         .fee.main-copy {
             @include setMainCopy($white);
-            padding-left: 30px;
+            padding-left: 5%;
             font-size: 50px;
         }
         .fee-description-wraps {
