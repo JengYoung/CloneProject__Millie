@@ -117,15 +117,22 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/changeGenrePageBackgroundColor.js":[function(require,module,exports) {
-var genreContainer = document.querySelector("#genre-introduction-container");
+})({"js/changeNavLogoScrollEvent.js":[function(require,module,exports) {
+var navLogo = document.querySelector('#nav-logo');
+var genreSection = document.querySelector('#genre-introduction-container');
+console.log(genreSection);
+navLogo.style.opacity = 0;
 window.addEventListener('scroll', function () {
-  var changePointY = 200;
-
-  if (genreContainer.offsetTop - document.documentElement.scrollTop < changePointY) {
-    genreContainer.classList.add("black");
+  if (window.scrollY > 400) {
+    navLogo.style.opacity = 1;
+    navLogo.style.zIndex = 99;
+    navLogo.style.transition = 'all 1s';
   } else {
-    genreContainer.classList.remove("black");
+    navLogo.style.opacity = 0;
+  }
+
+  if (innerHeight * 1.2 > genreSection.getBoundingClientRect().y && innerHeight * -0.8 < genreSection.getBoundingClientRect().y) {
+    navLogo.style.color = 'yellow';
   }
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -332,5 +339,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/changeGenrePageBackgroundColor.js"], null)
-//# sourceMappingURL=/changeGenrePageBackgroundColor.59a4dd40.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/changeNavLogoScrollEvent.js"], null)
+//# sourceMappingURL=/changeNavLogoScrollEvent.1e972a6a.js.map

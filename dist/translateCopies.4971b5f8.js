@@ -117,15 +117,41 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/changeGenrePageBackgroundColor.js":[function(require,module,exports) {
-var genreContainer = document.querySelector("#genre-introduction-container");
+})({"js/translateCopies.js":[function(require,module,exports) {
+var mainCopies = document.querySelectorAll('.main-copy');
+var subCopies = document.querySelectorAll('.sub-copy');
+var descriptions = document.querySelectorAll('.description');
 window.addEventListener('scroll', function () {
-  var changePointY = 200;
+  for (var i = 0; i < mainCopies.length; i++) {
+    var nowMainCopy = mainCopies[i];
+    var nowMainCopyHeight = nowMainCopy.getBoundingClientRect().y;
 
-  if (genreContainer.offsetTop - document.documentElement.scrollTop < changePointY) {
-    genreContainer.classList.add("black");
-  } else {
-    genreContainer.classList.remove("black");
+    if (innerHeight > nowMainCopyHeight) {
+      var setTranslateY = (innerHeight * 0.9 - nowMainCopyHeight) / innerHeight;
+      nowMainCopy.style.transform = "translate(0, ".concat(setTranslateY > 1 ? 100 : setTranslateY * 100, "px)");
+    }
+  }
+
+  for (var _i = 0; _i < subCopies.length; _i++) {
+    var nowSubCopy = subCopies[_i];
+    var nowSubCopyHeight = nowSubCopy.getBoundingClientRect().y;
+
+    if (innerHeight * 1.4 > nowSubCopyHeight) {
+      var _setTranslateY = (innerHeight * 1.4 - nowSubCopyHeight) / innerHeight;
+
+      nowSubCopy.style.transform = "translate(0, ".concat(_setTranslateY > 1 ? 100 : _setTranslateY * 100, "px)");
+    }
+  }
+
+  for (var _i2 = 0; _i2 < descriptions.length; _i2++) {
+    var nowDescription = descriptions[_i2];
+    var nowDescriptionHeight = nowDescription.getBoundingClientRect().y;
+
+    if (innerHeight * 1.5 > nowDescriptionHeight) {
+      var _setTranslateY2 = (innerHeight * 1.5 - nowDescriptionHeight) / innerHeight;
+
+      nowDescription.style.transform = "translate(0, ".concat(_setTranslateY2 > 1 ? 100 : _setTranslateY2 * 100, "px)");
+    }
   }
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -332,5 +358,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/changeGenrePageBackgroundColor.js"], null)
-//# sourceMappingURL=/changeGenrePageBackgroundColor.59a4dd40.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/translateCopies.js"], null)
+//# sourceMappingURL=/translateCopies.4971b5f8.js.map

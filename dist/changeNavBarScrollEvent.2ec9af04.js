@@ -117,15 +117,15 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/changeGenrePageBackgroundColor.js":[function(require,module,exports) {
-var genreContainer = document.querySelector("#genre-introduction-container");
+})({"js/changeNavBarScrollEvent.js":[function(require,module,exports) {
+var navLogo = document.querySelector('#nav-logo');
+navLogo.style.opacity = 0;
 window.addEventListener('scroll', function () {
-  var changePointY = 200;
-
-  if (genreContainer.offsetTop - document.documentElement.scrollTop < changePointY) {
-    genreContainer.classList.add("black");
+  if (window.scrollY > 400) {
+    navLogo.style.opacity = 1;
+    navLogo.style.transition = 'all 1s';
   } else {
-    genreContainer.classList.remove("black");
+    navLogo.style.opacity = 0;
   }
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -156,7 +156,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56041" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65375" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -332,5 +332,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/changeGenrePageBackgroundColor.js"], null)
-//# sourceMappingURL=/changeGenrePageBackgroundColor.59a4dd40.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/changeNavBarScrollEvent.js"], null)
+//# sourceMappingURL=/changeNavBarScrollEvent.2ec9af04.js.map

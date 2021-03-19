@@ -1,5 +1,5 @@
-const mainCopy = document.querySelector(".main-copy");
-const subCopy = document.querySelector(".sub-copy");
+const mainCopy = document.querySelector(".intro-main-copy");
+const subCopy = document.querySelector(".intro-sub-copy");
 const imgWrap = document.querySelector(".img-wrap");
 const opacityZeroHeight = 360;
 window.addEventListener('scroll', () => {

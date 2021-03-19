@@ -118,8 +118,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/introSetOpacity.js":[function(require,module,exports) {
-var mainCopy = document.querySelector(".main-copy");
-var subCopy = document.querySelector(".sub-copy");
+var mainCopy = document.querySelector(".intro-main-copy");
+var subCopy = document.querySelector(".intro-sub-copy");
 var imgWrap = document.querySelector(".img-wrap");
 var opacityZeroHeight = 360;
 window.addEventListener('scroll', function () {
@@ -163,7 +163,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65375" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56041" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

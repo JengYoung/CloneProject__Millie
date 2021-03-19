@@ -220,19 +220,19 @@ img {
     z-index: 1;
     opacity: 0;
     animation: moveCopies 1.5s ease-out 1.5s forwards; }
-    #intro-container .copy-wrap .main-copy {
+    #intro-container .copy-wrap .intro-main-copy {
       position: relative;
       padding-top: 40px;
       font-size: 80px;
       font-weight: 900;
       color: #333333; }
-    #intro-container .copy-wrap .sub-copy {
+    #intro-container .copy-wrap .intro-sub-copy {
       position: relative;
       margin-top: 20px;
       font-size: 23px; }
-      #intro-container .copy-wrap .sub-copy strong {
+      #intro-container .copy-wrap .intro-sub-copy strong {
         color: #333333; }
-      #intro-container .copy-wrap .sub-copy strong {
+      #intro-container .copy-wrap .intro-sub-copy strong {
         animation: fontColorChange 2s ease-out 2s forwards; }
   #intro-container .img-wrap {
     position: relative;
@@ -274,7 +274,7 @@ img {
     flex-direction: column;
     justify-content: space-between;
     align-items: center; }
-    #slogan-container .copy-and-logo-container .main-copy {
+    #slogan-container .copy-and-logo-container .slogan-main-copy {
       position: relative;
       z-index: 11;
       padding-top: 130px;
@@ -282,7 +282,7 @@ img {
       font-size: 60px;
       font-weight: 300;
       letter-spacing: -5px; }
-      #slogan-container .copy-and-logo-container .main-copy strong {
+      #slogan-container .copy-and-logo-container .slogan-main-copy strong {
         font-family: "supilmyeongjo010";
         font-weight: 900;
         color: #A451F7; }
@@ -311,17 +311,17 @@ img {
   padding-bottom: 100px;
   margin-top: 60px;
   min-height: 1024px; }
-  #book-introduction-container .book-main-copy {
+  #book-introduction-container .book.main-copy {
     position: relative;
     padding-top: 40px;
     font-size: 80px;
     font-weight: 900;
     color: #333333; }
-  #book-introduction-container .book-sub-copy {
+  #book-introduction-container .book.sub-copy {
     position: relative;
     margin-top: 20px;
     font-size: 23px; }
-    #book-introduction-container .book-sub-copy strong {
+    #book-introduction-container .book.sub-copy strong {
       color: #A451F7; }
   #book-introduction-container .descriptions {
     margin-top: 30px; }
@@ -387,17 +387,17 @@ img {
       animation: genrePageGradientEffect 0.7s ease-in-out; }
     #genre-introduction-container.black * {
       color: white; }
-  #genre-introduction-container .genre-main-copy {
+  #genre-introduction-container .genre.main-copy {
     position: relative;
     padding-top: 40px;
     font-size: 80px;
     font-weight: 900;
     color: #333333; }
-  #genre-introduction-container .genre-sub-copy {
+  #genre-introduction-container .genre.sub-copy {
     position: relative;
     margin-top: 20px;
     font-size: 23px; }
-    #genre-introduction-container .genre-sub-copy strong {
+    #genre-introduction-container .genre.sub-copy strong {
       color: #A451F7; }
   #genre-introduction-container .descriptions {
     margin-top: 30px; }
@@ -481,17 +481,17 @@ img {
   padding-left: 50px;
   overflow-x: hidden;
   min-height: 1024px; }
-  #contents-introduction-container .contents-main-copy {
+  #contents-introduction-container .contents.main-copy {
     position: relative;
     padding-top: 40px;
     font-size: 80px;
     font-weight: 900;
     color: #333333; }
-  #contents-introduction-container .contents-sub-copy {
+  #contents-introduction-container .contents.sub-copy {
     position: relative;
     margin-top: 20px;
     font-size: 23px; }
-    #contents-introduction-container .contents-sub-copy strong {
+    #contents-introduction-container .contents.sub-copy strong {
       color: #A451F7; }
   #contents-introduction-container .descriptions {
     margin-top: 30px; }
@@ -607,13 +607,13 @@ img {
   #fee-introduction-container * {
     color: #FDFAF3;
     list-style: none; }
-  #fee-introduction-container .fee-sub-copy {
+  #fee-introduction-container .fee.sub-copy {
     position: relative;
     margin-top: 20px;
     font-size: 23px; }
-    #fee-introduction-container .fee-sub-copy strong {
+    #fee-introduction-container .fee.sub-copy strong {
       color: #FDFAF3; }
-  #fee-introduction-container .fee-main-copy {
+  #fee-introduction-container .fee.main-copy {
     position: relative;
     padding-top: 40px;
     font-size: 80px;

@@ -377,11 +377,11 @@ img {
         z-index: 1;
         opacity: 0;
         animation: moveCopies 1.5s ease-out 1.5s forwards;
-        .main-copy {
+        .intro-main-copy {
             @include setMainCopy($black);
         }
         
-        .sub-copy {
+        .intro-sub-copy {
             @include setSubCopy($black);
             strong {
                 animation: fontColorChange 2s ease-out 2s forwards;
@@ -425,7 +425,7 @@ img {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        .main-copy {
+        .slogan-main-copy {
             position: relative;
             z-index: 11;
             padding-top: 130px;
@@ -468,11 +468,11 @@ img {
     padding-bottom: 100px;
     margin-top: 60px;
     min-height: 1024px;     
-    .book-main-copy {
+    .book.main-copy {
         @include setMainCopy($black);
         // font-size: $main-copy-size;
     }
-    .book-sub-copy  {
+    .book.sub-copy  {
         @include setSubCopy($purple);
     }
     .descriptions {
@@ -540,10 +540,10 @@ img {
             color: white;
         }
     }
-    .genre-main-copy {
+    .genre.main-copy {
         @include setMainCopy($black);
     }
-    .genre-sub-copy {
+    .genre.sub-copy {
         @include setSubCopy($purple);
     }
     .descriptions {
@@ -592,10 +592,10 @@ img {
     min-height: 1024px;
     // position: relative;
     // display: block;
-    .contents-main-copy {
+    .contents.main-copy {
         @include setMainCopy($black);
     }
-    .contents-sub-copy {
+    .contents.sub-copy {
         @include setSubCopy($purple);
     }
     .descriptions {
@@ -720,10 +720,10 @@ img {
     min-height: 1024px;
     background-color: $black;
 
-    .fee-sub-copy {
+    .fee.sub-copy {
         @include setSubCopy($white);
     }
-    .fee-main-copy {
+    .fee.main-copy {
         @include setMainCopy($white);
         font-size: 50px;
     }

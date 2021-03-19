@@ -2,6 +2,13 @@
 
 https://www.millie.co.kr/company/company.html?&gclid=Cj0KCQiA1KiBBhCcARIsAPWqoSq0uD57A7114k7_hU-cXbSTDO8BKxpUFUy_Dkig9dTc0a_MGb6zdHIaAi39EALw_wcB
 
+## 2021.03.19
+
+### commit "translateCopies 구현"
+
+1. 스크롤에 따른 전체 카피 이동 구현
+2. 이에 따른, copy의 클래스명을 main-copy, sub-copy로 통일
+
 ## 2021.03.17
 
 ### commit "changeScalePaperSubscriptionFeeWrapScrollEvent 구현"
